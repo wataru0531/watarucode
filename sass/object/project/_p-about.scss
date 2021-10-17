@@ -1,0 +1,27 @@
+/******************************************************************
+
+p-about
+
+******************************************************************/
+.p-about{
+  padding-top: rem(50);
+  padding-bottom: rem(50);
+  @include mq('tab'){
+    padding-top: rem(70);
+    padding-bottom: rem(70);
+  }
+}
+
+.p-about__contents{
+  margin-top: rem(40);
+  @include mq('tab'){
+    margin-top: rem(50);
+  }
+}
+
+.p-about__skill{
+  margin-top: rem(20);
+  @include mq('tab'){
+    margin-top: rem(30);
+  }
+}

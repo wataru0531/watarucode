@@ -1,0 +1,43 @@
+/******************************************************************
+
+.p-concept
+
+******************************************************************/
+.p-concept{
+  padding-top: rem(50);
+  padding-bottom: rem(50);
+  background-color: $bgGray;
+  @include mq('tab'){
+    padding-top: rem(70);
+    padding-bottom: rem(70);
+  }
+}
+
+.p-concept__contents{
+  margin-top: rem(40);
+  @include mq('tab'){
+    margin-top: rem(50);
+  }
+}
+
+.p-concept__text{
+  font-size: rem(14);
+  line-height: 1.8;
+  @include mq('tab'){
+    font-size: rem(16);
+  }
+}
+
+.p-concept__text:nth-child(3) br:nth-child(2){
+  display: none;
+  @include mq('tab'){
+    display: block;
+  }
+}
+
+.p-concept__text:not(:first-child){
+  margin-top: rem(30);
+  @include mq('tab'){
+    margin-top: rem(35);
+  }
+}

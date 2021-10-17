@@ -1,0 +1,101 @@
+/******************************************************************
+
+.p-works
+
+******************************************************************/
+.p-works{
+  padding-top: rem(50);
+  padding-bottom: rem(50);
+  @include mq('tab'){
+    padding-top: rem(70);
+    padding-bottom: rem(70);
+  }
+}
+.p-works__description{
+  margin-top: rem(40);
+  font-size: rem(16);
+  line-height: 1;
+  @include mq('tab'){
+    margin-top: rem(50);
+  }
+}
+
+.p-works__contents{
+  margin-top: rem(40);
+  @include mq('tab'){
+    margin-top: rem(50);
+  }
+}
+
+.p-works__items{
+  @include mq('tab'){
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+}
+
+.p-works__item{
+  @include mq('tab'){
+    width: calc(50% - 20px / 2);
+  }
+  @include mq('pc'){
+    width: calc(100% / 3 - 20px * 2 / 3);
+  }
+}
+
+// スマホ時のmargin-top
+.p-works__item:not(:first-child){
+  margin-top: rem(30);
+  @include mq('tab'){
+    margin-top: 0;
+  }
+}
+
+// タブレット時の左列のmargin-right
+.p-works__item:nth-child(odd){
+  @include mq('tab'){
+    margin-right: rem(20);
+  }
+  @include mq('pc'){
+    margin-right: 0;
+  }
+}
+
+//タブレット時の3番目以降のmargin-top
+.p-works__item:nth-child(n+3){ //n+3...３番目から最後まで。　※-n+3...最初から3番目まで。
+  @include mq('tab'){
+    margin-top: rem(40);
+  }
+  @include mq('pc'){
+    margin-top: 0;
+  }
+}
+
+//　パソコン時の左2列のmargin-right
+.p-works__item:nth-child(3n+1),
+.p-works__item:nth-child(3n+2){
+  @include mq('pc'){
+    margin-right: rem(20);
+  }
+}
+
+//　パソコン時の4番目以降margin-top
+.p-works__item:nth-child(n+4){
+  @include mq('pc'){
+    margin-top: rem(40);
+  }
+}
+
+.p-works__btn{
+  margin-top: rem(60);
+  // text-align: center;
+  // text-align: left;
+  text-align: right;
+  @include mq('tab'){
+    margin-top: rem(80);
+  }
+}
+
+
+

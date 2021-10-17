@@ -1,0 +1,130 @@
+/******************************************************************
+
+.p-drawer
+
+******************************************************************/
+.p-drawer{
+  width: 100%;
+  height: 100vh;
+  // background-color: $coral;
+  background-color: $white;
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  // opacity: 0;
+  transform: translateX(100%);
+  transition: all .2s;
+}
+
+.p-drawer__items{
+  padding-top: rem(20);
+  overflow: scroll;
+}
+
+// .is-slide付与
+.p-drawer.is-slide{
+  // opacity: 1;
+  transform: translateX(0);
+}
+
+.p-drawer__item:not(:first-child){
+  margin-top: rem(20);
+}
+
+.p-drawer__item{
+  overflow: hidden;
+}
+
+.p-drawer__item a{
+  padding-left: rem(50);
+  display: block;
+  font-family: $font-family-sub;
+  font-size: rem(35);
+  // font-weight: bold;
+  font-weight: normal;
+  line-height: 1;
+  letter-spacing: 0.03em;
+  // color: $coral;
+  // color: $white;
+  color: $text-color;
+  text-transform: uppercase;
+
+  opacity: 0;
+  transform: translateX(rem(-20));
+}
+
+// .is-slide付与
+.p-drawer.is-slide .p-drawer__item a{
+  animation-name: fadeRight;
+  animation-duration: .5s;
+  animation-delay: .3s;
+  animation-fill-mode: forwards;
+}
+
+
+// sns
+.p-drawer__sns-items{
+  margin-top: rem(30);
+  padding-top: rem(30);
+  padding-bottom: rem(20);
+  padding-left: rem(50);
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.p-drawer__sns-items::before{
+  content: '';
+  display: block;
+  width: rem(200);
+  height: rem(2);
+  // background-color: $white;
+  // background-color: $coral;
+  background-color: $text-color;
+  position: absolute;
+  top: 0;
+  left: rem(50);
+
+  // opacity: 0;
+  transform: scaleX(0);
+}
+
+// ライン
+// .is-slide付与
+.p-drawer.is-slide .p-drawer__sns-items::before{
+  animation-name: extendRight;
+  animation-duration: .5s;
+  animation-delay: .7s;
+  animation-fill-mode: forwards;
+}
+
+.p-drawer__sns-item:not(:last-child){
+  margin-right: rem(20);
+}
+
+
+// SNS群
+.p-drawer__sns-item a{
+  display: block;
+  // overflow: hidden;
+}
+
+.p-drawer__sns-item a img{
+  width: rem(40);
+
+  // transform: translateY(2.5em);
+
+  opacity: 0;
+  transform: translateX(rem(-20));
+}
+
+.p-drawer.is-slide .p-drawer__sns-item a img{
+  animation-name: fadeRight;
+  animation-duration: .5s;
+  animation-delay: .7s;
+  animation-fill-mode: forwards;
+}

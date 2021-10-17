@@ -1,0 +1,51 @@
+/******************************************************************
+
+.p-header
+
+******************************************************************/
+.p-header{
+  width: 100%;
+  height: rem(56);
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 500;
+  background-color: $white;
+  @include mq('tab'){
+    height: rem(80);
+  }
+}
+
+.p-header__inner{
+  width: 100%;
+  height: inherit;
+  padding-right: rem(20);
+  padding-left: rem(20);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  @include mq('tab'){
+    padding-right: rem(25);
+    padding-left: rem(25);
+  }
+}
+
+.p-header__global-nav{
+  display: none;
+  @include mq('tab'){
+    display: block;
+  }
+}
+
+.p-header__hamburger-btn{
+	z-index: 500;
+  @include mq('tab'){
+    display: none;
+  }
+}
+
+.p-header__drawer{
+	z-index: 400;
+}

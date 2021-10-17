@@ -1,0 +1,56 @@
+/******************************************************************
+
+.p-global-nav ヘッダーナビゲーション
+
+******************************************************************/
+.p-global-nav{
+  height: inherit;
+}
+
+.p-global-nav__items{
+  height: inherit;
+  display: flex;
+}
+
+.p-global-nav__item{
+  height: inherit;
+}
+
+.p-global-nav__item:not(:last-child){
+  margin-right: rem(22);
+}
+
+.p-global-nav__item a{
+  display: block;
+  height: inherit;
+  font-family: $font-family-sub;
+  font-size: rem(22);
+  font-weight: normal;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.p-global-nav__item a::after{
+  content: '';
+  display: block;
+  width: 100%;
+  height: rem(1);
+  background-color: $coral;
+  position: absolute;
+  bottom: rem(20);
+  left: 0;
+  transform-origin: right;
+  transform: scale(0, 1);
+  transition: transform .2s;
+}
+
+.p-global-nav__item a:hover::after{
+  transform-origin: left;
+  transform: scale(1, 1);
+}

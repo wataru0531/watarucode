@@ -1,0 +1,37 @@
+/******************************************************************
+
+p-profile
+
+******************************************************************/
+.p-profile__contents{
+  margin-top: rem(20);
+}
+.p-profile__title{
+  font-family: $font-family-sub;
+  font-size: rem(20);
+  font-weight: normal;
+  line-height: 1;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  @include mq('tab'){
+    font-size: rem(24);
+  }
+}
+
+.p-profile__resident{
+  font-size: rem(14);
+  line-height: 1;
+  @include mq('tab'){
+    // margin-top: rem(10);
+    font-size: rem(16);
+  }
+}
+
+.p-profile__hobby{
+  margin-top: rem(10);
+  font-size: rem(14);
+  line-height: 1;
+  @include mq('tab'){
+    font-size: rem(16);
+  }
+}
