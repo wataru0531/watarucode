@@ -1,0 +1,18 @@
+/******************************************************************
+
+.p-sns
+
+******************************************************************/
+.p-sns__item:not(:first-child){
+  margin-top: rem(20);
+  @include mq('tab'){
+    margin-top: rem(30);
+  }
+}
+
+.p-sns__item a img{
+  width: rem(30);
+  @include mq('tab'){
+    width: rem(40);
+  }
+}

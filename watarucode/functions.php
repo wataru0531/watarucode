@@ -165,7 +165,7 @@ add_action('wp_enqueue_scripts', 'my_script_init');
 function post_has_archive($args, $post_type){
 	if('post' == $post_type){
 		$args['rewrite'] = true;
-		$args['has_archive'] = 'blog';
+		// $args['has_archive'] = 'blog';
 		$args['label'] = 'BLOG';
 	}
 
@@ -173,6 +173,8 @@ function post_has_archive($args, $post_type){
 }
 add_filter('register_post_type_args', 'post_has_archive', 10, 2);
 
+//archive.phpがあればarchive.phpに一覧が出る。　
+//archive.phpがなくて、home.phpがあればhome.phpに一覧がでる。
 
 //抜粋文を適度な長さに調整する。
 function get_flexible_excerpt($number){
@@ -192,7 +194,7 @@ function get_flexible_excerpt($number){
 // カスタム投稿「制作実績」
 add_action('init', function(){
 	register_post_type('works', [
-		'label' => '制作実績',
+		'label' => 'WORKS',
 		'public' => true,
 		'menu_position' => 5,
 		'has_archive' => true,
@@ -208,9 +210,6 @@ add_action('init', function(){
 		],
 	]);
 });
-
-
-
 
 //アイキャッチ画像がなければ、デフォルト画像を表示する。
 function get_eye_catch_default(){
@@ -228,3 +227,19 @@ function get_eye_catch_default(){
 
 	return $img;
 }
+
+
+// 管理画面の投稿件数とは関係なく、トップページはそのままの投稿件数を、他のページの投稿件数を変更する。
+// ページネーションでのエラーを無くすため
+function set_pre_get_posts($query) {
+  if (is_admin() || !$query->is_main_query()) {
+    return;
+  }
+
+  if ($query->is_post_type_archive('works')) {
+    $query->set('posts_per_page', '6');
+    return;
+  }
+
+}
+add_action('pre_get_posts', 'set_pre_get_posts');

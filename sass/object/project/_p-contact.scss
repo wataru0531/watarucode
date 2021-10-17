@@ -1,0 +1,29 @@
+/******************************************************************
+
+p-contact
+
+******************************************************************/
+.p-contact{
+  padding-top: rem(50);
+  padding-bottom: rem(50);
+  @include mq('tab'){
+    padding-top: rem(70);
+    padding-bottom: rem(70);
+  }
+}
+.p-contact__description{
+  margin-top: rem(40);
+  font-size: rem(14);
+  // line-height: 1;
+  @include mq('tab'){
+    margin-top: rem(50);
+    font-size: rem(16);
+  }
+}
+
+.p-contact__contents{
+  margin-top: rem(40);
+  @include mq('tab'){
+    margin-top: rem(50);
+  }
+}

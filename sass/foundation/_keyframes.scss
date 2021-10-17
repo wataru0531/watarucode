@@ -1,0 +1,46 @@
+/******************************************************************
+
+.keyframes アニメーションで使用するkeyframes
+
+******************************************************************/
+// 左から右へ出現
+@keyframes fadeRight {
+  0%{
+    opacity: 0;
+    transform: translateX(rem(-20));
+  }
+  100%{
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+// 左から右に伸びる
+@keyframes extendRight {
+  0%{
+    transform-origin: left;
+    transform: scaleX(0);
+  }
+  100%{
+    transform-origin: left;
+    transform: scaleX(1);
+  }
+}
+
+@keyframes fadeIn {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+@keyframes emergeUp {
+  0%{
+    transform: translateY(2.5em);
+  }
+  100%{
+    transform: none;
+  }
+}

@@ -1,0 +1,36 @@
+/***************************************************************
+
+.c-btn-view 共通のviewボタン
+
+***************************************************************/
+.c-btn-view{
+  padding: rem(10);
+  width: rem(150);
+  display: inline-block;
+  font-family: $font-family-sub;
+  font-size: rem(20);
+  line-height: 1;
+  letter-spacing: 0.02em;
+  border-bottom: rem(1) solid $text-color;
+  text-align: left;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.c-btn-view::after{
+  content: '';
+  display: inline-block;
+  width: rem(7);
+  height: rem(7);
+  border-bottom: rem(2) solid $text-color;
+  border-right: rem(2) solid $text-color;
+  position: absolute;
+  top: 50%;
+  right: rem(10);
+  transform: rotate(-45deg) translate(0, -50%);
+  transition: right .3s;
+}
+
+.c-btn-view:hover::after{
+  right: rem(5);
+}

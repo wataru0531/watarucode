@@ -1,0 +1,54 @@
+/******************************************************************
+
+.p-pagination
+
+******************************************************************/
+.p-pagination{
+  font-size: rem(14);
+  line-height: 1;
+  color: $text-color;
+  text-align: center;
+
+  @include mq('tab'){
+    font-size: rem(16);
+  }
+}
+
+.p-pagination .page-numbers{
+  padding-top: rem(12);
+  padding-bottom: rem(12);
+  padding-right: rem(15);
+  padding-left: rem(15);
+  position: relative;
+
+  @include mq('tab'){
+    padding-top: rem(15);
+    padding-bottom: rem(15);
+    padding-right: rem(18);
+    padding-left: rem(18);
+  }
+}
+
+.p-pagination .page-numbers.current{
+  color: $current;
+}
+
+.p-pagination__inner > a.page-numbers::after{
+  content: '';
+  display: block;
+  width: 100%;
+  height: rem(1);
+  background-color: $coral;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  transform-origin: right;
+  transform: scale(0, 1);
+  transition: transform .2s;
+}
+
+.p-pagination__inner > a.page-numbers:hover::after{
+  transform-origin: left;
+  transform: scale(1, 1);
+}

@@ -1,0 +1,40 @@
+/******************************************************************
+
+p-price
+
+******************************************************************/
+.p-price{
+  padding-top: rem(50);
+  padding-bottom: rem(50);
+  background-color: $bgGray;
+  @include mq('tab'){
+    padding-top: rem(70);
+    padding-bottom: rem(70);
+  }
+}
+
+.p-price__description{
+  margin-top: rem(40);
+  font-size: rem(14);
+  @include mq('tab'){
+    margin-top: rem(50);
+    font-size: rem(16);
+  }
+}
+
+.p-price__contents{
+  margin-top: rem(40);
+  font-size: rem(16);
+  @include mq('tab'){
+    margin-top: rem(50);
+  }
+}
+
+.p-price__btn{
+  margin-top: rem(60);
+  font-size: rem(16);
+  text-align: center;
+  @include mq('tab'){
+    margin-top: rem(80);
+  }
+}
