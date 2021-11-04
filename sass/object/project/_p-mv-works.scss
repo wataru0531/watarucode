@@ -1,0 +1,88 @@
+/******************************************************************
+
+.p-mv-works
+
+******************************************************************/
+.p-mv-works{
+  width: 100%;
+  height: rem(200);
+  background-color: $white;
+  position: relative;
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  
+  @include mq('tab'){
+    height: rem(250);
+  }
+}
+
+.p-mv-works__inner{
+  padding-top: rem(56);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @include mq('tab'){
+    padding-top: rem(80);
+  }
+}
+
+.p-mv-works__title{
+  font-family: $font-family-sub;
+  font-size: rem(40);
+  line-height: 1;
+  letter-spacing: 0.02em;
+  font-weight: bold;
+  color: $text-color;
+  text-transform: uppercase;
+
+  @include mq('tab'){
+    font-size: rem(50);
+  }
+}
+
+.p-mv-works__subtitle{
+  padding-left: rem(30);
+  font-size: rem(14);
+  line-height: 2.5;
+  color: $text-color;
+  font-weight: normal;
+  font-weight: bold;
+  position: relative;
+
+  @include mq('tab'){
+    padding-left: rem(35);
+    font-size: rem(16);
+  }
+}
+
+.p-mv-works__subtitle::before{
+  content: '';
+  display: block;
+  width: rem(25);
+  height: rem(2);
+  background-color: $coral;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+
+  @include mq('tab'){
+    width: rem(30);
+  }
+}
+
+.p-mv-works__title--single{
+  @extend .p-mv-works__title;
+  font-family: $font-family-base;
+  font-weight: bold;
+  font-size: rem(30);
+  letter-spacing: normal;
+  text-transform: none;
+
+  @include mq('tab'){
+    font-size: rem(40);
+  }
+}

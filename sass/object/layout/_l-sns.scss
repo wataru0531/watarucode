@@ -7,7 +7,7 @@
   position: fixed;
   bottom: rem(50);
   right: rem(30);
-  z-index: 100;
+  z-index: 300;
 
   @include mq('tab'){
     bottom: rem(100);

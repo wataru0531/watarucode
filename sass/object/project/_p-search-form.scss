@@ -1,0 +1,42 @@
+/******************************************************************
+
+.p-search-form
+
+******************************************************************/
+.p-search-form{
+  width: 100%;
+  position: relative;
+}
+
+.p-search-form__input{
+  padding-top: rem(5);
+  padding-bottom: rem(5);
+  padding-right: rem(45);
+  padding-left: rem(8);
+
+  width: 100%;
+
+  font-size: rem(14);
+  line-height: 2;
+  background-color: $white;
+  border: rem(1) solid $gray;
+}
+
+.p-search-form__btn{
+  width: rem(40);
+  height: 100%;
+  background-color: $coral;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 100;
+}
+
+.p-search-form__btn img{
+  width: rem(20);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

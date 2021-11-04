@@ -11,10 +11,15 @@ p-contact
     padding-bottom: rem(70);
   }
 }
+
+.p-contact__header{
+  margin-top: rem(-30);
+}
+
 .p-contact__description{
   margin-top: rem(40);
   font-size: rem(14);
-  // line-height: 1;
+  
   @include mq('tab'){
     margin-top: rem(50);
     font-size: rem(16);

@@ -4,11 +4,13 @@
 
 ******************************************************************/
 .p-breadcrumb{
-  font-size: rem(14);
-  line-height: 1;
+  padding-top: rem(5);
+  padding-bottom: rem(5);
+  font-size: rem(12);
   color: $text-color;
+  background-color: $bgGray;
 
   @include mq('tab'){
-    font-size: rem(16);
+    font-size: rem(14);
   }
 }

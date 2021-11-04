@@ -1,47 +1,62 @@
 /******************************************************************
 
-p-blog
+.p-blog
 
 ******************************************************************/
-.p-blog{
-  padding-top: rem(50);
-  padding-bottom: rem(50);
-  // background-color: $bgGray;
+.p-blog__header{
+  margin-bottom: rem(50);
+  padding-top: rem(10);
+  padding-bottom: rem(10);
+  padding-left: rem(10);
+  position: relative;
+
   @include mq('tab'){
-    padding-top: rem(70);
-    padding-bottom: rem(70);
+    margin-bottom: rem(70);
   }
 }
 
-.p-blog__description{
-  margin-top: rem(40);
-  font-size: rem(16);
-  @include mq('tab'){
-    margin-top: rem(50);
-  }
+.p-blog__header::before{
+  content: '';
+  display: block;
+  width: 100%;
+  height: rem(1);
+  background-color: #E2E2E2;
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
 
-.p-blog__contents{
-  margin-top: rem(40);
-  @include mq('tab'){
-    margin-top: rem(50);
-  }
+.p-blog__header::after{
+  content: '';
+  display: block;
+  width: 40%;
+  height: rem(1);
+  background-color: $coral;
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
+
+.p-blog__category-title{
+  font-size: rem(20);
+  font-weight: bold;
+  line-height: 1;
+  color: $text-color;
+}
+
+.p-blog__category-title span{
+  margin-left: rem(10);
+  font-size: rem(18);
+  font-weight: normal;
+  line-height: 1;
+  color: $subTitle;
+}
+
 
 .p-blog__items{
   @include mq('tab'){
     display: flex;
     flex-wrap: wrap;
-  }
-  
-}
-
-.p-blog__item{
-  @include mq('tab'){
-    width: calc(50% - 20px / 2);
-  }
-  @include mq('pc'){
-    width: calc(100% / 3 - 20px * 2 / 3);
   }
 }
 
@@ -53,46 +68,21 @@ p-blog
   }
 }
 
-// タブレット時の左列のmargin-right
+//タブレット時の3番目以降のmargin-top
+.p-blog__item:nth-child(n+3){
+  @include mq('tab'){
+    margin-top: rem(30);
+  }
+}
+
+.p-blog__item{
+  @include mq('tab'){
+    width: calc(50% - 20px / 2);
+  }
+}
+
 .p-blog__item:nth-child(odd){
   @include mq('tab'){
     margin-right: rem(20);
-  }
-  @include mq('pc'){
-    margin-right: 0;
-  }
-}
-
-//タブレット時の3番目以降のmargin-top
-.p-blog__item:nth-child(n+3){ //n+3...３番目から最後まで。　※-n+3...最初から3番目まで。
-  @include mq('tab'){
-    margin-top: rem(40);
-  }
-  @include mq('pc'){
-    margin-top: 0;
-  }
-}
-
-//　パソコン時の左2列のmargin-right
-.p-blog__item:nth-child(3n+1),
-.p-blog__item:nth-child(3n+2){
-  @include mq('pc'){
-    margin-right: rem(20);
-  }
-}
-
-//　パソコン時の4番目以降margin-top
-.p-blog__item:nth-child(n+4){
-  @include mq('pc'){
-    margin-top: rem(40);
-  }
-}
-
-.p-blog__btn{
-  margin-top: rem(60);
-  // text-align: center;
-  text-align: right;
-  @include mq('tab'){
-    margin-top: rem(80);
   }
 }

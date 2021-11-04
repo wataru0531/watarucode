@@ -1,0 +1,26 @@
+/******************************************************************
+
+.c-btn-normal
+
+******************************************************************/
+.c-btn-normal{
+  padding-top: rem(18);
+  padding-bottom: rem(18);
+  padding-right: rem(50);
+  padding-left: rem(50);
+  display:inline-block;
+  font-size: rem(14);
+  font-weight: bold;
+  line-height: 1;
+  color: $white;
+  background-color: $coral;
+  border: rem(1) solid $coral;
+  border-radius: rem(27);
+
+  @include mq('tab'){
+    padding-top: rem(14);
+    padding-bottom: rem(14);
+    padding-right: rem(35);
+    padding-left: rem(35);
+  }
+}

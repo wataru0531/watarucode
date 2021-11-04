@@ -13,7 +13,10 @@
 .c-hamburger-btn span{
   width: 100%;
   height: rem(2);
-  background-color: $text-color;
+  // background-color: $text-color;
+  //mix-blend-modeを効かせるために反転したカラーを指定。
+  background-color: $white;
+
   position: absolute;
   transition: all .2s;
   // transition: transform .2s, background-color .5s;
@@ -46,7 +49,10 @@
 .c-hamburger-btn::before{
   width: 100%;
   height: rem(2);
-  background-color: $text-color;
+  // background-color: $text-color;
+  //mix-blend-modeを効かせるために反転したカラーを指定。
+  background-color: $white;
+
   content: '';
   position: absolute;
   top: 0;
@@ -62,7 +68,10 @@
 .c-hamburger-btn::after{
   width: 100%;
   height: rem(2);
-  background-color: $text-color;
+  // background-color: $text-color;
+  //mix-blend-modeを効かせるために反転したカラーを指定。
+  background-color: $white;
+
   content: '';
   position: absolute;
   top: 0;
@@ -76,36 +85,36 @@
 }
 
 
-
 // is-open付与後の動き
+// miz-blend-modeがヘッダーにかかっているので、is-open付与後はbackground-colorを元の色に戻す。
 // span 三本ライン
 .c-hamburger-btn.is-open span:nth-of-type(1){
   transform: scaleX(0);
   transition-delay: 0s;
-  // background-color: $white;
+  background-color: $text-color;
 }
 
 .c-hamburger-btn.is-open span:nth-of-type(2){
   transform: scaleX(0) translateY(-50%);
   transition-delay: 0s;
-  // background-color: $white;
+  background-color: $text-color;
 }
 
 .c-hamburger-btn.is-open span:nth-of-type(3){
   transform: scaleX(0);
   transition-delay: 0s;
-  // background-color: $white;
+  background-color: $text-color;
 }
 
 // ばつ印
 .c-hamburger-btn.is-open::before{
   transform: rotate(45deg) scaleX(1);
   transition-delay: .3s;
-  // background-color: $white;
+  background-color: $text-color;
 }
 
 .c-hamburger-btn.is-open::after{
   transform: rotate(-45deg) scaleX(1);
   transition-delay: .3s;
-  // background-color: $white;
+  background-color: $text-color;
 }

@@ -6,17 +6,17 @@ p-skill
 .p-skill__title{
   font-family: $font-family-sub;
   font-size: rem(20);
-  font-weight: normal;
+  font-weight: bold;
   line-height: 1;
   letter-spacing: 0.03em;
   text-transform: uppercase;
   @include mq('tab'){
-    font-size: rem(24);
+    font-size: rem(30);
   }
 }
 
 .p-skill__skills{
-  margin-top: rem(20);
+  margin-top: rem(10);
   font-size: rem(14);
   line-height: 1.5;
   @include mq('tab'){

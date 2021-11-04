@@ -36,6 +36,10 @@ body {
 	z-index: -9999;
 }
 
+main{
+  background-color: $white;
+}
+
 /* pcの電話番号発信対応 */
 a[href^="tel:"] {
   @include mq("tab") {
@@ -84,9 +88,9 @@ dd {
 }
 
 /* Set core root defaults */
-html {
-  scroll-behavior: smooth;
-}
+// html {
+//   scroll-behavior: smooth;
+// }
 
 /* Remove list styles on ul, ol elements with a class attribute */
 ul,

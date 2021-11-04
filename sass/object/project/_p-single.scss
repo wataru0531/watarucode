@@ -1,0 +1,58 @@
+/******************************************************************
+
+.p-single 記事詳細ページ single.phpのコンテンツ部分
+
+******************************************************************/
+.p-single__title{
+  font-size: rem(24);
+  line-height: 1;
+  color: $text-color;
+  font-weight: bold;
+}
+
+.p-single__box{
+  margin-top: rem(20);
+  display: flex;
+  align-items: center;
+}
+
+.p-single__category{
+  margin-right: rem(10);
+}
+
+.p-single__time{
+  font-size: rem(14);
+  line-height: 1;
+  font-weight: normal;
+  color: $text-color;
+}
+
+.p-single__img{
+  margin-top: rem(20);
+  overflow: hidden;
+  position: relative;
+}
+
+.p-single__img::before{
+  content: '';
+  display: block;
+  padding-top: 56.25%;
+}
+
+.p-single__img img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.p-single__content{
+  // margin-top: rem(50);
+
+  @include mq('tab'){
+    // margin-top: rem(70);
+  }
+}

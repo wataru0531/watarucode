@@ -2,6 +2,29 @@
 <!-- <?php var_dump($post); ?>
 <?php var_dump($wp_query); ?> -->
 
+<!-- l-sub-mv -->
+<div class="l-mv-works p-mv-works" style="background-image: url(<?php if(get_field('works_image', 220)){ the_field('works_image', 220); } ?>)">
+  <div class="p-mv-works__inner l-inner">
+    <div class="p-mv-works__header">
+        <h1 class="p-mv-works__title">works</h1>
+        <div class="p-mv-works__subtitle">制作実績</div>
+    </div>
+  </div> 
+</div><!-- l-sub-mv -->
+
+<!-- l-breadcrumb -->
+<div class="l-breadcrumb p-breadcrumb">
+  <div class="p-breadcrumb__inner l-inner">
+    <?php
+      if(function_exists('bcn_display')){
+        bcn_display();
+      }
+    ?>
+  </div>
+</div><!-- l-breadcrumb -->
+
+<main>
+
   <!-- l-works -->
   <section class="p-works">
     <div class="p-works__inner l-inner">
@@ -23,12 +46,12 @@
           ?>
           <?php if($wp_query->have_posts()): ?>
             <?php while($wp_query->have_posts()): $wp_query->the_post(); ?>
-              <li class="p-works__item p-works-card">
-                <a class="p-works-card__img" href="<?php the_permalink(); ?>">
+              <li class="p-works__item p-card-works">
+                <a class="p-card-works__img" href="<?php the_permalink(); ?>">
                   <img src="<?php the_field('image'); ?>" alt="">
                 </a>
-                <div class="p-works-card__body">
-                  <h3 class="p-works-card__title"><?php the_title(); ?></h3>
+                <div class="p-card-works__body">
+                  <h2 class="p-card-works__title"><?php the_title(); ?></h2>
                 </div>
               </li>
             <?php endwhile; ?>
@@ -73,4 +96,7 @@
       </div>
     </div>
   </section><!-- l-works -->
+
+  </main>
+  
 <?php get_footer(); ?>
