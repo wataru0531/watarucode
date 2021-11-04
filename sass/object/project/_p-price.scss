@@ -6,11 +6,16 @@ p-price
 .p-price{
   padding-top: rem(50);
   padding-bottom: rem(50);
-  background-color: $bgGray;
+  background-color: $white;
+
   @include mq('tab'){
     padding-top: rem(70);
     padding-bottom: rem(70);
   }
+}
+
+.p-price__header{
+  margin-top: rem(-30);
 }
 
 .p-price__description{

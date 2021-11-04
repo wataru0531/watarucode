@@ -5,48 +5,19 @@
 ***************************************************************/
 .c-section-title{
   font-family: $font-family-sub;
-  font-size: rem(35);
-  // font-weight: bold;
-  font-weight: normal;
+  font-size: rem(48);
+  font-weight: bold;
   line-height: 1;
   letter-spacing: 0.02em;
   color: $text-color;
   text-transform: uppercase;
+  
   @include mq('tab'){
-    font-size: rem(40);
+    font-size: rem(80);
   }
 }
 
-
-
-//旧セクションタイトル
-// .c-section-title{
-//   padding-left: rem(25);
-//   font-size: rem(16);
-//   line-height: 1.2;
-//   font-weight: bold;
-//   color: $gray;
-//   position: relative;
-
-//   @include mq('tab'){
-//     padding-left: rem(35);
-//     font-size: rem(18);
-//   }
-// }
-
-// .c-section-title::before{
-//   content: '';
-//   display: block;
-//   width: rem(20);
-//   height: rem(2);
-//   background-color: $coral;
-//   position: absolute;
-//   top: 50%;
-//   left: 0;
-//   transform: translateY(-50%);
-
-//   @include mq('tab'){
-//     width: rem(25);
-//     height: rem(2);
-//   }
-// }
+.c-section-title--white{
+  @extend .c-section-title;
+  color: $white;
+}

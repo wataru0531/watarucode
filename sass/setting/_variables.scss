@@ -2,16 +2,21 @@
 $white: #fff; // 背景
 $black: #000;
 
-$text-color: #2f2c2a; // テキスト色
+// テキスト色
+// $text-color: #2f2c2a;
+$text-color: #282828;
 
-$coral: rgb(255, 79, 79);
-$gray: #B4B4B4;
-$bgGray: #f9f9f9;
+$coral: #ff4f4f;
+$gray: #E2E2E2;
+$subTitle: #B4B4B4;
 $border: #7F7F7F;
 
-$gray: #B4B4B4;
-
 $current: #bdbdbd; //ページナビのcurrent表示部分のカラー
+
+// 背景色
+$bgWhite: #F8F8F8;
+// $bgBlack: #282828;
+$bgGray: #f9f9f9;
 
 // マウスホバー
 $opacity: 0.7; // 透過度

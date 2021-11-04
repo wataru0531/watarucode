@@ -1,0 +1,25 @@
+/******************************************************************
+
+.p-concept
+
+******************************************************************/
+.c-background-text{
+  display: block;
+  font-family: $font-family-sub;
+  font-weight: bold;
+  font-size: 25vw;
+  line-height: 0.8;
+  color: $white;
+  text-transform: uppercase;
+  white-space: nowrap;
+
+  @include mq('tab'){
+    font-size: rem(245);
+  }
+}
+
+.c-background-text--gray{
+  @extend .c-background-text;
+
+  color: $bgWhite;
+}

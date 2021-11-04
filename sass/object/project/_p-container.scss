@@ -1,0 +1,14 @@
+/******************************************************************
+
+.p-container
+
+******************************************************************/
+.p-container__inner{
+  @include mq('tab'){
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
+
+

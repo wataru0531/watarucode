@@ -32,13 +32,19 @@ add_action( 'after_setup_theme', 'my_setup' );
  *
  * @codex https://wpdocs.osdn.jp/%E3%83%8A%E3%83%93%E3%82%B2%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%83%A1%E3%83%8B%E3%83%A5%E3%83%BC
  */
-function my_script_init()
-{
+function my_script_init(){
 
+	// swiperのCSS
+	wp_enqueue_style('swiper_css', get_template_directory_uri() . '/assets/css/vendors/swiper.min.css');
+	// CSS読み込み
 	wp_enqueue_style( 'my', get_template_directory_uri() . '/assets/css/style.css', array(), '1.0.1', 'all' );
-
+	
+	
+	// swiperのJS
+	wp_enqueue_script('swiper_js', get_template_directory_uri() . '/assets/js/vendors/swiper.min.js');
+	// JavaScript読み込み
 	wp_enqueue_script( 'my', get_template_directory_uri() . '/assets/js/script.js', array( 'jquery' ), '1.0.1', true );
-
+	
 }
 add_action('wp_enqueue_scripts', 'my_script_init');
 
@@ -211,6 +217,14 @@ add_action('init', function(){
 	]);
 });
 
+// コンテンツの内容を適切な長さに調節する関数。
+function get_flexible_content($number){
+	$value = get_the_content();
+	$value = wp_trim_words($value, $number, '...');
+
+	return $value;
+}
+
 //アイキャッチ画像がなければ、デフォルト画像を表示する。
 function get_eye_catch_default(){
 	if(has_post_thumbnail()):
@@ -241,5 +255,58 @@ function set_pre_get_posts($query) {
     return;
   }
 
+	if($query->is_home()){
+		$query->set('posts_per_page', '10');
+		return;
+	}
+
 }
 add_action('pre_get_posts', 'set_pre_get_posts');
+
+
+// 記事のPV数を取得する。
+// get_post_meta()...特定の投稿の特定のキーからカスタムフィールドの値を取得する。第３パラメータは、true...文字列として、false...配列として返す。
+function getPostViews($postID) {
+  $count_key = 'post_views_count';
+  $count = get_post_meta($postID, $count_key, true);
+
+  if ($count=='') {
+    delete_post_meta($postID, $count_key);
+    add_post_meta($postID, $count_key, '0');
+    return "0 View";
+  }
+  return $count.' Views';
+}
+
+
+// 記事PVをカウントする。
+
+// 記事のPV数はsetPostViews()関数に記事のpostIDを渡して呼び出すことにより、
+// カスタムフィールド(メタデータ)でカウントしていき、記事ごとのPV数を保存していく。
+// この関数が呼ばれる度に'post_views_count'というキーでビュー数が保存されるようになっている。
+function setPostViews($postID) {
+  $count_key = 'post_views_count'; //キーを設定。任意で設定。
+  $count = get_post_meta($postID, $count_key, true); //現在のPV数を取得
+
+	//メタデータの有無で判定する
+  if ($count=='') {
+		 //メタデータがない時
+    $count = 0; //0のデータを登録、設定する。
+    delete_post_meta($postID, $count_key); //メタデータを念のため、一旦削除する
+    add_post_meta($postID, $count_key, '0'); //ここでカウント０のメタデータを追加
+
+  } else {
+		//メタデータがすでにある時
+    $count++; //PV数を+1する。
+    update_post_meta($postID, $count_key, $count); //メタデータを更新する。
+  }
+
+  // デバッグ start
+  // echo '';
+  // echo 'console.log("postID: ' . $postID .'");';
+  // echo 'console.log("カウント: ' . $count .'");';
+  // echo '';
+  // デバッグ end
+}
+remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
+

@@ -17,17 +17,20 @@
 }
 
 .p-global-nav__item:not(:last-child){
-  margin-right: rem(22);
+  margin-right: rem(30);
 }
 
 .p-global-nav__item a{
   display: block;
   height: inherit;
   font-family: $font-family-sub;
-  font-size: rem(22);
-  font-weight: normal;
+  font-size: rem(18);
+  font-weight: bold;
   line-height: 1;
   letter-spacing: 0.02em;
+  //mix-blend-modeを効かせるために反転したカラーを指定。
+  color: $white;
+
   text-transform: uppercase;
   display: flex;
   flex-direction: column;
@@ -41,7 +44,9 @@
   display: block;
   width: 100%;
   height: rem(1);
-  background-color: $coral;
+  // background-color: $coral;
+  // background-color: #00A5AA;
+  background-color: $white;
   position: absolute;
   bottom: rem(20);
   left: 0;

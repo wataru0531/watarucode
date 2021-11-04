@@ -1,0 +1,36 @@
+/******************************************************************
+
+.p-mv-blog
+
+******************************************************************/
+.p-mv-blog{
+  padding-top: rem(86);
+  padding-bottom: rem(66);
+  width: 100%;
+  background-color: $coral;
+  
+  background-image: url(../img/common/wall03.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  
+  @include mq('tab'){
+    padding-top: rem(106);
+    padding-bottom: rem(86);
+  }
+}
+
+.p-mv-blog__inner{
+  text-align: center;
+}
+
+.p-mv-blog__title{
+  font-family: $font-family-sub;
+  font-weight: bold;
+  font-size: rem(30);
+  line-height: 1;
+  letter-spacing: 0.02em;
+  color: $text-color;
+  color: $white;
+  text-transform: uppercase;
+}

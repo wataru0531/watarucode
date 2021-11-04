@@ -1,66 +1,73 @@
 /******************************************************************
 
-.p-blog-card　共通のカード
+.p-card-works　共通のカード
 
 ******************************************************************/
-.p-blog-card{
+.p-card-works{
   display: flex;
   flex-direction: column;
 }
 
-.p-blog-card__img{
+.p-card-works__img{
   display: block;
   position: relative;
   overflow: hidden;
 }
 
-.p-blog-card__img::before{
+.p-card-works__img::before{
   content: '';
   display: block;
   padding-top: 75%;
 }
 
-.p-blog-card__img img{
+.p-card-works__img img{
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: all .3s;
 }
 
-.p-blog-card__body{
+.p-card-works__img:hover img{
+  transform: translateY(-50%) scale(1.1);
+}
+
+.p-card-works__body{
   flex: 1;
   padding-top: rem(10);
   padding-bottom: rem(10);
   padding-right: rem(10);
   padding-left: rem(10);
   background-color: $white;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 }
 
-.p-blog-card__title{
+.p-card-works__title{
   font-size: rem(16);
-  line-height: 1;
+  line-height: 1.5;
   // font-weight: bold;
   font-weight: normal
 }
 
-.p-blog-card__pages{
+.p-card-works__title--weight{
+  @extend .p-card-works__title;
+  font-weight: 400;
+}
+
+.p-card-works__pages{
   margin-top: rem(15);
   font-size: rem(16);
   line-height: 1;
 }
 
-.p-blog-card__specification{
+.p-card-works__specification{
   margin-top: rem(15);
   font-size: rem(16);
   line-height: 1;
 }
 
-.p-blog-card__category{
+.p-card-works__category{
   margin-top: rem(15);
   padding-top: rem(5);
   padding-bottom: rem(5);
@@ -74,7 +81,7 @@
   // border-radius: rem(15);
 }
 
-.p-blog-card__time{
+.p-card-works__time{
   margin-top: rem(15);
   display: block;
   font-size: rem(14);

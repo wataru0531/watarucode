@@ -3,6 +3,15 @@
 .keyframes アニメーションで使用するkeyframes
 
 ******************************************************************/
+@keyframes fadeIn {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
 // 左から右へ出現
 @keyframes fadeRight {
   0%{
@@ -27,20 +36,24 @@
   }
 }
 
-@keyframes fadeIn {
+// 下 → 上
+@keyframes emergeUp {
   0%{
     opacity: 0;
+    transform: translateY(1em);
   }
   100%{
     opacity: 1;
+    transform: none;
   }
 }
 
-@keyframes emergeUp {
+// ズームアップ
+@keyframes zoomUp {
   0%{
-    transform: translateY(2.5em);
+    transform: scale(1);
   }
   100%{
-    transform: none;
+    transform: scale(1.1);
   }
 }

@@ -21,7 +21,7 @@
 .p-introduction__img::before{
   content: '';
   display: block;
-  padding-top: 75%;
+  padding-top: 56.25%;
 }
 
 .p-introduction__img img{
@@ -125,15 +125,14 @@
   }
 }
 
-.p-introduction_previous{
+.p-introduction__previous{
   margin-right: rem(100);
   @include mq('tab'){
     margin-right: rem(400);
   }
 }
 
-// previousボタン
-.p-introduction_previous a{
+.p-introduction__previous a{
   padding: rem(10);
   width: rem(100);
   display: inline-block;
@@ -152,7 +151,7 @@
   }
 }
 
-.p-introduction_previous a::after{
+.p-introduction__previous a::after{
   content: '';
   display: inline-block;
   width: rem(7);
@@ -168,11 +167,10 @@
   transition: left .3s;
 }
 
-.p-introduction_previous a:hover::after{
+.p-introduction__previous a:hover::after{
   left: rem(5);
 }
 
-// nextボタン
 .p-introduction__next a{
   padding: rem(10);
   width: rem(100);

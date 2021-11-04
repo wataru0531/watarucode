@@ -1,14 +1,39 @@
 <?php get_header(); ?>
 <!-- <?php var_dump($post); ?> -->
 
+<!-- l-sub-mv -->
+<div class="l-mv-works p-mv-works" style="background-image: url(<?php if(get_field('single_image', 220)){ the_field('single_image', 220); } ?>)">
+  <div class="p-mv-works__inner l-inner">
+    <div class="p-mv-works__header">
+        <h1 class="p-mv-works__title--single"><?php single_post_title(); ?></h1>
+    </div>
+  </div>
+</div><!-- l-sub-mv -->
+
+<!-- l-breadcrumb -->
+<div class="l-breadcrumb p-breadcrumb">
+  <div class="p-breadcrumb__inner l-inner">
+    <?php
+      if(function_exists('bcn_display')){
+        bcn_display();
+      }
+    ?>
+  </div>
+</div><!-- l-breadcrumb -->
+
+<main>
   <section class="l-introduction p-introduction">
     <div class="p-introduction__inner l-inner">
 
       <?php if(have_posts()): ?>
         <?php while(have_posts()): the_post(); ?>
+
+
+
           <figure class="p-introduction__img">
             <img src="<?php the_field('image'); ?>" alt="">
           </figure>
+
           <div class="p-introduction__contents">
             <!-- url -->
             <?php if(get_field('url')): ?>
@@ -68,15 +93,15 @@
           </div>
 
           <div class="p-introduction__pagination">
-            <?php if(get_previous_post()): ?>
-              <div class="p-introduction_previous">
-                <?php previous_post_link('%link', 'PREV'); ?>
+            <?php if(get_next_post()): ?>
+              <div class="p-introduction__previous">
+                <?php next_post_link('%link', 'PREV'); ?>
               </div>
             <?php endif; ?>
 
-            <?php if(get_next_post()): ?>
+            <?php if(get_previous_post()): ?>
               <div class="p-introduction__next">
-                <?php next_post_link('%link', 'NEXT'); ?>
+                <?php previous_post_link('%link', 'NEXT'); ?>
               </div>
             <?php endif; ?>
           </div>
@@ -87,4 +112,6 @@
     </div>
   </section>
 
+  </main>
+  
 <?php get_footer(); ?>

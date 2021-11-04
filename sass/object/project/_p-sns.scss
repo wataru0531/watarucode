@@ -10,9 +10,13 @@
   }
 }
 
+.p-sns__item a{
+  display: block;
+}
+
 .p-sns__item a img{
-  width: rem(30);
+  width: rem(25);
   @include mq('tab'){
-    width: rem(40);
+    width: rem(30);
   }
 }

@@ -11,10 +11,19 @@
 	left: 0;
 	right: 0;
 	z-index: 500;
-  background-color: $white;
+  background-color: transparent;
+  mix-blend-mode: difference;
+
   @include mq('tab'){
     height: rem(80);
   }
+}
+
+// is-blend付与後mix-blend-modeを解く。
+// ドロワーのカラーも反転してしまうため。
+// 他の要素も通常のカラーに戻す。
+.p-header.is-blend{
+  mix-blend-mode: normal;
 }
 
 .p-header__inner{
@@ -23,6 +32,7 @@
   padding-right: rem(20);
   padding-left: rem(20);
   display: flex;
+  // justify-content: space-between;
   justify-content: flex-end;
   align-items: center;
 
@@ -44,8 +54,4 @@
   @include mq('tab'){
     display: none;
   }
-}
-
-.p-header__drawer{
-	z-index: 400;
 }

@@ -6,18 +6,16 @@
 .p-works{
   padding-top: rem(50);
   padding-bottom: rem(50);
+  background-color: $white;
+
   @include mq('tab'){
     padding-top: rem(70);
     padding-bottom: rem(70);
   }
 }
-.p-works__description{
-  margin-top: rem(40);
-  font-size: rem(16);
-  line-height: 1;
-  @include mq('tab'){
-    margin-top: rem(50);
-  }
+
+.p-works__header{
+  margin-top: rem(-30);
 }
 
 .p-works__contents{
@@ -88,12 +86,12 @@
 }
 
 .p-works__btn{
-  margin-top: rem(60);
+  margin-top: rem(40);
   // text-align: center;
   // text-align: left;
   text-align: right;
   @include mq('tab'){
-    margin-top: rem(80);
+    margin-top: rem(60);
   }
 }
 
