@@ -7,16 +7,21 @@ $black: #000;
 $text-color: #282828;
 
 $coral: #ff4f4f;
-$gray: #E2E2E2;
-$subTitle: #B4B4B4;
-$border: #7F7F7F;
+$gray: #E2E2E2; //works詳細のライン、トップ料金ライン、サイドバーの枠、h2タグの下線
+$border: #7F7F7F; //ブログのul
+$grayText: #B4B4B4; //h2タグの下線
 
-$current: #bdbdbd; //ページナビのcurrent表示部分のカラー
+$current: #eedcdc; //ページネーションのcurrent表示部分のカラー
 
 // 背景色
-$bgWhite: #F8F8F8;
-// $bgBlack: #282828;
-$bgGray: #f9f9f9;
+$bgWhite: #F8F8F8; //トップセクション背景、セクション背景文字、パンくず
+$bgGray: #f9f9f9; //お問い合わせ各項目の背景色
+
+// ブログ記事内で仕様
+$background: #f7f7f7;
+$link: #337ab7;
+$red: red;
+$yellow: #ff0;
 
 // マウスホバー
 $opacity: 0.7; // 透過度

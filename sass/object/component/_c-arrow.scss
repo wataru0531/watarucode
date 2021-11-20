@@ -1,0 +1,14 @@
+/******************************************************************
+
+c-arrow トップに戻るボタン
+
+******************************************************************/
+.c-arrow{
+  padding: 0;
+  display: block;
+  width: rem(20);
+  height: rem(20);
+  border-top: rem(2) solid $text-color;
+  border-left: rem(2) solid $text-color;
+  transform: translateY(rem(5)) rotate(45deg);
+}

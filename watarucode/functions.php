@@ -39,10 +39,11 @@ function my_script_init(){
 	// CSS読み込み
 	wp_enqueue_style( 'my', get_template_directory_uri() . '/assets/css/style.css', array(), '1.0.1', 'all' );
 	
-	
+	//スムーススクロールをsafariでも対応可能にする。
+	wp_enqueue_script('smooth_js', get_template_directory_uri() . '/assets/js/vendors/smoothScrollBehaviorPolyfill.js');
 	// swiperのJS
 	wp_enqueue_script('swiper_js', get_template_directory_uri() . '/assets/js/vendors/swiper.min.js');
-	// JavaScript読み込み
+	// jQueryの読み込み
 	wp_enqueue_script( 'my', get_template_directory_uri() . '/assets/js/script.js', array( 'jquery' ), '1.0.1', true );
 	
 }
@@ -260,6 +261,11 @@ function set_pre_get_posts($query) {
 		return;
 	}
 
+	if($query->is_search()){
+		$query->set('posts_per_page', '10');
+		return;
+	}
+
 }
 add_action('pre_get_posts', 'set_pre_get_posts');
 
@@ -309,4 +315,15 @@ function setPostViews($postID) {
   // デバッグ end
 }
 remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
+
+
+
+// サイト内検索で投稿のみを検索対象にする。
+function searchFilter($query){
+	if($query->is_search){
+		$query->set('post_type', 'post');
+	}
+	return $query;
+}
+add_filter('pre_get_posts', 'searchFilter');
 

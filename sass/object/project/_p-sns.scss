@@ -4,9 +4,9 @@
 
 ******************************************************************/
 .p-sns__item:not(:first-child){
-  margin-top: rem(20);
+  margin-top: rem(25);
   @include mq('tab'){
-    margin-top: rem(30);
+    margin-top: rem(35);
   }
 }
 

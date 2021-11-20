@@ -1,19 +1,20 @@
 <?php get_header(); ?>
-<!-- <?php var_dump($post); ?>
-<?php var_dump($wp_query); ?> -->
 
-<!-- l-sub-mv -->
-<div class="l-mv-works p-mv-works" style="background-image: url(<?php if(get_field('works_image', 220)){ the_field('works_image', 220); } ?>)">
+<!-- p-mv-works -->
+<div class="p-mv-works" style="background-image: url(<?php if(get_field('works_image', 220)){ the_field('works_image', 220); } ?>)">
   <div class="p-mv-works__inner l-inner">
     <div class="p-mv-works__header">
-        <h1 class="p-mv-works__title">works</h1>
-        <div class="p-mv-works__subtitle">制作実績</div>
+        <div class="p-mv-works__subtitle" style="color: <?php the_field('sub_color', 220); ?>">works</div>
+        <h1 class="p-mv-works__title" style="color: <?php the_field('title_color', 220); ?>">
+          <span class="p-mv-works__line" style="background-color: <?php the_field('background_color', 220); ?>"></span>
+          制作実績
+        </h1>
     </div>
   </div> 
-</div><!-- l-sub-mv -->
+</div><!-- p-mv-works -->
 
-<!-- l-breadcrumb -->
-<div class="l-breadcrumb p-breadcrumb">
+<!-- p-breadcrumb -->
+<div class="p-breadcrumb">
   <div class="p-breadcrumb__inner l-inner">
     <?php
       if(function_exists('bcn_display')){
@@ -21,19 +22,16 @@
       }
     ?>
   </div>
-</div><!-- l-breadcrumb -->
+</div><!-- p-breadcrumb -->
 
 <main>
 
-  <!-- l-works -->
+  <!-- p-works -->
   <section class="p-works">
     <div class="p-works__inner l-inner">
       <div class="p-works__contents">
         <ul class="p-works__items">
-
           <?php $paged = get_query_var('paged')? get_query_var('paged') : 1; ?>
-          
-          <!-- <?php var_dump($paged); ?> -->
           <?php
             $args = [
               'post_type' => 'works',
@@ -68,15 +66,11 @@
       <!-- get_pagenum_link()...引数で与えられた数字を元にページ番号のリンクを返す。 -->
       <!-- 例：http://hogehoge.com/?paged=9999999999/ -->
 
-
         <?php if($wp_query->max_num_pages > 1): ?>
           <?php
             $big = 999999999;
             $page = get_pagenum_link($big);
-            // var_dump($page);
-
             $num = get_query_var($paged);
-            // var_dump($num);
 
             echo paginate_links([
               'base'         => str_replace($big, '%#%', esc_url(get_pagenum_link($big))),
@@ -95,7 +89,7 @@
 
       </div>
     </div>
-  </section><!-- l-works -->
+  </section><!-- p-works -->
 
   </main>
   

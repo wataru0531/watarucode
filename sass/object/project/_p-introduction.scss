@@ -21,7 +21,7 @@
 .p-introduction__img::before{
   content: '';
   display: block;
-  padding-top: 56.25%;
+  padding-top: 75%;
 }
 
 .p-introduction__img img{
@@ -34,14 +34,27 @@
   transform: translateY(-50%);
 }
 
+.p-introduction__line{
+  margin-top: rem(30);
+  border-top: rem(1) solid $gray;
+
+  @include mq('tab'){
+    margin-top: rem(40);
+  }
+}
+
 .p-introduction__contents{
-  margin-top: rem(20);
+  margin-top: rem(30);
+
+  @include mq('tab'){
+    margin-top: rem(40);
+  }
 }
 
 .p-introduction__url > a{
   font-size: rem(14);
   line-height: 1.5;
-  color: $text-color;
+  color: $link;
   @include mq('tab'){
     font-size: rem(16);
   }
@@ -78,8 +91,12 @@
 }
 
 .p-introduction__list{
-  margin-top: rem(20);
+  margin-top: rem(30);
   border-top: rem(1) solid $gray;
+
+  @include mq('tab'){
+    margin-top: rem(40);
+  }
 }
 
 .p-introduction-list__block{

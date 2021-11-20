@@ -5,12 +5,12 @@
 ******************************************************************/
 .l-sns{
   position: fixed;
-  bottom: rem(50);
-  right: rem(30);
+  top: rem(90);
+  right: rem(22);
   z-index: 300;
 
   @include mq('tab'){
-    bottom: rem(100);
-    right: rem(60);
+    top: rem(150);
+    right: rem(30);
   }
 }

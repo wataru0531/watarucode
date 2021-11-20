@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- favicon -->
+  <link rel="icon" href="<?php echo get_template_directory_uri();?>/assets/img/favicon/favicon.ico">
+  <link rel="apple-touch-icon" href="<?php echo get_template_directory_uri();?>/assets/img/favicon/apple-touch-icon.png">
+
   <!-- Google Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,16 +18,31 @@
   <?php wp_head(); ?>
 </head>
 <body>
+  <!-- ソースコードをご覧いただきありがとうございます。(人-) -->
+  <!-- 何かお気づきのことやご質問ありましたらTwitterの方でDMをいただけたら幸いです。 -->
+  <!-- 今後とも宜しくお願いいたします。 -->
+  <!--  -->
+
+  <!-- l-opening -->
+  <div class="l-opening p-opening js-opening">
+      <div class="p-opening__box">
+        <div class="p-opening__title js-opening-title">
+          <span class="char">w</span><span class="char">a</span><span class="char">t</span><span class="char">a</span><span class="char">r</span><span class="char">u</span><span class="char">&nbsp;</span><span class="char">d</span><span class="char">e</span><span class="char">s</span><span class="char">i</span><span class="char">g</span><span class="char">n</span>
+        </div>
+        <div class="p-opening__lines">
+          <span class="p-opening__line-gray js-opening-line"></span>
+          <span class="p-opening__line-coral js-opening-line"></span>
+        </div>
+      </div>
+  </div>
+  <!-- l-opening -->
+
   <!-- l-drawer -->
   <div class="l-drawer p-drawer js-drawer">
     <div class="p-drawer__inner">
       <ul class="p-drawer__items">
         <li class="p-drawer__item">
-          <?php if(is_front_page()): ?>
-            <a class="js-link" href="#top">top</a>
-          <?php else: ?>
-            <a href="<?php echo esc_url(home_url('/')); ?>#top">top</a>
-          <?php endif; ?>
+          <a href="<?php echo esc_url(home_url('/')); ?>">top</a>
         </li>
         <li class="p-drawer__item">
           <?php if(is_front_page()): ?>
@@ -70,12 +90,12 @@
       <ul class="p-drawer__sns-items">
         <li class="p-drawer__sns-item">
           <a href="https://twitter.com/watarudesign">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/twitter-blue.png" alt="">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/twitter-blue.png" alt="">
           </a>
         </li>
         <li class="p-drawer__sns-item">
-          <a href="https://www.instagram.com/watarucode/">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/instagram-multi.png" alt="">
+          <a href="https://www.instagram.com/watarudesign/">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/instagram-multi.png" alt="">
           </a>
         </li>
       </ul>
@@ -87,39 +107,32 @@
     <ul class="p-sns__items">
       <li class="p-sns__item">
         <a href="https://twitter.com/watarudesign/" target="_black">
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/twitter-blue.png" alt="">
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/img/twitter-blue.png" alt="">
         </a>
       </li>
       <li class="p-sns__item">
-        <a href="https://www.instagram.com/watarucode/" target="_black">
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/instagram-multi.png" alt="">
+        <a href="https://www.instagram.com/watarudesign/" target="_black">
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/img/instagram-multi.png" alt="">
         </a>
       </li>
     </ul>
   </div><!-- l-sns -->
 
+  <!-- l-page-top -->
+  <div class="l-page-top p-page-top js-page-top">
+    <button class="c-arrow"></button>
+  </div>
+  <!-- l-page-top -->
+
   <!-- l-header -->
   <header class="l-header p-header js-header">
     <div class="p-header__inner">
-      <!-- <?php if(is_front_page()): ?>
-        <h1 class="p-header__title">
-          <a href="<?php echo esc_url(home_url('/')); ?>">wataru&nbsp;design.</a>
-        </h1>
-      <?php else: ?>
-        <div class="p-header__title">
-          <a href="<?php echo esc_url(home_url('/')); ?>">wataru&nbsp;design.</a>
-        </div>
-      <?php endif; ?> -->
 
       <!-- p-global-nav -->
       <nav class="p-header__global-nav p-global-nav">
         <ul class="p-global-nav__items">
           <li class="p-global-nav__item">
-            <?php if(is_front_page()): ?>
-              <a href="#top">top</a>
-            <?php else: ?>
-              <a href="<?php echo esc_url(home_url('/')); ?>#top">top</a>
-            <?php endif; ?>
+            <a href="<?php echo esc_url(home_url('/')); ?>">top</a>
           </li>
           <li class="p-global-nav__item">
             <?php if(is_front_page()): ?>

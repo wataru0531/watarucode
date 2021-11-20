@@ -1,17 +1,16 @@
 <?php get_header(); ?>
-<!-- <?php var_dump($post); ?> -->
 
-<!-- l-sub-mv -->
-<div class="l-mv-works p-mv-works" style="background-image: url(<?php if(get_field('single_image', 220)){ the_field('single_image', 220); } ?>)">
+<!-- p-mv-works -->
+<div class="p-mv-works" style="background-image: url(<?php if(get_field('works_image', 255)){ the_field('works_image', 255); } ?>)">
   <div class="p-mv-works__inner l-inner">
     <div class="p-mv-works__header">
-        <h1 class="p-mv-works__title--single"><?php single_post_title(); ?></h1>
+        <h1 class="p-mv-works__title-single js-animate-title" style="color: <?php the_field('title_color', 255); ?>"><?php single_post_title(); ?></h1>
     </div>
   </div>
-</div><!-- l-sub-mv -->
+</div><!-- p-mv-works -->
 
-<!-- l-breadcrumb -->
-<div class="l-breadcrumb p-breadcrumb">
+<!-- p-breadcrumb -->
+<div class="p-breadcrumb">
   <div class="p-breadcrumb__inner l-inner">
     <?php
       if(function_exists('bcn_display')){
@@ -19,20 +18,23 @@
       }
     ?>
   </div>
-</div><!-- l-breadcrumb -->
+</div><!-- p-breadcrumb -->
 
 <main>
-  <section class="l-introduction p-introduction">
+  <!-- p-introduction -->
+  <section class="p-introduction">
     <div class="p-introduction__inner l-inner">
-
       <?php if(have_posts()): ?>
         <?php while(have_posts()): the_post(); ?>
 
-
-
+          <!-- 画像 -->
           <figure class="p-introduction__img">
-            <img src="<?php the_field('image'); ?>" alt="">
+            <?php if(get_field('image')): ?>
+              <img src="<?php the_field('image'); ?>" alt="">
+            <?php endif; ?>
           </figure>
+
+          <div class="p-introduction__line"></div>
 
           <div class="p-introduction__contents">
             <!-- url -->
@@ -110,7 +112,7 @@
       <?php endif; ?>
 
     </div>
-  </section>
+  </section><!-- p-introduction -->
 
   </main>
   

@@ -1,9 +1,13 @@
 <?php get_header(); ?>
 
-<!-- l-mv -->
-<div class="l-mv p-mv" id='top'>
-  <h1 class="p-mv__title">wataru&nbsp;design</h1>
-
+<!-- p-mv -->
+<div class="p-mv">
+  <h1 class="p-mv__title js-inview" style="color: <?php the_field('title_color', 10); ?>">wataru&nbsp;design</h1>
+  <div class="p-mv__scroll">
+    <span class="c-line-background"></span>
+    <a class="c-btn-scroll" href="#concept" style="color: <?php the_field('scroll_color', 10); ?>">scroll</a>
+    <span class="c-line-down" style="background-color: <?php the_field('line_color', 10); ?>"></span>
+  </div>
   <?php $slider_images = SCF::get('slider_images', 10); ?>
   <?php if($slider_images[0]['image']): ?>
     <div class="swiper-container swiper-mv">
@@ -26,62 +30,57 @@
       </div>
     <?php endif; ?>
   <?php endif; ?>
-
-</div><!-- l-mv -->
+</div><!-- p-mv -->
 
 <main>
-  <!-- l-concept -->
-  <section class="l-concept p-concept" id="concept">
+  <!-- p-concept -->
+  <section class="p-concept js-inview" id="concept">
     <div class="p-concept__inner l-inner">
-      <div class="p-concept__background-text">
-        <span class="c-background-text">concept</span>
-      </div>
       <div class="p-concept__header">
-        <div class="c-section-title">concept</div>
-        <h2 class="c-section-subtitle">コンセプト</h2>
+        <div class="p-concept__background-text">
+          <span class="c-background-text">concept</span>
+        </div>
+        <div class="c-section-subtitle">concept</div>
+        <h2 class="c-section-title">コンセプト</h2>
       </div>
       <div class="p-concept__contents">
         <p class="p-concept__text">
-          ポートフォリオサイトをご覧いただきありがとうございます。<br>
+          当サイトをご覧いただきありがとうございます。<br>
           WEB制作の実装者（コーダー）として活動しています。<br>
           以下の考え方のもと制作に取り組んでいます。
         </p>
-
         <p class="p-concept__text">
           デザインを忠実に再現<br>
           保守性を考えた実装<br>
           ものづくりを楽しむ<br>
         </p>
-        
         <p class="p-concept__text">
-          WEB制作の実装をするにあたって最も難しく時間がかかる部分はデザイン通りに実装する部分だと思います。<br>
-          初めてピクセルパーフェクトでの実装を試みたときにずれが生じてしまい、実装し終えるまでに想像以上の時間を費やしたからです。
-          それからいくつかのサイトを実装していく中で、ピクセルパーフェクトで実装できないとうことは、デザインを忠実に再現できていないということ、大体の場合自身のスキル不足であるということを自覚するようになりました。
-          柔軟にレイアウトが組めるCSSプロパティが数多くあり、また実際にデザインを忠実に再現されている実装者の方たちがいるからです。<br>
-          デザインの意図や構成を見極め、ゴールまでの最適解を見つけてデザインを再現することが実装者の役割であると考えるようになりました。
+          制作にあたってですが、デザインを忠実に再現することを心がけています。<br>
+          デザインには意図があり、デザインデータの値を測らなかったり、一部分のズレでもそれを多くの箇所で許容した実装をすると、当初想定されたデザインとは違うものとなってしまうからです。
+          ですので実装者側の判断のみでデザインを変更することや、ソースコードの保守性を優先するあまりデザインの再現を無視することはあってはならないと考えています。 
         </p>
-
         <p class="p-concept__text">
-          基本的にですが、デザインの再現が最優先だと考えています。<br>
-          ですので実装者側の判断のみでデザインを変更することや、ソースコードの保守性を優先するあまりデザインの再現を無視することはあってはならないと考えています。
-          ただし現実的にですが、パーツごとにコードを共通化させた方がいいケースがあるなどの理由から、デザインを再現することよりも保守性を優先させた方がいい場合もあります。
-          デザインは再現されていてもソースコードに保守性がなければ今後のWEBサイトの運用に支障をきたてしまうからです。<br>
-          デザインの再現を最大限担保しつつ保守性の高い実装を施す。その完成度を高めていくことが目標です。
+          ただし現実的にですが、デザインを再現することよりもソースコードの保守性を優先させた方がいい場合もあります（その場合は必ず相談いたします）。
+          それは、パーツごとにソースコードを共通化させた方がいいケースがあるなどの場合です。
+          デザインは再現されていてもソースコードに保守性がなければ今後のWEBサイトの運用に支障をきたてしまうからです。
         </p>
-
+        <p class="p-concept__text">
+          デザインの再現を最大限しつつ保守性の高い実装を施す。<br>
+          その完成度を高めていくことを目標としています。
+        </p>
       </div>
     </div>
-  </section><!-- l-concept -->
+  </section><!-- p-concept -->
 
   <!-- l-works -->
-  <section class="l-works p-works" id="works">
+  <section class="l-works p-works js-inview" id="works">
     <div class="p-works__inner l-inner">
       <div class="p-works__background-text">
         <span class="c-background-text--gray">works</span>
       </div>
       <div class="p-works__header">
-        <div class="c-section-title">works</div>
-        <h2 class="c-section-subtitle">制作実績</h2>
+        <div class="c-section-subtitle">works</div>
+        <h2 class="c-section-title">制作実績</h2>
       </div>
       <div class="p-works__contents">
         <div class="swiper-container swiper-works">
@@ -118,19 +117,19 @@
     </div>
   </section><!-- l-works -->
 
-  <!-- l-top-blog -->
-  <section class="l-top-blog p-top-blog" id="blog">
-    <div class="p-top-blog__background-text l-inner">
+  <!-- l-blog-top -->
+  <section class="l-blog-top p-blog-top js-inview" id="blog">
+    <div class="p-blog-top__background-text l-inner">
       <span class="c-background-text--gray">blog</span>
     </div>
-    <div class="p-top-blog__header l-inner">
-      <div class="c-section-title">blog</div>
-      <h2 class="c-section-subtitle">ブログ</h2>
+    <div class="p-blog-top__header l-inner">
+      <div class="c-section-subtitle">blog</div>
+      <h2 class="c-section-title">ブログ</h2>
     </div>
-    <div class="p-top-blog__over-inner">
-      <div class="p-top-blog__inner l-inner">
-        <div class="swiper-container swiper-blog p-top-blog__swiper">
-          <ul class="swiper-wrapper p-top-blog__items">
+    <div class="p-blog-top__over-inner">
+      <div class="p-blog-top__inner l-inner">
+        <div class="swiper-container swiper-blog p-blog-top__swiper">
+          <ul class="swiper-wrapper p-blog-top__items">
             <?php
               $args = [
                 'post_type' => 'post',
@@ -142,14 +141,14 @@
             ?>
             <?php if($wp_query->have_posts()): ?>
               <?php while($wp_query->have_posts()): $wp_query->the_post(); ?>
-                <li class="swiper-slide p-top-blog__item p-card-blog">
+                <li class="swiper-slide p-blog-top__item p-card-blog">
                   <a class="p-card-blog__img" href="<?php the_permalink(); ?>">
                     <?php if(has_post_thumbnail()): ?>
                       <?php the_post_thumbnail(); ?>
                     <?php else: ?>
-                      <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/rose.jpg" alt="">
+                      <img src="<?php echo get_template_directory_uri(); ?>/assets/img/blog-no-image.jpeg" alt="">
                     <?php endif; ?>
-                    <span class="p-card-blog__category" style="background-color: <?php the_field('background', 'category_' . get_the_category()[0]->cat_ID); ?>">
+                    <span class="p-card-blog__category" style="background-color: <?php the_field('background_color', 'category_' . get_the_category()[0]->cat_ID); ?>">
                         <?php
                           $category = get_the_category();
                           $category_name = $category[0]->cat_name;
@@ -160,7 +159,7 @@
                   <div class="p-card-blog__body">
                     <div class="p-blog__box">
                       <h3 class="p-card-blog__title"><?php the_title(); ?></h3>
-                      <div class="p-card-blog__content"><?php echo get_flexible_content(80); ?></div>
+                      <div class="p-card-blog__content"><?php echo get_flexible_content(60); ?></div>
                     </div>
                     <time class="p-card-blog__time" datetime="<?php the_time(get_option('date_format')); ?>"><?php the_time(get_option('date_format')); ?></time>
                   </div>
@@ -169,34 +168,30 @@
               <?php wp_reset_postdata(); ?>
             <?php endif; ?>
           </ul>
-          <!-- ページネーション -->
+          <!-- swiperページネーション -->
           <div class="swiper-pagination"></div>
         </div>
-
-        <div class="p-top-blog__box">
-          <p class="p-top-blog__description">
-            主に制作過程で学んだことをブログにストックしていきます。<br>
-            ご覧いただけると幸いです。
+        <div class="p-blog-top__box">
+          <p class="p-blog-top__description">
+            制作過程や学習で学んだこと（主にHTML、CSS、JavaScript、WordPress、デザイン）について発信していきます。
           </p>
-          <div class="p-top-blog__btn">
+          <div class="p-blog-top__btn">
             <a class="c-btn-blog" href="<?php echo esc_url(home_url('blog')); ?>">WATARU&nbsp;LOGへ</a>
           </div>
         </div>
       </div>
     </div>
-  </section><!-- l-top-blog -->
+  </section><!-- l-blog-top -->
 
   <!-- l-price -->
-  <!-- スマートカスタムフィールド繰り返しフィールド -->
-  <!-- 固定ページでgetする場合は必ずIDを第２パラメータに指定する。 -->
-  <section class="l-price p-price" id="price">
+  <section class="l-price p-price js-inview" id="price">
     <div class="p-price__inner l-inner">
       <div class="price__background-text">
         <span class="c-background-text--gray">price</span>
       </div>
       <div class="p-price__header">
-        <div class="c-section-title">price</div>
-        <h2 class="c-section-subtitle">価格</h2>
+        <div class="c-section-subtitle">price</div>
+        <h2 class="c-section-title">価格</h2>
       </div>
       <div class="p-price__description">
         価格は目安の価格となります。<br>
@@ -204,6 +199,7 @@
       </div>
       <div class="p-price__contents">
         <dl class="p-price__lists p-menu">
+          <!-- スマートカスタムフィールド繰り返しフィールド -->
           <?php $price_menus = scf::get('price_menus', 10); ?>
           <?php foreach($price_menus as $menu): ?>
             <div class="p-menu__block">
@@ -213,38 +209,36 @@
           <?php endforeach; ?>
         </dl>
       </div>
-      <!-- <div class="p-price__btn">
-        <a class="c-btn" href="">contact</a>
-      </div> -->
     </div>
   </section>
   <!-- l-price -->
 
-
   <!-- l-about -->
-  <section class="l-about p-about" id="about">
+  <section class="l-about p-about js-inview" id="about">
     <div class="p-about__inner l-inner">
-      <div class="p-about__background-text">
-        <span class="c-background-text">about</span>
-      </div>
       <div class="p-about__header">
-        <div class="c-section-title">about</div>
-        <h2 class="c-section-subtitle">制作者について</h2>
+        <div class="p-about__background-text">
+          <span class="c-background-text">about</span>
+        </div>
+        <div class="c-section-subtitle">about</div>
+        <h2 class="c-section-title">制作者について</h2>
       </div>
       <div class="p-about__contents">
         <figure class="p-about__img">
           <?php if(get_field('face_image', 10)): ?>
             <img src="<?php the_field('face_image', 10); ?>" alt="">
-          <?php else: ?>
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/green-apples.jpeg" alt="">
           <?php endif; ?>
         </figure>
         <div class="p-about__profiles">
           <div class="p-about__profile p-profile">
             <h3 class="p-profile__title">profile</h3>
             <div class="p-profile__contents">
-              <p class="p-profile__resident"><?php the_field('resident', 10); ?></p>
-              <p class="p-profile__hobby">趣味：<?php the_field('hobby', 10); ?></p>
+              <?php if(get_field('resident', 10)): ?>
+                <p class="p-profile__resident"><?php the_field('resident', 10); ?></p>
+              <?php endif; ?>
+              <?php if(get_field('hobby', 10)): ?>
+                <p class="p-profile__hobby"><?php the_field('hobby', 10); ?></p>
+              <?php endif; ?>
             </div>
           </div>
           <div class="p-about__skill p-skill">
@@ -261,14 +255,14 @@
   <!-- l-about -->
 
   <!-- l-contact -->
-  <section class="l-contact p-contact" id="contact">
+  <section class="l-contact p-contact js-inview" id="contact">
     <div class="p-contact__inner l-inner">
       <div class="p-contact__background-text">
         <span class="c-background-text--gray">contact</span>
       </div>
       <div class="p-contact__header">
-        <div class="c-section-title">contact</div>
-        <h2 class="c-section-subtitle">お問い合わせ</h2>
+        <div class="c-section-subtitle">contact</div>
+        <h2 class="c-section-title">お問い合わせ</h2>
       </div>
       <div class="p-contact__description">
         <p class="p-contact__text">
@@ -278,12 +272,10 @@
           必須の項目は必ずご記入お願いします。
         </p>
       </div>
-
-      <!-- コンタクトフォーム7を表示 -->
+      <!-- コンタクトフォーム7をショートコードで表示 -->
       <?php echo do_shortcode('[contact-form-7 id="9" title="お問い合わせ"]'); ?>
     </div>
   </section><!-- l-contact -->
-
 </main>
 
 <?php get_footer(); ?>
