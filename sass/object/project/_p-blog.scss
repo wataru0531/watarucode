@@ -4,14 +4,15 @@
 
 ******************************************************************/
 .p-blog__header{
-  margin-bottom: rem(50);
+  margin-bottom: rem(30);
   padding-top: rem(10);
   padding-bottom: rem(10);
+  padding-right: rem(10);
   padding-left: rem(10);
   position: relative;
 
   @include mq('tab'){
-    margin-bottom: rem(70);
+    margin-bottom: rem(40);
   }
 }
 
@@ -49,10 +50,16 @@
   font-size: rem(18);
   font-weight: normal;
   line-height: 1;
-  color: $subTitle;
+  color: $grayText;
 }
 
 
+/******************************************************************
+
+１カラムと２カラムのリスト。
+home.php、category,php、single.php、各ページで繰り返し使用。
+
+******************************************************************/
 .p-blog__items{
   @include mq('tab'){
     display: flex;
@@ -84,5 +91,15 @@
 .p-blog__item:nth-child(odd){
   @include mq('tab'){
     margin-right: rem(20);
+  }
+}
+
+.p-blog__not-found{
+  font-size: rem(14);
+  line-height: 1;
+  color: $text-color;
+
+  @include mq('tab'){
+    font-size: rem(16);
   }
 }

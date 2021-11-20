@@ -1,16 +1,16 @@
 <?php get_header(); ?>
 
-<!-- l-mv-blog -->
-<div class="l-mv-blog p-mv-blog">
+<!-- p-mv-blog -->
+<div class="p-mv-blog" style="background-color: <?php the_field('background_color', 12); ?>; background-image: url(<?php the_field('background_image', 12); ?>)">
   <div class="p-mv-blog__inner">
-    <h1 class="p-mv-blog__title">
+    <h1 class="p-mv-blog__title" style="color: <?php the_field('title_color', 12); ?>">
       <a href="<?php echo esc_url(home_url('blog')); ?>">wataru&nbsp;log</a>
     </h1>
   </div>
-</div><!-- l-mv-blog -->
+</div><!-- p-mv-blog -->
 
-<!-- l-breadcrumb -->
-<div class="l-breadcrumb p-breadcrumb">
+<!-- p-breadcrumb -->
+<div class="p-breadcrumb">
   <div class="p-breadcrumb__inner l-inner">
     <?php
       if(function_exists('bcn_display')){
@@ -18,10 +18,7 @@
       }
     ?>
   </div>
-</div><!-- l-breadcrumb -->
-
-<!-- <?php var_dump($post); ?> -->
-<!-- <?php var_dump($wp_query); ?> -->
+</div><!-- p-breadcrumb -->
 
 <!-- l-container -->
 <div class="l-container p-container">
@@ -32,7 +29,6 @@
           <ul class="p-blog__items">
 
             <?php $paged = get_query_var('paged')? get_query_var('paged') : 1; ?>
-            <!-- <?php var_dump($paged); ?> -->
             <?php
               $args = [
                 'post_type' => 'post',
@@ -49,9 +45,9 @@
                     <?php if(has_post_thumbnail()): ?>
                       <?php the_post_thumbnail(); ?>
                     <?php else: ?>
-                      <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/rose.jpg" alt="">
+                      <img src="<?php echo get_template_directory_uri(); ?>/assets/img/blog-no-image.jpeg" alt="">
                     <?php endif; ?>
-                    <span class="c-category--absolute" style="background-color: <?php the_field('background', 'category_' . get_the_category()[0]->cat_ID); ?>">
+                    <span class="c-category--absolute" style="background-color: <?php the_field('background_color', 'category_' . get_the_category()[0]->cat_ID); ?>">
                         <?php
                           $category = get_the_category();
                           $category_name = $category[0]->cat_name;
@@ -66,12 +62,12 @@
                     </div>
                     <time class="p-card-blog__time--black" datetime="<?php the_time(get_option('date_format')); ?>"><?php the_time(get_option('date_format')); ?></time>
                   </div>
-
                 </li>
               <?php endwhile; ?>
+            <?php else: ?>
+              <p class="p-blog__not-write">記事はありませんでした。</p>
             <?php endif; ?>
             <?php wp_reset_postdata(); ?>
-
           </ul>
 
           <!-- l-pagination -->
@@ -86,10 +82,7 @@
                 <?php
                   $big = 999999999;
                   $page = get_pagenum_link($big);
-                  // var_dump($page);
-
                   $num = get_query_var($paged);
-                  // var_dump($num);
 
                   echo paginate_links([
                     'base'         => str_replace($big, '%#%', esc_url(get_pagenum_link($big))),

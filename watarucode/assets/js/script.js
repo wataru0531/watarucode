@@ -3,6 +3,87 @@
 JavaScript
 
 ***************************************************************/
+window.addEventListener('load', function(){
+
+	// オープニングの演出
+	const opening = document.querySelector('.js-opening');
+	const openingTitle = document.querySelector('.js-opening-title');
+	const openingLines = document.querySelectorAll('.js-opening-line');
+
+	//タイトルをアコーディオンさせる
+	const accordion = function(){
+		openingTitle.classList.add('is-accordion');
+	}
+
+	// オープニングタイトルを上にフェイドアウトさせる
+	const upFade = function(){
+		openingTitle.classList.add('is-upFade');
+	}
+
+	// レイヤーをフェイドアウトさせる
+	const fadeOut = function(){
+		opening.classList.add('is-fade');
+	}
+
+	// オープニングの演出を初回のみに制御
+	const keyName = 'visited';
+	const keyValue = true;
+
+	if(!sessionStorage.getItem(keyName)){
+		// 初回アクセス
+		sessionStorage.setItem(keyName, keyValue);
+
+		openingLines.forEach(openingLine => {
+			openingLine.classList.add('is-stretch'); //２つのラインを右に伸ばす
+		});
+		setTimeout(accordion, 2200); //アコーディオン開始
+		setTimeout(upFade, 5000); //タイトルを上にフェイドアウト
+		setTimeout(fadeOut, 6500); //レイヤーをフェイドアウト
+
+	}else{
+		// ２回目以降のアクセス
+		opening.style.display = 'none';
+
+		// openingLines.forEach(openingLine => {
+		// 	openingLine.classList.add('is-stretch'); //２つのラインを右に伸ばす
+		// });
+		// setTimeout(accordion, 2200); //アコーディオン開始
+		// setTimeout(upFade, 5000); //タイトルを上にフェイドアウト
+		// setTimeout(fadeOut, 6500); //レイヤーをフェイドアウト
+	}
+
+	// オープニングの演出
+
+
+	//intersectionObserver
+	const contents = document.querySelectorAll('.js-inview');
+
+	const cb = function(entries, observer){
+		entries.forEach(entry => {
+			if(entry.isIntersecting){
+				entry.target.classList.add('is-inview');
+				observer.unobserve(entry.target); //監視を打ち切る。
+			}else{
+				entry.target.classList.remove('is-inview');
+			}
+		});
+	}
+
+	const options = {
+		root: null,
+		rootMargin: '-10% 0px',  //0にもpxなど単位をつける。　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+		threshold: 0,
+	}
+
+	const io = new IntersectionObserver(cb, options);
+	contents.forEach(content => {
+		io.observe(content);
+	});
+	//intersectionObserver
+
+});
+
+
 document.addEventListener('DOMContentLoaded', function(){
 
 	// ハンバーガーメニュー
@@ -64,12 +145,11 @@ document.addEventListener('DOMContentLoaded', function(){
 	}
 	// スムーススクロール
 
-	// swiper mv
+	// swiper トップページ　メインビジュアル
 	// 2枚以上で動かす。
 	const slideLength = document.querySelectorAll('.swiper-mv .swiper-slide').length;
 
 	if(slideLength > 1){
-		
 		const mvOptions = {
 			loop: true,
 			centeredSlides: true,
@@ -83,21 +163,19 @@ document.addEventListener('DOMContentLoaded', function(){
 
 		const mvSwiper = new Swiper('.swiper-mv', mvOptions);
 	}
-	// swiper mv
+	// swiper トップページ　メインビジュアル
 
 
-	// swiper　works
+	// swiper　トップページ　WORKSセクション
 	const worksOptions = {
 		grabCursor: true,
 		direction: 'horizontal',
 		spaceBetween: 20,
 		slidesPerView: 1.3,
-
 		pagination: {
 			el: '.swiper-pagination',
 			type: 'bullets',
 			clickable: true,
-			// type: 'custom',
 			renderBullet: function(index, className){
 				return '<div class="' + className + '">' + '0' + (index + 1) + '</div>';
 			}
@@ -114,20 +192,18 @@ document.addEventListener('DOMContentLoaded', function(){
 	};
 
 	const worksSwiper = new Swiper('.swiper-works', worksOptions);
-	// swiper　works
+	// swiper　トップページ　WORKSセクション
 
-	// swiper　blog
+	// swiper　トップページ　BLOGセクション
 	const blogOptions = {
 		grabCursor: true,
 		direction: 'horizontal',
 		spaceBetween: 20,
 		slidesPerView: 1.3,
-
 		pagination: {
 			el: '.swiper-pagination',
 			type: 'bullets',
 			clickable: true,
-			// type: 'custom',
 			renderBullet: function(index, className){
 				return '<div class="' + className + '">' + '0' + (index + 1) + '</div>';
 			}
@@ -144,36 +220,28 @@ document.addEventListener('DOMContentLoaded', function(){
 	};
 
 	const blogSwiper = new Swiper('.swiper-blog', blogOptions);
-	// swiper　blog
+	// swiper　トップページ　BLOGセクション
 	
 
-	// IntersectionObserver 各セクションでのスクロールアニメーション。inview付与。
-	const contents = document.querySelectorAll('.js-inview');
+	// トップに戻るボタン
+	const pageTopBtn = document.querySelector('.js-page-top');
 
-	const cb = function(entries, observer){
-		entries.forEach(entry => {
-			if(entry.isIntersecting){
-				entry.target.classList.add('inview');
-				observer.unobserve(entry.target); //監視を打ち切る。
-			}else{
-				entry.target.classList.remove('inview');
-			}
-		});
-	}
+	window.addEventListener('scroll', function(){
+		const currentY = window.pageYOffset;
 
-	const options = {
-		root: null,
-		rootMargin: '-10% 0px',  //0にもpxなど単位をつける。　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
-		threshold: 0,
-	}
-
-	const io = new IntersectionObserver(cb, options);
-	contents.forEach(content => {
-		io.observe(content);
+		if(currentY > 100){
+			pageTopBtn.classList.add('is-top');
+		}else{
+			pageTopBtn.classList.remove('is-top');
+		}
 	});
-	// IntersectionObserver
 
-	
+	pageTopBtn.addEventListener('click', function(){
+		window.scrollTo({
+				top: 0,
+				behavior: "smooth"
+		});
+	});
+	// トップに戻るボタン
 
 });
-

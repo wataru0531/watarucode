@@ -6,14 +6,22 @@ p-contact
 .p-contact{
   padding-top: rem(50);
   padding-bottom: rem(50);
+  opacity: 0;
+
   @include mq('tab'){
     padding-top: rem(70);
     padding-bottom: rem(70);
   }
 }
 
+.p-contact.is-inview{
+  animation-name: fadeIn;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+}
+
 .p-contact__header{
-  margin-top: rem(-30);
+  margin-top: rem(-20);
 }
 
 .p-contact__description{

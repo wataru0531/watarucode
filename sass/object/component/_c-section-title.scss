@@ -1,23 +1,36 @@
 /***************************************************************
 
-.c-section-title 共通のh2タイトル
+.c-section-title 共通のセクションタイトル
 
 ***************************************************************/
 .c-section-title{
-  font-family: $font-family-sub;
-  font-size: rem(48);
-  font-weight: bold;
-  line-height: 1;
-  letter-spacing: 0.02em;
+  padding-left: rem(27);
+  font-size: rem(16);
+  line-height: 3;
+  // color: $subTitle;
   color: $text-color;
-  text-transform: uppercase;
-  
+  font-weight: normal;
+  font-weight: bold;
+  position: relative;
+
   @include mq('tab'){
-    font-size: rem(80);
+    padding-left: rem(32);
+    font-size: rem(18);
   }
 }
 
-.c-section-title--white{
-  @extend .c-section-title;
-  color: $white;
+.c-section-title::before{
+  content: '';
+  display: block;
+  width: rem(20);
+  height: rem(2);
+  background-color: $coral;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+
+  @include mq('tab'){
+    width: rem(25);
+  }
 }

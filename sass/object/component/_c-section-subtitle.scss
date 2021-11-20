@@ -1,41 +1,18 @@
 /***************************************************************
 
-.c-section-subtitle 共通のサブタイトル
+.c-section-title 共通のサブタイトル
 
 ***************************************************************/
 .c-section-subtitle{
-  padding-left: rem(35);
-  font-size: rem(16);
-  line-height: 3;
-  // color: $subTitle;
-  color: $text-color;
-  font-weight: normal;
+  font-family: $font-family-sub;
+  font-size: rem(40);
   font-weight: bold;
-  position: relative;
-
+  line-height: 1;
+  letter-spacing: 0.02em;
+  color: $text-color;
+  text-transform: uppercase;
+  
   @include mq('tab'){
-    padding-left: rem(40);
-    font-size: rem(18);
-  }
-}
-
-.c-section-subtitle--white{
-  @extend .c-section-subtitle;
-  color: $white;
-}
-
-.c-section-subtitle::before{
-  content: '';
-  display: block;
-  width: rem(30);
-  height: rem(2);
-  background-color: $coral;
-  position: absolute;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-
-  @include mq('tab'){
-    width: rem(35);
+    font-size: rem(60);
   }
 }

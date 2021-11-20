@@ -4,24 +4,31 @@
 
 ******************************************************************/
 .p-mv-blog{
-  padding-top: rem(86);
-  padding-bottom: rem(66);
   width: 100%;
-  background-color: $coral;
+  height: rem(250);
+  background-color: $white;
   
-  background-image: url(../img/common/wall03.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   
   @include mq('tab'){
-    padding-top: rem(106);
-    padding-bottom: rem(86);
+    height: rem(350);
   }
 }
 
 .p-mv-blog__inner{
+  padding-top: rem(56);
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   text-align: center;
+
+  @include mq('tab'){
+    padding-top: rem(80);
+    
+  }
 }
 
 .p-mv-blog__title{
@@ -30,7 +37,9 @@
   font-size: rem(30);
   line-height: 1;
   letter-spacing: 0.02em;
-  color: $text-color;
-  color: $white;
   text-transform: uppercase;
+}
+
+.p-mv-blog__title a{
+  display: inline-block;
 }

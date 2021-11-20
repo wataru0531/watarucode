@@ -30,7 +30,7 @@
   position: absolute;
   top: 50%;
   right: rem(10);
-  transform: rotate(-45deg) translate(0, -50%);
+  transform: rotate(-45deg) translateY(-50%);
   transition: right .3s;
 }
 

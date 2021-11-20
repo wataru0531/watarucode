@@ -1,20 +1,20 @@
 <!-- 検索バー -->
-<form class="p-mv-blog__form p-search-form" role="search" method="get" action="<?php echo esc_url('/'); ?>">
-  <!-- the_search_query()...検索ワード出力する。 -->
-  <input class="p-search-form__input" type="text" name="s" placeholder="検索" value="<?php the_search_query(); ?>">
+<div class="p-sidebar__search-form">
+  <form class="c-search-form" role="search" method="get" action="<?php echo esc_url(home_url('/')); ?>">
+    <!-- the_search_query()...検索ワード出力する。 -->
+    <input class="c-search-form__input" type="text" name="s" placeholder="検索" value="<?php the_search_query(); ?>">
 
-  <button class="p-search-form__btn">
-    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/search.png" alt="">
-  </button>
-</form>
+    <button class="c-search-form__btn">
+      <img src="<?php echo get_template_directory_uri(); ?>/assets/img/search.png" alt="">
+    </button>
+  </form>
+</div>
 
 <!-- 運営者情報 -->
 <div class="p-sidebar__administrator p-administrator">
   <figure class="p-administrator__img">
     <?php if(get_field('image', 12)): ?>
-      <img src="<?php the_field('image', 12); ?>" alt="わたる">
-    <?php else: ?>
-      <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/wall03.jpg" alt="">
+      <img src="<?php the_field('face_image', 12); ?>" alt="わたる">
     <?php endif; ?>
   </figure>
   <div class="p-administrator__name"><?php the_field('name', 12); ?></div>
@@ -26,8 +26,6 @@
   <figure class="p-administrator__painting">
     <?php if(get_field('painting', 12)): ?>
       <img src="<?php the_field('painting', 12); ?>" alt="">
-    <?php else: ?>
-      <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/wall03.jpg" alt="">
     <?php endif; ?>
     </figure>
 
@@ -36,10 +34,10 @@
   </div>
 </div><!-- 運営者情報 -->
 
-<!-- よく見られている記事 -->
+<!-- よく読まれている記事 -->
 <div class="p-sidebar__popular p-popular">
   <div class="p-popular__header">
-    <h2 class="p-popular__title">よく見られている記事</h2>
+    <h2 class="p-popular__title">よく読まれている記事</h2>
   </div>
   <ul class="p-popular__items">
     <?php
@@ -59,12 +57,11 @@
             <?php if(has_post_thumbnail()): ?>
               <?php the_post_thumbnail(); ?>
             <?php else: ?>
-              <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/rose.jpg" alt="">
+              <img src="<?php echo get_template_directory_uri(); ?>/assets/img/blog-no-image.jpeg" alt="">
             <?php endif; ?>
-            <span class="c-category--absolute" style="background-color: <?php the_field('background', 'category_' . get_the_category()[0]->cat_ID); ?> ">
+            <span class="c-category--absolute" style="background-color: <?php the_field('background_color', 'category_' . get_the_category()[0]->cat_ID); ?> ">
               <?php
               $category = get_the_category();
-              // var_dump($category);
               $category_name = $category[0]->cat_name;
 
               echo $category_name;
@@ -85,7 +82,7 @@
     <?php endif; ?>
     <?php wp_reset_postdata(); ?>
   </ul>
-</div><!-- よく見られている記事 -->
+</div><!-- よく読まれている記事 -->
 
 <!-- カテゴリー一覧 -->
 <div class="p-sidebar_category p-category">
@@ -99,7 +96,6 @@
         'order' => 'ASC'
       ];
       $categories = get_categories($args);
-      // var_dump($categories);
     ?>
     <?php foreach($categories as $category): ?>
       <li class="p-category__item">

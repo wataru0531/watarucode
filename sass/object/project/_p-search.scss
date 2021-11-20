@@ -1,0 +1,76 @@
+/******************************************************************
+
+.p-search 
+
+******************************************************************/
+.p-search__header{
+  margin-bottom: rem(30);
+  padding-top: rem(10);
+  padding-bottom: rem(10);
+  padding-right: rem(10);
+  padding-left: rem(10);
+  position: relative;
+
+  @include mq('tab'){
+    margin-bottom: rem(40);
+  }
+}
+
+.p-search__header::before{
+  content: '';
+  display: block;
+  width: 100%;
+  height: rem(1);
+  background-color: $gray;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.p-search__header::after{
+  content: '';
+  display: block;
+  width: 40%;
+  height: rem(1);
+  background-color: $coral;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.p-search__title{
+  font-size: rem(20);
+  font-weight: bold;
+  line-height: 1;
+  color: $text-color;
+}
+
+.p-search__posts{
+  margin-left: rem(10);
+  font-size: rem(18);
+  font-weight: normal;
+  line-height: 1;
+  color: $grayText;
+}
+
+.p-search__not-keyword{
+  font-size: rem(14);
+  font-weight: normal;
+  line-height: 1;
+  color: $text-color;
+
+  @include mq('tab'){
+    font-size: rem(16);
+  }
+}
+
+.p-search__not-found{
+  font-size: rem(14);
+  font-weight: normal;
+  line-height: 1;
+  color: $text-color;
+
+  @include mq('tab'){
+    font-size: rem(16);
+  }
+}

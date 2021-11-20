@@ -1,21 +1,28 @@
 /******************************************************************
 
-p-top-blog
+.p-blog-top
 
 ******************************************************************/
-.p-top-blog{
+.p-blog-top{
   padding-top: rem(50);
+  opacity: 0;
 
   @include mq('tab'){
     padding-top: rem(70);
   }
 }
 
-.p-top-blog__header{
-  margin-top: rem(-30);
+.p-blog-top.is-inview{
+  animation-name: fadeIn;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
 }
 
-.p-top-blog__over-inner{
+.p-blog-top__header{
+  margin-top: rem(-20);
+}
+
+.p-blog-top__over-inner{
   margin-top: rem(90);
   padding-bottom: rem(50);
   background-color: $text-color;
@@ -26,14 +33,14 @@ p-top-blog
   }
 }
 
-.p-top-blog__inner{
+.p-blog-top__inner{
   @include mq('tab'){
     display: flex;
     flex-direction: row-reverse;
   }
 }
 
-.p-top-blog__swiper{
+.p-blog-top__swiper{
   transform: translateY(rem(-50));
 
   @include mq('tab'){
@@ -44,7 +51,7 @@ p-top-blog
   
 }
 
-.p-top-blog__box{
+.p-blog-top__box{
   @include mq('tab'){
     width: 40%;
     margin-right: rem(20);
@@ -55,7 +62,7 @@ p-top-blog
   }
 }
 
-.p-top-blog__description{
+.p-blog-top__description{
   font-size: rem(14);
   font-weight: normal;
   color: $white;
@@ -64,11 +71,11 @@ p-top-blog
   }
 }
 
-.p-top-blog__btn{
+.p-blog-top__btn{
   margin-top: rem(40);
   text-align: left;
 
   @include mq('tab'){
-    margin-top: rem(80);
+    margin-top: rem(90);
   }
 }

@@ -6,13 +6,8 @@
 .p-mv{
   width: 100%;
   height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   background-color: $white;
   position: relative;
-
 }
 
 .p-mv__title{
@@ -21,19 +16,37 @@
   font-size: rem(30);
   line-height: 1;
   letter-spacing: 0.02em;
-  color: $text-color;
   text-transform: uppercase;
+  opacity: 0;
+
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 300;
-
+  z-index: 200;
+  
   @include mq('tab'){
     font-size: rem(50);
   }
 }
 
+.p-mv__title.is-inview{
+  animation-name: fadeIn;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+}
+
+.p-mv__scroll{
+  position: absolute;
+  bottom: rem(0);
+  right: rem(16);
+  z-index: 200;
+
+  @include mq('tab'){
+    font-size: rem(16);
+    right: rem(27);
+  }
+}
 
 .p-mv__img{
   width: 100%;

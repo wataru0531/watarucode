@@ -15,18 +15,15 @@
 }
 
 .p-pagination .page-numbers{
-  padding-top: rem(12);
-  padding-bottom: rem(12);
-  padding-right: rem(15);
-  padding-left: rem(15);
+  padding-top: rem(10);
+  padding-bottom: rem(10);
+  padding-right: rem(10);
+  padding-left: rem(10);
   position: relative;
+}
 
-  @include mq('tab'){
-    padding-top: rem(15);
-    padding-bottom: rem(15);
-    padding-right: rem(18);
-    padding-left: rem(18);
-  }
+.p-pagination .page-numbers:not(:last-child){
+  margin-right: rem(10);
 }
 
 .p-pagination .page-numbers.current{
