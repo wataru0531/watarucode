@@ -14,21 +14,3 @@
   border-bottom: rem(1) solid $text-color;
   position: relative;
 }
-
-// .c-btn-top::after{
-//   content: '';
-//   display: inline-block;
-//   width: rem(7);
-//   height: rem(7);
-//   border-bottom: rem(2) solid $text-color;
-//   border-right: rem(2) solid $text-color;
-//   position: absolute;
-//   top: 50%;
-//   right: rem(10);
-//   transform: rotate(-45deg) translateY(-50%);
-//   transition: all .3s;
-// }
-
-// .c-btn-top:hover::after{
-//   right: rem(5);
-// }

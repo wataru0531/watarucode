@@ -37,15 +37,42 @@
 }
 
 .p-mv__scroll{
+  padding-top: rem(10);
+  padding-bottom: rem(110);
+  padding-right: rem(10);
+  padding-left: rem(10);
+  display: block;
+  font-family: $font-family-sub;
+  font-weight: bold;
+  font-size: rem(14);
+  line-height: 1;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  writing-mode: vertical-lr;
+  overflow: hidden;
+
   position: absolute;
-  bottom: rem(0);
+  bottom: 0;
   right: rem(16);
   z-index: 200;
+
 
   @include mq('tab'){
     font-size: rem(16);
     right: rem(27);
   }
+}
+
+.p-mv__scroll::before{
+  content: '';
+  display: block;
+  width: rem(1);
+  height: rem(100);
+  background-color: $bgWhite;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .p-mv__img{

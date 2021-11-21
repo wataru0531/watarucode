@@ -74,17 +74,12 @@
   display: inline-block;
   width: rem(250);
   height: rem(1);
-  // background-color: $bgWhite;
   background-color: #E9E9E9;
   
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(0, 1);
-
-  // @include mq('tab'){
-  //   width: rem(400);
-  // }
 }
 .p-opening__line-gray.is-stretch{
   animation-name: stretchLine;
@@ -102,10 +97,6 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(0, 1);
-
-  // @include mq('tab'){
-  //   width: rem(400);
-  // }
 }
 .p-opening__line-coral.is-stretch{
   animation-name: stretchLine;

@@ -73,12 +73,12 @@ WORKS  .swiper-works
   }
 }
 
+.swiper-works .swiper-pagination-bullet:focus{
+  outline: none;
+}
+
 .swiper-works .swiper-pagination-bullet-active{
   border-bottom: rem(2) solid $text-color;
-
-  @include mq('tab'){
-    // border-bottom: rem(3) solid $text-color;
-  }
 }
 
 /******************************************************************
@@ -129,6 +129,10 @@ WORKS  .swiper-works
     padding-left: rem(3);
     font-size: rem(22);
   }
+}
+
+.swiper-blog .swiper-pagination-bullet:focus{
+  outline: none;
 }
 
 .swiper-blog .swiper-pagination-bullet-active{

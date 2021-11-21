@@ -89,12 +89,12 @@
       </ul>
       <ul class="p-drawer__sns-items">
         <li class="p-drawer__sns-item">
-          <a href="https://twitter.com/watarudesign">
+          <a href="https://twitter.com/watarudesign" target="_blank">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/img/twitter-blue.png" alt="">
           </a>
         </li>
         <li class="p-drawer__sns-item">
-          <a href="https://www.instagram.com/watarudesign/">
+          <a href="https://www.instagram.com/watarudesign/" target="_blank">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/img/instagram-multi.png" alt="">
           </a>
         </li>
@@ -106,12 +106,12 @@
   <div class="l-sns p-sns">
     <ul class="p-sns__items">
       <li class="p-sns__item">
-        <a href="https://twitter.com/watarudesign/" target="_black">
+        <a href="https://twitter.com/watarudesign/" target="_blank">
           <img src="<?php echo get_template_directory_uri(); ?>/assets/img/twitter-blue.png" alt="">
         </a>
       </li>
       <li class="p-sns__item">
-        <a href="https://www.instagram.com/watarudesign/" target="_black">
+        <a href="https://www.instagram.com/watarudesign/" target="_blank">
           <img src="<?php echo get_template_directory_uri(); ?>/assets/img/instagram-multi.png" alt="">
         </a>
       </li>

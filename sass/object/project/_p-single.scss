@@ -113,11 +113,9 @@
   padding-bottom: rem(2);
   padding-right: rem(10);
   padding-left: rem(10);
-
   font-size: rem(16);
   font-weight: bold;
   color: $text-color;
-  // background-color: $background;
   border-left: rem(5) solid $coral;
 
   @include mq('tab'){

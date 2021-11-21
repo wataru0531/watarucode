@@ -15,12 +15,6 @@
   }
 }
 
-// .p-works.is-inview{
-//   animation-name: fadeIn;
-//   animation-duration: 1.5s;
-//   animation-fill-mode: forwards;
-// }
-
 .p-works__header{
   margin-top: rem(-20);
 }
@@ -94,9 +88,8 @@
 
 .p-works__btn{
   margin-top: rem(40);
-  // text-align: center;
-  // text-align: left;
   text-align: right;
+  
   @include mq('tab'){
     margin-top: rem(60);
   }
