@@ -7,9 +7,11 @@
 <footer class="l-footer p-footer">
   <div class="p-footer__inner l-inner">
     <div class="p-footer__copyright">
-      <small>
-        <p>&copy; WATARU&nbsp;DESIGN. ALL Rights Reserved.</p>
-      </small>
+      <p>
+        <small>
+          &copy; WATARU&nbsp;DESIGN. ALL Rights Reserved.
+        </small>
+      </p>
     </div>
   </div>
 </footer>

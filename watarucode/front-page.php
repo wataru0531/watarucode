@@ -3,11 +3,10 @@
 <!-- p-mv -->
 <div class="p-mv">
   <h1 class="p-mv__title js-inview" style="color: <?php the_field('title_color', 10); ?>">wataru&nbsp;design</h1>
-  <div class="p-mv__scroll">
-    <span class="c-line-background"></span>
-    <a class="c-btn-scroll" href="#concept" style="color: <?php the_field('scroll_color', 10); ?>">scroll</a>
+  <a class="p-mv__scroll" href="#concept" style="color: <?php the_field('scroll_color', 10); ?>">
+    scroll
     <span class="c-line-down" style="background-color: <?php the_field('line_color', 10); ?>"></span>
-  </div>
+  </a>
   <?php $slider_images = SCF::get('slider_images', 10); ?>
   <?php if($slider_images[0]['image']): ?>
     <div class="swiper-container swiper-mv">
@@ -65,8 +64,7 @@
           デザインは再現されていてもソースコードに保守性がなければ今後のWEBサイトの運用に支障をきたてしまうからです。
         </p>
         <p class="p-concept__text">
-          デザインの再現を最大限しつつ保守性の高い実装を施す。<br>
-          その完成度を高めていくことを目標としています。
+          デザインの再現性を最大限高めつつ保守性の高い実装を施し、その完成度を高めていくことを目標としています。
         </p>
       </div>
     </div>

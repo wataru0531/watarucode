@@ -5,12 +5,10 @@
 
 ******************************************************************/
 .l-container{
-  // margin-top: rem(50);
   padding-top: rem(50);
   background-color: $white;
 
   @include mq('tab'){
-    // margin-top: rem(70);
     padding-top: rem(70);
   }
 }
