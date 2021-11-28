@@ -34,6 +34,7 @@ body {
 	text-rendering: optimizeSpeed;
 	position: relative;
 	z-index: -9999;
+  -webkit-tap-highlight-color: transparent; //スマホでaタグやbuttonタグのクリック時に背景色が変わらないように指定。
 }
 
 main{

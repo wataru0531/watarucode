@@ -192,7 +192,7 @@
         <h2 class="c-section-title">価格</h2>
       </div>
       <div class="p-price__description">
-        価格は目安の価格となります。<br>
+        価格は目安となります。<br>
         詳しい価格については柔軟に対応させていただきます。
       </div>
       <div class="p-price__contents">
