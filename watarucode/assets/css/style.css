@@ -1928,12 +1928,12 @@ p-contact
 	content: '';
 	display: block;
 	height: 0.0625rem;
-	left: 0;
+	left: 0.9375rem;
 	position: absolute;
 	transform: scale(0, 1);
 	transform-origin: right;
 	transition: transform .2s;
-	width: 100%;
+	width: calc(100% - 1.875rem);
 }
 
 .p-global-nav__item a:hover::after {
