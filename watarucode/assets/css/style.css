@@ -1924,7 +1924,7 @@ p-contact
 
 .p-global-nav__item a::after {
 	background-color: #fff;
-	bottom: 1.25rem;
+	bottom: 1.5625rem;
 	content: '';
 	display: block;
 	height: 0.0625rem;
