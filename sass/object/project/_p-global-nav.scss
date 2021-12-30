@@ -17,10 +17,12 @@
 }
 
 .p-global-nav__item:not(:last-child){
-  margin-right: rem(30);
+  // margin-right: rem(30);
 }
 
 .p-global-nav__item a{
+  padding-right: rem(15);
+  padding-left: rem(15);
   height: inherit;
   font-family: $font-family-sub;
   font-size: rem(18);

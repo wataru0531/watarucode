@@ -26,15 +26,13 @@
   overflow: scroll;
 }
 
-.p-drawer__item:not(:first-child){
-  margin-top: rem(20);
-}
-
 .p-drawer__item{
   overflow: hidden;
 }
 
 .p-drawer__item a{
+  padding-top: rem(10);
+  padding-bottom: rem(10);
   padding-left: rem(50);
   display: block;
   font-family: $font-family-sub;
