@@ -23,6 +23,9 @@
   <!-- 今後とも宜しくお願いいたします。 -->
   <!--  -->
 
+<!-- l-global-container -->
+<div class="l-global-container">
+  
   <!-- l-opening -->
   <div class="l-opening p-opening js-opening">
       <div class="p-opening__box">

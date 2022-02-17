@@ -17,5 +17,8 @@
 </footer>
 
 <?php wp_footer(); ?>
+
+</div><!-- l-global-container -->
+
 </body>
 </html>

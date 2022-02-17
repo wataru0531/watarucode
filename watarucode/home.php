@@ -21,7 +21,7 @@
 </div><!-- p-breadcrumb -->
 
 <!-- l-container -->
-<div class="l-container p-container">
+<div class="l-container p-container l-min-height">
   <div class="p-container__inner l-inner">
     <main class="l-main">
       <section class="l-blog p-blog">
@@ -80,7 +80,7 @@
 
               <?php if($wp_query->max_num_pages > 1): ?>
                 <?php
-                  $big = 999999999;
+                  $big = 9999999999;
                   $page = get_pagenum_link($big);
                   $num = get_query_var($paged);
 

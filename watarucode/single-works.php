@@ -20,7 +20,7 @@
   </div>
 </div><!-- p-breadcrumb -->
 
-<main>
+<main class="l-min-height">
   <!-- p-introduction -->
   <section class="p-introduction">
     <div class="p-introduction__inner l-inner">
@@ -94,18 +94,24 @@
             </dl>
           </div>
 
+          <!-- ページネーション -->
           <div class="p-introduction__pagination">
-            <?php if(get_next_post()): ?>
-              <div class="p-introduction__previous">
+            
+            <div class="p-introduction__previous">
+              <?php if(get_next_post()): ?>
+                <!-- %link...aタグで表示させる記述 -->
                 <?php next_post_link('%link', 'PREV'); ?>
-              </div>
-            <?php endif; ?>
-
-            <?php if(get_previous_post()): ?>
-              <div class="p-introduction__next">
+              <?php endif; ?>
+            </div>
+            <div class="p-introduction__archive">
+              <a href="<?php echo esc_url(home_url('works')); ?>">一覧へ</a>
+            </div>
+            <div class="p-introduction__next">
+              <?php if(get_previous_post()): ?>
                 <?php previous_post_link('%link', 'NEXT'); ?>
-              </div>
-            <?php endif; ?>
+              <?php endif; ?>
+            </div>
+            
           </div>
 
         <?php endwhile; ?>

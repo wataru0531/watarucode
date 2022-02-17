@@ -244,9 +244,10 @@ function get_eye_catch_default(){
 }
 
 
-// 管理画面の投稿件数とは関係なく、トップページはそのままの投稿件数を、他のページの投稿件数を変更する。
+// 管理画面、メインループは変更せず、他のページの投稿件数などを変更する。
 // ページネーションでのエラーを無くすため
 function set_pre_get_posts($query) {
+	// 管理画面、メインループに干渉しないようにする
   if (is_admin() || !$query->is_main_query()) {
     return;
   }
