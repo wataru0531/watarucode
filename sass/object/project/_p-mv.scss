@@ -8,6 +8,10 @@
   height: 100vh;
   background-color: $white;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .p-mv__title{
@@ -18,12 +22,6 @@
   letter-spacing: 0.02em;
   text-transform: uppercase;
   opacity: 0;
-
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 200;
   
   @include mq('tab'){
     font-size: rem(50);

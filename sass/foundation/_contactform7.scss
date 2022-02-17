@@ -12,3 +12,40 @@
 .wpcf7-response-output{
   text-align: center;
 }
+
+// 各項目でのエラーメッセージ
+.wpcf7-not-valid-tip{
+  font-size: rem(14);
+  color: $coral;
+
+  @include mq('tab'){
+    font-size: rem(16);
+  }
+}
+
+// 送信失敗時メッセージ
+.wpcf7 form.invalid .wpcf7-response-output, .wpcf7 form.unaccepted .wpcf7-response-output, .wpcf7 form.payment-required .wpcf7-response-output{
+  font-size: rem(14);
+  color: $text-color;
+  border-color: $coral;
+
+  @include mq('tab'){
+    font-size: rem(16);
+  }
+}
+
+// 送信成功時メッセージ
+.wpcf7 form.sent .wpcf7-response-output{
+  font-size: rem(14);
+  color: $text-color;
+  border-color: $coral;
+
+  @include mq('tab'){
+    font-size: rem(16);
+  }
+}
+
+// 必須にしている項目が空の場合には背景色を付与
+.wpcf7-validates-as-required.wpcf7-not-valid{
+  background-color: rgba(255, 79, 79, .1);;
+}

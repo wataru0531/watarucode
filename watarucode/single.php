@@ -32,7 +32,7 @@ PV数のカウントが行われる。 -->
 </div><!-- p-breadcrumb -->
 
 <!-- l-container -->
-<div class="l-container p-container">
+<div class="l-container p-container l-min-height">
   <div class="p-container__inner l-inner">
     <main class="l-main">
       <article class="l-single p-single">
@@ -78,7 +78,7 @@ PV数のカウントが行われる。 -->
           <div class="p-relation__items">
             <ul class="p-blog__items">
               <?php
-                $categories = get_the_categorY($post->ID);
+                $categories = get_the_category($post->ID);
                 $category_id = [];
                 
                 foreach($categories as $category):

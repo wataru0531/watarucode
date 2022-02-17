@@ -20,7 +20,7 @@
   </div>
 </div><!-- p-breadcrumb -->
 
-<div class="l-container p-container">
+<div class="l-container p-container l-min-height">
   <div class="p-container__inner l-inner">
     <main class="l-main">
       <!-- l-search -->

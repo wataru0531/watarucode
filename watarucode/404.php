@@ -19,7 +19,7 @@
   </div>
 </div><!-- p-breadcrumb -->
 
-<main>
+<main class="l-min-height">
   <!-- l-404 -->
   <section class="l-404 p-404">
     <div class="p-404__inner l-inner">

@@ -133,22 +133,21 @@
 // ページネーション
 .p-introduction__pagination{
   margin-top: rem(80);
+  margin-right: auto;
+  margin-left: auto;
+  width: 100%;
+  max-width: rem(500);
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  position: relative;
   
   @include mq('tab'){
     margin-top: rem(120);
   }
 }
 
-.p-introduction__previous{
-  margin-right: rem(100);
-  @include mq('tab'){
-    margin-right: rem(400);
-  }
-}
-
+// 前へ prev
 .p-introduction__previous a{
   padding: rem(10);
   width: rem(100);
@@ -188,6 +187,24 @@
   left: rem(5);
 }
 
+// 一覧へ
+.p-introduction__archive{
+  padding: rem(10);
+  display: inline-block;
+  font-size: rem(14);
+  line-height: 1;
+  border-bottom: rem(1) solid $text-color;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  @include mq('tab'){
+    font-size: rem(16);
+  }
+}
+
+// 次へ
 .p-introduction__next a{
   padding: rem(10);
   width: rem(100);

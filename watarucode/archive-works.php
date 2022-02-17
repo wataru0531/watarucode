@@ -24,7 +24,7 @@
   </div>
 </div><!-- p-breadcrumb -->
 
-<main>
+<main class="l-min-height">
 
   <!-- p-works -->
   <section class="p-works">
