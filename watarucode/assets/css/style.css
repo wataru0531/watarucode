@@ -1290,7 +1290,7 @@ p-about
 
 /******************************************************************
 
-.p-blog
+.p-blog  下層ページのブログセクション
 
 ******************************************************************/
 
@@ -1338,17 +1338,6 @@ p-about
 	font-weight: normal;
 	line-height: 1;
 	margin-left: 0.625rem;
-}
-
-/******************************************************************
-
-１カラムと２カラムのリスト。
-home.php、category,php、single.php、各ページで繰り返し使用。
-
-******************************************************************/
-
-.p-blog__item:not(:first-child) {
-	margin-top: 1.875rem;
 }
 
 .p-blog__not-found {
@@ -1563,6 +1552,26 @@ home.php、category,php、single.php、各ページで繰り返し使用。
 	line-height: 1;
 	margin-top: 0.9375rem;
 	text-align: right;
+}
+
+/******************************************************************
+
+.p-cards-list-02  スマホ→1列  タブレット→2列
+
+******************************************************************/
+
+.p-cards-list-02__card:not(:first-child) {
+	margin-top: 1.875rem;
+}
+
+/******************************************************************
+
+.p-cards-list-03  タブレット→２列、パソコン→3列
+
+******************************************************************/
+
+.p-cards-list-03__card:not(:first-child) {
+	margin-top: 1.875rem;
 }
 
 /******************************************************************
@@ -3167,10 +3176,6 @@ p-skill
 	margin-top: 2.5rem;
 }
 
-.p-works__item:not(:first-child) {
-	margin-top: 1.875rem;
-}
-
 .p-works__btn {
 	margin-top: 2.5rem;
 	text-align: right;
@@ -3463,33 +3468,54 @@ a:hover {
 	margin-bottom: 2.5rem;
 }
 
-.p-blog__items {
-	display: flex;
-	flex-wrap: wrap;
-}
-
-.p-blog__item:not(:first-child) {
-	margin-top: 0;
-}
-
-.p-blog__item:nth-child(n+3) {
-	margin-top: 1.875rem;
-}
-
-.p-blog__item {
-	width: calc(50% - 20px / 2);
-}
-
-.p-blog__item:nth-child(odd) {
-	margin-right: 1.25rem;
-}
-
 .p-blog__not-found {
 	font-size: 1rem;
 }
 
 .p-breadcrumb {
 	font-size: 0.875rem;
+}
+
+.p-cards-list-02 {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.p-cards-list-02__card:not(:first-child) {
+	margin-top: 0;
+}
+
+.p-cards-list-02__card:nth-child(n+3) {
+	margin-top: 1.875rem;
+}
+
+.p-cards-list-02__card {
+	width: calc(50% - 20px / 2);
+}
+
+.p-cards-list-02__card:nth-child(odd) {
+	margin-right: 1.25rem;
+}
+
+.p-cards-list-03 {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.p-cards-list-03__card {
+	width: calc(50% - 20px / 2);
+}
+
+.p-cards-list-03__card:not(:first-child) {
+	margin-top: 0;
+}
+
+.p-cards-list-03__card:nth-child(odd) {
+	margin-right: 1.25rem;
+}
+
+.p-cards-list-03__card:nth-child(n+3) {
+	margin-top: 2.5rem;
 }
 
 .p-concept {
@@ -3844,27 +3870,6 @@ a:hover {
 	margin-top: 3.125rem;
 }
 
-.p-works__items {
-	display: flex;
-	flex-wrap: wrap;
-}
-
-.p-works__item {
-	width: calc(50% - 20px / 2);
-}
-
-.p-works__item:not(:first-child) {
-	margin-top: 0;
-}
-
-.p-works__item:nth-child(odd) {
-	margin-right: 1.25rem;
-}
-
-.p-works__item:nth-child(n+3) {
-	margin-top: 2.5rem;
-}
-
 .p-works__btn {
 	margin-top: 3.75rem;
 }
@@ -3889,24 +3894,24 @@ html {
 	margin-right: 1.875rem;
 }
 
-.p-works__item {
+.p-cards-list-03__card {
 	width: calc(100% / 3 - 20px * 2 / 3);
 }
 
-.p-works__item:nth-child(odd) {
+.p-cards-list-03__card:nth-child(odd) {
 	margin-right: 0;
 }
 
-.p-works__item:nth-child(n+3) {
+.p-cards-list-03__card:nth-child(n+3) {
 	margin-top: 0;
 }
 
-.p-works__item:nth-child(3n+1),
-.p-works__item:nth-child(3n+2) {
+.p-cards-list-03__card:nth-child(3n+1),
+.p-cards-list-03__card:nth-child(3n+2) {
 	margin-right: 1.25rem;
 }
 
-.p-works__item:nth-child(n+4) {
+.p-cards-list-03__card:nth-child(n+4) {
 	margin-top: 2.5rem;
 }
 

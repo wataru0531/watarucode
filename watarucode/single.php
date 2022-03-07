@@ -76,7 +76,7 @@ PV数のカウントが行われる。 -->
           </div>
 
           <div class="p-relation__items">
-            <ul class="p-blog__items">
+            <ul class="p-cards-list-02">
               <?php
                 $categories = get_the_category($post->ID);
                 $category_id = [];
@@ -97,7 +97,7 @@ PV数のカウントが行われる。 -->
               ?>
               <?php if($wp_query->have_posts()): ?>
                 <?php while($wp_query->have_posts()): $wp_query->the_post(); ?>
-                  <li class="p-blog__item p-card-blog">
+                  <li class="p-cards-list-02__card p-card-blog">
                     <a class="p-card-blog__img" href="<?php the_permalink(); ?>">
                       <?php if(has_post_thumbnail()): ?>
                         <?php the_post_thumbnail(); ?>

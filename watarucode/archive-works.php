@@ -30,7 +30,8 @@
   <section class="p-works">
     <div class="p-works__inner l-inner">
       <div class="p-works__contents">
-        <ul class="p-works__items">
+
+        <ul class="p-works__items p-cards-list-03">
           <?php $paged = get_query_var('paged')? get_query_var('paged') : 1; ?>
           <?php
             $args = [
@@ -44,7 +45,7 @@
           ?>
           <?php if($wp_query->have_posts()): ?>
             <?php while($wp_query->have_posts()): $wp_query->the_post(); ?>
-              <li class="p-works__item p-card-works">
+              <li class="p-cards-list-03__card p-card-works">
                 <a class="p-card-works__img" href="<?php the_permalink(); ?>">
                   <img src="<?php the_field('image'); ?>" alt="">
                 </a>
