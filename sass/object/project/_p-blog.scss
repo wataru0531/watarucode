@@ -1,6 +1,6 @@
 /******************************************************************
 
-.p-blog
+.p-blog  下層ページのブログセクション
 
 ******************************************************************/
 .p-blog__header{
@@ -51,47 +51,6 @@
   font-weight: normal;
   line-height: 1;
   color: $grayText;
-}
-
-
-/******************************************************************
-
-１カラムと２カラムのリスト。
-home.php、category,php、single.php、各ページで繰り返し使用。
-
-******************************************************************/
-.p-blog__items{
-  @include mq('tab'){
-    display: flex;
-    flex-wrap: wrap;
-  }
-}
-
-// スマホ時のmargin-top
-.p-blog__item:not(:first-child){
-  margin-top: rem(30);
-  @include mq('tab'){
-    margin-top: 0;
-  }
-}
-
-//タブレット時の3番目以降のmargin-top
-.p-blog__item:nth-child(n+3){
-  @include mq('tab'){
-    margin-top: rem(30);
-  }
-}
-
-.p-blog__item{
-  @include mq('tab'){
-    width: calc(50% - 20px / 2);
-  }
-}
-
-.p-blog__item:nth-child(odd){
-  @include mq('tab'){
-    margin-right: rem(20);
-  }
 }
 
 .p-blog__not-found{

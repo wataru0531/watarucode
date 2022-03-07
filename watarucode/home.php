@@ -26,7 +26,7 @@
     <main class="l-main">
       <section class="l-blog p-blog">
         <div class="p-blog__inner">
-          <ul class="p-blog__items">
+          <ul class="p-blog__items p-cards-list-02">
 
             <?php $paged = get_query_var('paged')? get_query_var('paged') : 1; ?>
             <?php
@@ -40,7 +40,7 @@
             ?>
             <?php if($wp_query->have_posts()): ?>
               <?php while($wp_query->have_posts()): $wp_query->the_post(); ?>
-                <li class="p-blog__item p-card-blog">
+                <li class="p-cards-list-02__card p-card-blog">
                   <a class="p-card-blog__img" href="<?php the_permalink(); ?>">
                     <?php if(has_post_thumbnail()): ?>
                       <?php the_post_thumbnail(); ?>
