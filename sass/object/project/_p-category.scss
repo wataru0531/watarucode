@@ -73,5 +73,7 @@
 }
 
 .p-category__item a:hover::after{
-  right: rem(10);
+  @include mq('tab'){
+    right: rem(10);
+  }
 }

@@ -8,30 +8,32 @@
   height: 100vh;
   background-color: $white;
   position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 .p-mv__title{
   font-family: $font-family-sub;
   font-weight: bold;
-  font-size: rem(30);
-  line-height: 1;
-  letter-spacing: 0.02em;
+  // min(基本サイズ, 最大サイズ)
+  font-size: unquote('min(30vw, #{rem(80)})');
   text-transform: uppercase;
   opacity: 0;
+  position: absolute;
+  bottom: rem(20);
+  left: rem(20);
+  line-height: 1.3;
   
   @include mq('tab'){
-    font-size: rem(50);
+    bottom: 5%;
+    left: 5%;
+    font-size: unquote('min(30vw, #{rem(120)})');
+  }
+  @include mq('pc'){
+    font-size: unquote('min(30vw, #{rem(160)})');
   }
 }
 
 .p-mv__title.is-inview{
-  animation-name: fadeIn;
-  animation-duration: 3s;
-  animation-fill-mode: forwards;
+  @include animation($name: fadeIn, $duration: 3s);
 }
 
 .p-mv__scroll{
@@ -48,12 +50,10 @@
   text-transform: uppercase;
   writing-mode: vertical-lr;
   overflow: hidden;
-
   position: absolute;
   bottom: 0;
   right: rem(16);
   z-index: 200;
-
 
   @include mq('tab'){
     font-size: rem(16);

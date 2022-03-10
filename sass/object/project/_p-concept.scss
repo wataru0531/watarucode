@@ -17,9 +17,7 @@
 }
 
 .p-concept.is-inview{
-  animation-name: fadeIn;
-  animation-duration: 1.5s;
-  animation-fill-mode: forwards;
+  @include animation($name: fadeIn, $duration: 1.5s);
 }
 
 .p-concept::before{
