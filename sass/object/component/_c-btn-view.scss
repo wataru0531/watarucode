@@ -35,7 +35,9 @@
 }
 
 .c-btn-view:hover::after{
-  right: rem(5);
+  @include mq('tab'){
+    right: rem(5);
+  }
 }
 
 

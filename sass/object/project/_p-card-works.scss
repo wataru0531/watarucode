@@ -31,7 +31,9 @@
 }
 
 .p-card-works__img:hover img{
-  transform: translateY(-50%) scale(1.1);
+  @include mq('tab'){
+    transform: translateY(-50%) scale(1.1);
+  }
 }
 
 .p-card-works__body{

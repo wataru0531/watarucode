@@ -2,7 +2,9 @@
 
 <!-- p-mv -->
 <div class="p-mv">
-  <h1 class="p-mv__title js-inview" style="color: <?php the_field('title_color', 10); ?>">wataru&nbsp;design</h1>
+  <!-- <h1 class="p-mv__title js-inview" style="color: <?php the_field('title_color', 10); ?>">wataru&nbsp;design</h1> -->
+  <h1 class="p-mv__title js-inview" style="color: <?php the_field('title_color', 10); ?>">wataru<br>design</h1>
+
   <a class="p-mv__scroll" href="#concept" style="color: <?php the_field('scroll_color', 10); ?>">
     scroll
     <span class="c-line-down" style="background-color: <?php the_field('line_color', 10); ?>"></span>
@@ -71,17 +73,17 @@
     </div>
   </section><!-- p-concept -->
 
-  <!-- l-works -->
-  <section class="l-works p-works js-inview" id="works">
-    <div class="p-works__inner l-inner">
-      <div class="p-works__background-text">
+  <!-- l-works-top -->
+  <section class="l-works-top p-works-top js-inview" id="works">
+    <div class="p-works-top__inner l-inner">
+      <div class="p-works-top__background-text">
         <span class="c-background-text--gray">works</span>
       </div>
-      <div class="p-works__header">
+      <div class="p-works-top__header">
         <div class="c-section-subtitle">works</div>
         <h2 class="c-section-title">制作実績</h2>
       </div>
-      <div class="p-works__contents">
+      <div class="p-works-top__contents">
         <div class="swiper-container swiper-works">
           <div class="swiper-pagination"></div>
           <ul class="swiper-wrapper">
@@ -110,11 +112,11 @@
           </ul>
         </div>
       </div>
-      <div class="p-works__btn">
+      <div class="p-works-top__btn">
         <a class="c-btn-view" href="<?php echo esc_url(home_url('works')); ?>">view&nbsp;more</a>
       </div>
     </div>
-  </section><!-- l-works -->
+  </section><!-- l-works-top -->
 
   <!-- l-blog-top -->
   <section class="l-blog-top p-blog-top js-inview" id="blog">

@@ -26,8 +26,15 @@ $yellow: #ff0;
 // マウスホバー
 $opacity: 0.7; // 透過度
 
+
 // フォント
-$font-family-base: 'Noto Sans JP', sans-serif; // ベースフォント。全体へ適用するフォント。
+// ・游ゴシック体、YuGothic...mac。macにはMedium(500)とBold(700)しかないので大丈夫。
+// ・游ゴシック、Yu Gothic...windows。Light、Regular（標準）、Medium、Boldの４つがあるが、
+// font-weightを400で指定すると、regularが適用されてクロームではかすれてしまうのでMediumを直接指定しておく。
+
+$font-family-base: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
+// $font-family-base: 'Noto Sans JP', sans-serif; // ベースフォント。全体へ適用するフォント。
+
 $font-family-sub: 'Oswald', sans-serif; // 英語など適用したい部分に上書きしたいフォント。
 $font-size-base: 16px; // ベースフォントサイズ
 $font-weight-base: 400; // ベースフォントウェイト

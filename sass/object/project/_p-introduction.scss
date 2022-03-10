@@ -184,20 +184,25 @@
 }
 
 .p-introduction__previous a:hover::after{
-  left: rem(5);
+  @include mq('tab'){
+    left: rem(5);
+  }
 }
 
 // 一覧へ
 .p-introduction__archive{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.p-introduction__archive a{
   padding: rem(10);
   display: inline-block;
   font-size: rem(14);
   line-height: 1;
   border-bottom: rem(1) solid $text-color;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 
   @include mq('tab'){
     font-size: rem(16);
@@ -241,5 +246,7 @@
 }
 
 .p-introduction__next a:hover::after{
-  right: rem(5);
+  @include mq('tab'){
+    right: rem(5);
+  }
 }

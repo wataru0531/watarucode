@@ -1,11 +1,12 @@
 /******************************************************************
 
-p-contact
+.p-works-top
 
 ******************************************************************/
-.p-contact{
+.p-works-top{
   padding-top: rem(50);
   padding-bottom: rem(50);
+  background-color: $white;
   opacity: 0;
 
   @include mq('tab'){
@@ -14,27 +15,27 @@ p-contact
   }
 }
 
-.p-contact.is-inview{
+.p-works-top.is-inview{
   @include animation($name: fadeIn, $duration: 1.5s);
 }
 
-.p-contact__header{
+.p-works-top__header{
   margin-top: rem(-20);
 }
 
-.p-contact__description{
+.p-works-top__contents{
   margin-top: rem(40);
-  font-size: rem(14);
-  
   @include mq('tab'){
     margin-top: rem(50);
-    font-size: rem(16);
   }
 }
 
-.p-contact__form{
+
+.p-works-top__btn{
   margin-top: rem(40);
+  text-align: right;
+  
   @include mq('tab'){
-    margin-top: rem(50);
+    margin-top: rem(60);
   }
 }

@@ -13,8 +13,8 @@
   <!-- Google Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
-  
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+
   <?php wp_head(); ?>
 </head>
 <body>
@@ -30,7 +30,7 @@
   <div class="l-opening p-opening js-opening">
       <div class="p-opening__box">
         <div class="p-opening__title js-opening-title">
-          <span class="char">w</span><span class="char">a</span><span class="char">t</span><span class="char">a</span><span class="char">r</span><span class="char">u</span><span class="char">&nbsp;</span><span class="char">d</span><span class="char">e</span><span class="char">s</span><span class="char">i</span><span class="char">g</span><span class="char">n</span>
+          <span>w</span><span>a</span><span>t</span><span>a</span><span>r</span><span>u</span><span>&nbsp;</span><span>d</span><span>e</span><span>s</span><span>i</span><span>g</span><span>n</span>
         </div>
         <div class="p-opening__lines">
           <span class="p-opening__line-gray js-opening-line"></span>

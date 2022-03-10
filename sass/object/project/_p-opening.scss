@@ -12,9 +12,7 @@
 }
 
 .p-opening.is-fade{
-  animation-name: fade;
-  animation-duration: 1.5s;
-  animation-fill-mode: forwards;
+  @include animation($name: fade, $duration: 1.5s);
 }
 
 .p-opening__box{
@@ -31,12 +29,10 @@
 }
 
 .p-opening__title.is-upFade{
-  animation-name: upFade;
-  animation-duration: 1.5s;
-  animation-fill-mode: both;
+  @include animation($name: upFade, $duration: 1.5s);
 }
 
-.p-opening__title .char{
+.p-opening__title span{
   display: inline-block;
   font-family: $font-family-sub;
   font-weight: bold;
@@ -46,21 +42,19 @@
   text-transform: uppercase;
   opacity: 0;
   transform: translateY(50%);
-
-  // @include mq('tab'){
-  //   font-size: rem(50);
-  // }
 }
 
-.p-opening__title.is-accordion .char{
-  animation-name: animation-chars;
-  animation-duration: .8s;
-  animation-timing-function: cubic-bezier(0.39, 1.57, 0.58, 1);
-  animation-fill-mode: both; //開始前に0%状態を待機させる。
+.p-opening__title.is-accordion span{
+  @include animation(
+    $name: animation-chars,
+    $duration: .8s,
+    $timing-function: cubic-bezier(0.39, 1.57, 0.58, 1),
+    $fill-mode: both //開始前に0%状態を待機させる。
+  );
 }
 
 @for $i from 1 through 13 {
-  .p-opening__title.is-accordion .char:nth-child(#{$i}){
+  .p-opening__title.is-accordion span:nth-child(#{$i}){
     animation-delay: $i * 0.08s;
   }
 }
@@ -82,10 +76,11 @@
   transform: translate(-50%, -50%) scale(0, 1);
 }
 .p-opening__line-gray.is-stretch{
-  animation-name: stretchLine;
-  animation-duration: 4s;
-  animation-timing-function: cubic-bezier(1, 0, 0, 1);
-  animation-fill-mode: forwards;
+  @include animation(
+    $name: stretchLine,
+    $duration: 4s,
+    $timing-function: cubic-bezier(1, 0, 0, 1),
+  );
 }
 
 .p-opening__line-coral{
@@ -99,9 +94,10 @@
   transform: translate(-50%, -50%) scale(0, 1);
 }
 .p-opening__line-coral.is-stretch{
-  animation-name: stretchLine;
-  animation-duration: 4s;
-  animation-timing-function: cubic-bezier(1, 0, 0, 1);
-  animation-fill-mode: forwards;
-  animation-delay: 1s;
+  @include animation(
+    $name: stretchLine,
+    $duration: 4s,
+    $timing-function: cubic-bezier(1, 0, 0, 1),
+    $delay: 1s
+  );
 }

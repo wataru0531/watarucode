@@ -1,18 +1,21 @@
 /******************************************************************
 
-.p-works
+.p-works  下層ページのworks
 
 ******************************************************************/
 .p-works{
   padding-top: rem(50);
   padding-bottom: rem(50);
   background-color: $white;
-  // opacity: 0;
 
   @include mq('tab'){
     padding-top: rem(70);
     padding-bottom: rem(70);
   }
+}
+
+.p-works.is-inview{
+  @include animation($name: fadeIn, $duration: 1.5s);
 }
 
 .p-works__header{

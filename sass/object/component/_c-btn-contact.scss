@@ -21,6 +21,8 @@
 }
 
 .c-btn-contact:hover{
-  opacity: .7;
+  @include mq('tab'){
+    opacity: .7;
+  }
 }
 

@@ -49,10 +49,11 @@
 
 // .is-slide付与
 .p-drawer.is-slide .p-drawer__item a{
-  animation-name: fadeRight;
-  animation-duration: .5s;
-  animation-delay: .3s;
-  animation-fill-mode: forwards;
+  @include animation(
+    $name: fadeRight,
+    $duration: .5s,
+    $delay: .3s,
+  );
 }
 
 // sns
@@ -81,8 +82,9 @@
 }
 
 .p-drawer.is-slide .p-drawer__sns-item a img{
-  animation-name: emergeUp;
-  animation-duration: .5s;
-  animation-delay: .7s;
-  animation-fill-mode: forwards;
+  @include animation(
+    $name: emergeUp,
+    $duration: .5s,
+    $delay: .7s
+  );
 }

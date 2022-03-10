@@ -21,6 +21,15 @@ $window_widthにはinner幅が入る。
 
 /***************************************************************
 
+アニメーション 
+animation...一括指定プロパティ
+animation: ①-name ②-duration ③-timing ④-delay ⑤-iteration ⑥-direction ⑦-fill ⑧-play;
+
+
+***************************************************************/
+
+/***************************************************************
+
 数値のみを取り出す。
 
 ***************************************************************/
@@ -81,7 +90,7 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-tap-highlight-color: transparent;
 	color: #282828;
-	font-family: "Noto Sans JP", sans-serif;
+	font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
 	font-size: 16px;
 	font-weight: 400;
 	line-height: 1.6;
@@ -552,11 +561,11 @@ l-price
 
 /******************************************************************
 
-.l-works
+.l-works-top
 
 ******************************************************************/
 
-.l-works {
+.l-works-top {
 	margin-top: 3.125rem;
 }
 
@@ -635,10 +644,6 @@ c-arrow トップに戻るボタン
 	width: 0.5rem;
 }
 
-.c-btn-blog:hover::after {
-	right: 0.625rem;
-}
-
 /***************************************************************
 
 .c-btn-contact 共通のボタン
@@ -660,10 +665,6 @@ c-arrow トップに戻るボタン
 	padding-top: 1.25rem;
 	text-transform: uppercase;
 	transition: all .3s;
-}
-
-.c-btn-contact:hover {
-	opacity: .7;
 }
 
 /******************************************************************
@@ -740,11 +741,6 @@ c-arrow トップに戻るボタン
 	transform: rotate(-45deg) translateY(-50%);
 	transition: right .3s;
 	width: 0.4375rem;
-}
-
-.c-btn-view:hover::after,
-.c-btn-view--white:hover::after {
-	right: 0.3125rem;
 }
 
 .c-btn-view--white {
@@ -1105,10 +1101,18 @@ p-about
 .p-about.is-inview {
 	-webkit-animation-name: fadeIn;
 	-webkit-animation-duration: 1.5s;
+	-webkit-animation-timing-function: ease;
+	-webkit-animation-delay: 0s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-direction: normal;
 	-webkit-animation-fill-mode: forwards;
+	animation-delay: 0s;
+	animation-direction: normal;
 	animation-duration: 1.5s;
 	animation-fill-mode: forwards;
+	animation-iteration-count: 1;
 	animation-name: fadeIn;
+	animation-timing-function: ease;
 }
 
 .p-about::before {
@@ -1257,10 +1261,18 @@ p-about
 .p-blog-top.is-inview {
 	-webkit-animation-name: fadeIn;
 	-webkit-animation-duration: 1.5s;
+	-webkit-animation-timing-function: ease;
+	-webkit-animation-delay: 0s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-direction: normal;
 	-webkit-animation-fill-mode: forwards;
+	animation-delay: 0s;
+	animation-direction: normal;
 	animation-duration: 1.5s;
 	animation-fill-mode: forwards;
+	animation-iteration-count: 1;
 	animation-name: fadeIn;
+	animation-timing-function: ease;
 }
 
 .p-blog-top__header {
@@ -1394,10 +1406,6 @@ p-about
 	width: 100%;
 }
 
-.p-card-blog__img:hover img {
-	transform: translateY(-50%) scale(1.1);
-}
-
 .p-card-blog__category {
 	color: #fff;
 	display: inline-block;
@@ -1496,10 +1504,6 @@ p-about
 	transform: translateY(-50%);
 	transition: all .3s;
 	width: 100%;
-}
-
-.p-card-works__img:hover img {
-	transform: translateY(-50%) scale(1.1);
 }
 
 .p-card-works__body {
@@ -1649,10 +1653,6 @@ p-about
 	width: 0.3125rem;
 }
 
-.p-category__item a:hover::after {
-	right: 0.625rem;
-}
-
 /******************************************************************
 
 .p-concept
@@ -1670,10 +1670,18 @@ p-about
 .p-concept.is-inview {
 	-webkit-animation-name: fadeIn;
 	-webkit-animation-duration: 1.5s;
+	-webkit-animation-timing-function: ease;
+	-webkit-animation-delay: 0s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-direction: normal;
 	-webkit-animation-fill-mode: forwards;
+	animation-delay: 0s;
+	animation-direction: normal;
 	animation-duration: 1.5s;
 	animation-fill-mode: forwards;
+	animation-iteration-count: 1;
 	animation-name: fadeIn;
+	animation-timing-function: ease;
 }
 
 .p-concept::before {
@@ -1748,10 +1756,18 @@ p-contact
 .p-contact.is-inview {
 	-webkit-animation-name: fadeIn;
 	-webkit-animation-duration: 1.5s;
+	-webkit-animation-timing-function: ease;
+	-webkit-animation-delay: 0s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-direction: normal;
 	-webkit-animation-fill-mode: forwards;
+	animation-delay: 0s;
+	animation-direction: normal;
 	animation-duration: 1.5s;
 	animation-fill-mode: forwards;
+	animation-iteration-count: 1;
 	animation-name: fadeIn;
+	animation-timing-function: ease;
 }
 
 .p-contact__header {
@@ -1763,7 +1779,7 @@ p-contact
 	margin-top: 2.5rem;
 }
 
-.p-contact__contents {
+.p-contact__form {
 	margin-top: 2.5rem;
 }
 
@@ -1822,13 +1838,19 @@ p-contact
 
 .p-drawer.is-slide .p-drawer__item a {
 	-webkit-animation-name: fadeRight;
-	-webkit-animation-duration: .5s;
-	-webkit-animation-delay: .3s;
+	-webkit-animation-duration: 0.5s;
+	-webkit-animation-timing-function: ease;
+	-webkit-animation-delay: 0.3s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-direction: normal;
 	-webkit-animation-fill-mode: forwards;
-	animation-delay: .3s;
-	animation-duration: .5s;
+	animation-delay: 0.3s;
+	animation-direction: normal;
+	animation-duration: 0.5s;
 	animation-fill-mode: forwards;
+	animation-iteration-count: 1;
 	animation-name: fadeRight;
+	animation-timing-function: ease;
 }
 
 .p-drawer__sns-items {
@@ -1855,13 +1877,19 @@ p-contact
 
 .p-drawer.is-slide .p-drawer__sns-item a img {
 	-webkit-animation-name: emergeUp;
-	-webkit-animation-duration: .5s;
-	-webkit-animation-delay: .7s;
+	-webkit-animation-duration: 0.5s;
+	-webkit-animation-timing-function: ease;
+	-webkit-animation-delay: 0.7s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-direction: normal;
 	-webkit-animation-fill-mode: forwards;
-	animation-delay: .7s;
-	animation-duration: .5s;
+	animation-delay: 0.7s;
+	animation-direction: normal;
+	animation-duration: 0.5s;
 	animation-fill-mode: forwards;
+	animation-iteration-count: 1;
 	animation-name: emergeUp;
+	animation-timing-function: ease;
 }
 
 /******************************************************************
@@ -2173,20 +2201,19 @@ p-contact
 	width: 0.4375rem;
 }
 
-.p-introduction__previous a:hover::after {
-	left: 0.3125rem;
-}
-
 .p-introduction__archive {
-	border-bottom: 0.0625rem solid #282828;
-	display: inline-block;
-	font-size: 0.875rem;
 	left: 50%;
-	line-height: 1;
-	padding: 0.625rem;
 	position: absolute;
 	top: 50%;
 	transform: translate(-50%, -50%);
+}
+
+.p-introduction__archive a {
+	border-bottom: 0.0625rem solid #282828;
+	display: inline-block;
+	font-size: 0.875rem;
+	line-height: 1;
+	padding: 0.625rem;
 }
 
 .p-introduction__next a {
@@ -2216,10 +2243,6 @@ p-contact
 	transform-origin: center;
 	transition: right .3s;
 	width: 0.4375rem;
-}
-
-.p-introduction__next a:hover::after {
-	right: 0.3125rem;
 }
 
 /******************************************************************
@@ -2386,33 +2409,39 @@ p-menu
 ******************************************************************/
 
 .p-mv {
-	align-items: center;
 	background-color: #fff;
-	display: flex;
-	flex-direction: column;
 	height: 100vh;
-	justify-content: center;
 	position: relative;
 	width: 100%;
 }
 
 .p-mv__title {
+	bottom: 1.25rem;
 	font-family: "Oswald", sans-serif;
-	font-size: 1.875rem;
+	font-size: min(30vw, 5rem);
 	font-weight: bold;
-	letter-spacing: 0.02em;
-	line-height: 1;
+	left: 1.25rem;
+	line-height: 1.3;
 	opacity: 0;
+	position: absolute;
 	text-transform: uppercase;
 }
 
 .p-mv__title.is-inview {
 	-webkit-animation-name: fadeIn;
 	-webkit-animation-duration: 3s;
+	-webkit-animation-timing-function: ease;
+	-webkit-animation-delay: 0s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-direction: normal;
 	-webkit-animation-fill-mode: forwards;
+	animation-delay: 0s;
+	animation-direction: normal;
 	animation-duration: 3s;
 	animation-fill-mode: forwards;
+	animation-iteration-count: 1;
 	animation-name: fadeIn;
+	animation-timing-function: ease;
 }
 
 .p-mv__scroll {
@@ -2477,10 +2506,18 @@ p-menu
 .p-opening.is-fade {
 	-webkit-animation-name: fade;
 	-webkit-animation-duration: 1.5s;
+	-webkit-animation-timing-function: ease;
+	-webkit-animation-delay: 0s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-direction: normal;
 	-webkit-animation-fill-mode: forwards;
+	animation-delay: 0s;
+	animation-direction: normal;
 	animation-duration: 1.5s;
 	animation-fill-mode: forwards;
+	animation-iteration-count: 1;
 	animation-name: fade;
+	animation-timing-function: ease;
 }
 
 .p-opening__box {
@@ -2499,13 +2536,21 @@ p-menu
 .p-opening__title.is-upFade {
 	-webkit-animation-name: upFade;
 	-webkit-animation-duration: 1.5s;
-	-webkit-animation-fill-mode: both;
+	-webkit-animation-timing-function: ease;
+	-webkit-animation-delay: 0s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-direction: normal;
+	-webkit-animation-fill-mode: forwards;
+	animation-delay: 0s;
+	animation-direction: normal;
 	animation-duration: 1.5s;
-	animation-fill-mode: both;
+	animation-fill-mode: forwards;
+	animation-iteration-count: 1;
 	animation-name: upFade;
+	animation-timing-function: ease;
 }
 
-.p-opening__title .char {
+.p-opening__title span {
 	display: inline-block;
 	font-family: "Oswald", sans-serif;
 	font-size: 1.875rem;
@@ -2517,78 +2562,84 @@ p-menu
 	transform: translateY(50%);
 }
 
-.p-opening__title.is-accordion .char {
+.p-opening__title.is-accordion span {
 	-webkit-animation-name: animation-chars;
-	-webkit-animation-duration: .8s;
+	-webkit-animation-duration: 0.8s;
 	-webkit-animation-timing-function: cubic-bezier(0.39, 1.57, 0.58, 1);
+	-webkit-animation-delay: 0s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-direction: normal;
 	-webkit-animation-fill-mode: both;
-	animation-duration: .8s;
+	animation-delay: 0s;
+	animation-direction: normal;
+	animation-duration: 0.8s;
 	animation-fill-mode: both;
+	animation-iteration-count: 1;
 	animation-name: animation-chars;
 	animation-timing-function: cubic-bezier(0.39, 1.57, 0.58, 1);
 }
 
-.p-opening__title.is-accordion .char:nth-child(1) {
+.p-opening__title.is-accordion span:nth-child(1) {
 	-webkit-animation-delay: 0.08s;
 	animation-delay: 0.08s;
 }
 
-.p-opening__title.is-accordion .char:nth-child(2) {
+.p-opening__title.is-accordion span:nth-child(2) {
 	-webkit-animation-delay: 0.16s;
 	animation-delay: 0.16s;
 }
 
-.p-opening__title.is-accordion .char:nth-child(3) {
+.p-opening__title.is-accordion span:nth-child(3) {
 	-webkit-animation-delay: 0.24s;
 	animation-delay: 0.24s;
 }
 
-.p-opening__title.is-accordion .char:nth-child(4) {
+.p-opening__title.is-accordion span:nth-child(4) {
 	-webkit-animation-delay: 0.32s;
 	animation-delay: 0.32s;
 }
 
-.p-opening__title.is-accordion .char:nth-child(5) {
+.p-opening__title.is-accordion span:nth-child(5) {
 	-webkit-animation-delay: 0.4s;
 	animation-delay: 0.4s;
 }
 
-.p-opening__title.is-accordion .char:nth-child(6) {
+.p-opening__title.is-accordion span:nth-child(6) {
 	-webkit-animation-delay: 0.48s;
 	animation-delay: 0.48s;
 }
 
-.p-opening__title.is-accordion .char:nth-child(7) {
+.p-opening__title.is-accordion span:nth-child(7) {
 	-webkit-animation-delay: 0.56s;
 	animation-delay: 0.56s;
 }
 
-.p-opening__title.is-accordion .char:nth-child(8) {
+.p-opening__title.is-accordion span:nth-child(8) {
 	-webkit-animation-delay: 0.64s;
 	animation-delay: 0.64s;
 }
 
-.p-opening__title.is-accordion .char:nth-child(9) {
+.p-opening__title.is-accordion span:nth-child(9) {
 	-webkit-animation-delay: 0.72s;
 	animation-delay: 0.72s;
 }
 
-.p-opening__title.is-accordion .char:nth-child(10) {
+.p-opening__title.is-accordion span:nth-child(10) {
 	-webkit-animation-delay: 0.8s;
 	animation-delay: 0.8s;
 }
 
-.p-opening__title.is-accordion .char:nth-child(11) {
+.p-opening__title.is-accordion span:nth-child(11) {
 	-webkit-animation-delay: 0.88s;
 	animation-delay: 0.88s;
 }
 
-.p-opening__title.is-accordion .char:nth-child(12) {
+.p-opening__title.is-accordion span:nth-child(12) {
 	-webkit-animation-delay: 0.96s;
 	animation-delay: 0.96s;
 }
 
-.p-opening__title.is-accordion .char:nth-child(13) {
+.p-opening__title.is-accordion span:nth-child(13) {
 	-webkit-animation-delay: 1.04s;
 	animation-delay: 1.04s;
 }
@@ -2613,9 +2664,15 @@ p-menu
 	-webkit-animation-name: stretchLine;
 	-webkit-animation-duration: 4s;
 	-webkit-animation-timing-function: cubic-bezier(1, 0, 0, 1);
+	-webkit-animation-delay: 0s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-direction: normal;
 	-webkit-animation-fill-mode: forwards;
+	animation-delay: 0s;
+	animation-direction: normal;
 	animation-duration: 4s;
 	animation-fill-mode: forwards;
+	animation-iteration-count: 1;
 	animation-name: stretchLine;
 	animation-timing-function: cubic-bezier(1, 0, 0, 1);
 }
@@ -2635,11 +2692,15 @@ p-menu
 	-webkit-animation-name: stretchLine;
 	-webkit-animation-duration: 4s;
 	-webkit-animation-timing-function: cubic-bezier(1, 0, 0, 1);
-	-webkit-animation-fill-mode: forwards;
 	-webkit-animation-delay: 1s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-direction: normal;
+	-webkit-animation-fill-mode: forwards;
 	animation-delay: 1s;
+	animation-direction: normal;
 	animation-duration: 4s;
 	animation-fill-mode: forwards;
+	animation-iteration-count: 1;
 	animation-name: stretchLine;
 	animation-timing-function: cubic-bezier(1, 0, 0, 1);
 }
@@ -2667,10 +2728,6 @@ p-menu
 .p-page-top.is-top {
 	opacity: 1;
 	visibility: visible;
-}
-
-.p-page-top:hover {
-	opacity: .7;
 }
 
 /******************************************************************
@@ -2786,10 +2843,18 @@ p-price
 .p-price.is-inview {
 	-webkit-animation-name: fadeIn;
 	-webkit-animation-duration: 1.5s;
+	-webkit-animation-timing-function: ease;
+	-webkit-animation-delay: 0s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-direction: normal;
 	-webkit-animation-fill-mode: forwards;
+	animation-delay: 0s;
+	animation-direction: normal;
 	animation-duration: 1.5s;
 	animation-fill-mode: forwards;
+	animation-iteration-count: 1;
 	animation-name: fadeIn;
+	animation-timing-function: ease;
 }
 
 .p-price__header {
@@ -3158,7 +3223,50 @@ p-skill
 
 /******************************************************************
 
-.p-works
+.p-works-top
+
+******************************************************************/
+
+.p-works-top {
+	background-color: #fff;
+	opacity: 0;
+	padding-bottom: 3.125rem;
+	padding-top: 3.125rem;
+}
+
+.p-works-top.is-inview {
+	-webkit-animation-name: fadeIn;
+	-webkit-animation-duration: 1.5s;
+	-webkit-animation-timing-function: ease;
+	-webkit-animation-delay: 0s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-direction: normal;
+	-webkit-animation-fill-mode: forwards;
+	animation-delay: 0s;
+	animation-direction: normal;
+	animation-duration: 1.5s;
+	animation-fill-mode: forwards;
+	animation-iteration-count: 1;
+	animation-name: fadeIn;
+	animation-timing-function: ease;
+}
+
+.p-works-top__header {
+	margin-top: -1.25rem;
+}
+
+.p-works-top__contents {
+	margin-top: 2.5rem;
+}
+
+.p-works-top__btn {
+	margin-top: 2.5rem;
+	text-align: right;
+}
+
+/******************************************************************
+
+.p-works  下層ページのworks
 
 ******************************************************************/
 
@@ -3166,6 +3274,23 @@ p-skill
 	background-color: #fff;
 	padding-bottom: 3.125rem;
 	padding-top: 3.125rem;
+}
+
+.p-works.is-inview {
+	-webkit-animation-name: fadeIn;
+	-webkit-animation-duration: 1.5s;
+	-webkit-animation-timing-function: ease;
+	-webkit-animation-delay: 0s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-direction: normal;
+	-webkit-animation-fill-mode: forwards;
+	animation-delay: 0s;
+	animation-direction: normal;
+	animation-duration: 1.5s;
+	animation-fill-mode: forwards;
+	animation-iteration-count: 1;
+	animation-name: fadeIn;
+	animation-timing-function: ease;
 }
 
 .p-works__header {
@@ -3312,7 +3437,7 @@ a:hover {
 	top: 9.375rem;
 }
 
-.l-works {
+.l-works-top {
 	margin-top: 4.375rem;
 }
 
@@ -3321,11 +3446,24 @@ a:hover {
 	font-size: 15.3125rem;
 }
 
+.c-btn-blog:hover::after {
+	right: 0.625rem;
+}
+
+.c-btn-contact:hover {
+	opacity: .7;
+}
+
 .c-btn-normal {
 	padding-bottom: 0.875rem;
 	padding-left: 2.1875rem;
 	padding-right: 2.1875rem;
 	padding-top: 0.875rem;
+}
+
+.c-btn-view:hover::after,
+.c-btn-view--white:hover::after {
+	right: 0.3125rem;
 }
 
 .c-btn {
@@ -3476,6 +3614,14 @@ a:hover {
 	font-size: 0.875rem;
 }
 
+.p-card-blog__img:hover img {
+	transform: translateY(-50%) scale(1.1);
+}
+
+.p-card-works__img:hover img {
+	transform: translateY(-50%) scale(1.1);
+}
+
 .p-cards-list-02 {
 	display: flex;
 	flex-wrap: wrap;
@@ -3518,6 +3664,10 @@ a:hover {
 	margin-top: 2.5rem;
 }
 
+.p-category__item a:hover::after {
+	right: 0.625rem;
+}
+
 .p-concept {
 	padding-bottom: 4.375rem;
 	padding-top: 6.5625rem;
@@ -3549,7 +3699,7 @@ a:hover {
 	margin-top: 3.125rem;
 }
 
-.p-contact__contents {
+.p-contact__form {
 	margin-top: 3.125rem;
 }
 
@@ -3668,13 +3818,21 @@ a:hover {
 	width: 8.125rem;
 }
 
-.p-introduction__archive {
+.p-introduction__previous a:hover::after {
+	left: 0.3125rem;
+}
+
+.p-introduction__archive a {
 	font-size: 1rem;
 }
 
 .p-introduction__next a {
 	font-size: 1rem;
 	width: 8.125rem;
+}
+
+.p-introduction__next a:hover::after {
+	right: 0.3125rem;
 }
 
 .p-menu__block {
@@ -3734,12 +3892,18 @@ a:hover {
 }
 
 .p-mv__title {
-	font-size: 3.125rem;
+	bottom: 5%;
+	font-size: min(30vw, 7.5rem);
+	left: 5%;
 }
 
 .p-mv__scroll {
 	font-size: 1rem;
 	right: 1.6875rem;
+}
+
+.p-page-top:hover {
+	opacity: .7;
 }
 
 .p-pagination {
@@ -3861,6 +4025,19 @@ a:hover {
 	width: 1.875rem;
 }
 
+.p-works-top {
+	padding-bottom: 4.375rem;
+	padding-top: 4.375rem;
+}
+
+.p-works-top__contents {
+	margin-top: 3.125rem;
+}
+
+.p-works-top__btn {
+	margin-top: 3.75rem;
+}
+
 .p-works {
 	padding-bottom: 4.375rem;
 	padding-top: 4.375rem;
@@ -3913,6 +4090,10 @@ html {
 
 .p-cards-list-03__card:nth-child(n+4) {
 	margin-top: 2.5rem;
+}
+
+.p-mv__title {
+	font-size: min(30vw, 10rem);
 }
 
 .u-hidden-pc {
