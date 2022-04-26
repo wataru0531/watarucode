@@ -2,7 +2,6 @@
 
 <!-- p-mv -->
 <div class="p-mv">
-  <!-- <h1 class="p-mv__title js-inview" style="color: <?php the_field('title_color', 10); ?>">wataru&nbsp;design</h1> -->
   <h1 class="p-mv__title js-inview" style="color: <?php the_field('title_color', 10); ?>">wataru<br>design</h1>
 
   <a class="p-mv__scroll" href="#concept" style="color: <?php the_field('scroll_color', 10); ?>">
@@ -55,16 +54,6 @@
           デザインを忠実に再現<br>
           保守性を考えた実装<br>
           ものづくりを楽しむ<br>
-        </p>
-        <p class="p-concept__text">
-          制作にあたってですが、デザインを忠実に再現することを心がけています。<br>
-          デザインには意図があり、デザインデータの値を測らなかったり、一部分のズレでもそれを多くの箇所で許容した実装をすると、当初想定されたデザインとは違うものとなってしまうからです。
-          ですので実装者側の判断のみでデザインを変更することや、ソースコードの保守性を優先するあまりデザインの再現を無視することなどはあってはならないと考えています。 
-        </p>
-        <p class="p-concept__text">
-          ただし現実的にですが、デザインを再現することよりもソースコードの保守性を優先させた方がいい場合もあります（その場合は必ず相談いたします）。
-          それは、パーツごとにソースコードを共通化させた方がいいケースがあるなどの場合です。
-          デザインは再現されていてもソースコードに保守性がなければ今後のWEBサイトの運用に支障をきたてしまうからです。
         </p>
         <p class="p-concept__text">
           デザインの再現と保守を両立させ、完成度の高い実装を施していくことを目標としています。
@@ -174,7 +163,7 @@
         </div>
         <div class="p-blog-top__box">
           <p class="p-blog-top__description">
-            制作過程や学習で学んだこと（主にHTML、CSS、JavaScript、WordPress、デザイン）について発信していきます。
+            実装の過程や学習で学んだことについて発信します。
           </p>
           <div class="p-blog-top__btn">
             <a class="c-btn-blog" href="<?php echo esc_url(home_url('blog')); ?>">WATARU&nbsp;LOGへ</a>
