@@ -119,16 +119,4 @@
   </div>
 </div><!-- l-container -->
 
-
-
-
-
-
-
-
-
-
-
-
-
 <?php get_footer(); ?>

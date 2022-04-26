@@ -4,7 +4,7 @@
     <!-- the_search_query()...検索ワード出力する。 -->
     <input class="c-search-form__input" type="text" name="s" placeholder="検索" value="<?php the_search_query(); ?>">
 
-    <button class="c-search-form__btn">
+    <button type="submit" class="c-search-form__btn">
       <img src="<?php echo get_template_directory_uri(); ?>/assets/img/search.png" alt="">
     </button>
   </form>

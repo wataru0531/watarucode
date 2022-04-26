@@ -2,7 +2,7 @@
 
 
 - WordPressThemeは必要に応じて変更してください
-	- WordPressTheme
+  - WordPressTheme
 	- sass
 	- gulpfile.js
 	- package.json
