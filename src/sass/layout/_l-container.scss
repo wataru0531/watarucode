@@ -1,0 +1,16 @@
+/******************************************************************
+
+.l-container mix-blend-modeを効かせるためにpadding-topとで対応。
+              また、background-colorで白をしているする。
+
+******************************************************************/
+@use '../global/' as *;
+
+.l-container{
+  padding-top: rem(50);
+  background-color: $white;
+
+  @include mq('tab'){
+    padding-top: rem(70);
+  }
+}

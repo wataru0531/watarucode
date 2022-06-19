@@ -1,0 +1,26 @@
+/******************************************************************
+
+.p-sns
+
+******************************************************************/
+@use '../global/' as *;
+
+.p-sns__item:not(:first-child){
+  margin-top: rem(25);
+
+  @include mq('tab'){
+    margin-top: rem(35);
+  }
+}
+
+.p-sns__item a{
+  display: block;
+}
+
+.p-sns__item a img{
+  width: rem(25);
+  
+  @include mq('tab'){
+    width: rem(30);
+  }
+}

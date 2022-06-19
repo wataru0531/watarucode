@@ -1,0 +1,17 @@
+/******************************************************************
+
+.p-footer
+
+******************************************************************/
+@use '../global/' as *;
+
+.p-footer{
+  padding-top: rem(30);
+  padding-bottom: rem(30);
+}
+.p-footer__copyright{
+  font-size: rem(16);
+  line-height: 1;
+  text-align: center;
+}
+

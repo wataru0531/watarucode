@@ -1,0 +1,93 @@
+/******************************************************************
+
+.c-scroll-dows  メインビジュアルのスクロールダウン
+
+******************************************************************/
+@use '../global/' as *;
+
+.c-scroll-down{
+  padding-top: rem(10);
+  // padding-bottom: rem(110);
+  padding-bottom: rem(120);
+  padding-right: rem(10);
+  padding-left: rem(10);
+  display: block;
+  font-family: $font-family-sub;
+  font-weight: bold;
+  font-size: rem(14);
+  line-height: 1;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  writing-mode: vertical-lr;
+  overflow: hidden;
+  
+  @include mq('tab'){
+    font-size: rem(16);
+  }
+}
+
+// ライン
+.c-scroll-down::before{
+  content: '';
+  display: block;
+  width: rem(1);
+  height: rem(100);
+  background-color: $bgWhite;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+
+  // @include animation(
+  //   $name: scrollDownLine,
+  //   $duration: 3s,
+  //   $timing-function: cubic-bezier(1, 0, 0, 1),
+  //   $iteration-count: infinite,
+  // )
+}
+
+// 球
+.c-scroll-down__circle{
+  display: inline-block;
+  width: rem(12);
+  height: rem(12);
+  border-radius: 50%;
+  position: absolute;
+  top: rem(68);
+  left: 50%;
+  transform: translateX(-44%);
+
+  @include mq('tab'){
+    top: rem(73);
+  }
+
+  @include animation(
+    $name: circleDown,
+    $duration: 3s,
+    $iteration-count: infinite
+  )
+
+  // animation-name: circleDown;
+  // animation-duration: 3s;
+  // animation-iteration-count: infinite;
+  // animation-fill-mode: both;
+  // animation-fill-mode: backwards;
+  // animation-fill-mode: forwards;
+  // animation-fill-mode: none;
+}
+
+// 動くライン
+// .c-scroll-down__line{
+//   display: block;
+//   width: rem(1);
+//   height: rem(100);
+//   position: absolute;
+//   bottom: 0;
+//   left: 50%;
+//   transform: translateX(-50%);
+
+//   animation-name: downLine;
+//   animation-duration: 1.5s;
+//   animation-timing-function: cubic-bezier(1, 0, 0, 1);
+//   animation-iteration-count: infinite;
+// }

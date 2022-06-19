@@ -1,25 +1,23 @@
-# wp-flocss-rem-fromSPの使い方
+# gulp + webpack　の使い方
 
+- できること
+  - SCSSコンパイル(FLOCSS)、CSS圧縮
+	- JS圧縮・トランスパイル
+	- Webp画像生成
+	- 
 
-- WordPressThemeは必要に応じて変更してください
-  - WordPressTheme
-	- sass
-	- gulpfile.js
-	- package.json
-	- .gitignore
-	- index.php
+# gulp + webpack　の使い方
+- npm install でnode_modules生成
+- themeNameを任意のテーマ名に変更
+- npm run dev → 開発時
+- npm run build → 納品時
 
-## JSの記述
-- assets内のjsフォルダ内で直書きする
+# 注意
+- 画像の圧縮は含めない。よってsrcファルだではなくassetsフォルダのimagesフォルダに圧縮した画像を直接保存。
 
+# Webp画像の生成について
+- 手順① assets > images > webpに圧縮した画像を保存。
+- 手順② npm run webp　でWebp画像生成。
+- 手順③ gulp cleanWebp でwebpフォルダ内のWebp画像以外を削除
+- 注意...たまにWebp画像が生成されなかったりするのでその時は、npm run devを打ったり、もう一度コマンドを打って生成したりしてみる。
 
-## 画像
-- assets内のimgフォルダ内で直書きする
-- 必要に応じてフォルダを作成してその中にいれる
-- 自動圧縮は削除。最後に圧縮作業をする
-
-## 使い方
-- npm i でインストール → node_modulesが生成されればOK
-- npx gulp で起動
-# wp-flocss-rem-fromSP
-# wp-flocss-rem-fromSP

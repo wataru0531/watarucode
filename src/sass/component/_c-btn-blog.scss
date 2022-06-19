@@ -1,0 +1,44 @@
+/******************************************************************
+
+.c-btn-blog トップページ　BLOGセクションのボタン
+
+******************************************************************/
+@use '../global/' as *;
+
+.c-btn-blog{
+  display: inline-block;
+  padding-top: rem(13);
+  padding-bottom: rem(13);
+  padding-right: rem(40);
+  padding-left: rem(40);
+  font-size: rem(14);
+  line-height: 1;
+  font-weight: normal;
+  color: $white;
+  background-color: transparent;
+  text-align: center;
+  border: rem(1) solid $white;
+  border-radius: rem(20);
+  position: relative;
+
+}
+
+.c-btn-blog::after{
+  content: '';
+  display: block;
+  width: rem(8);
+  height: rem(8);
+  border-bottom: rem(2) solid $white;
+  border-right: rem(2) solid $white;
+  position: absolute;
+  top: 50%;
+  right: rem(15);
+  transform: rotate(-45deg) translateY(-50%);
+  transition: all .3s;
+}
+
+.c-btn-blog:hover::after{
+  @include mq('tab'){
+    right: rem(10);
+  }
+}

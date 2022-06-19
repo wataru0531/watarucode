@@ -1,0 +1,198 @@
+/******************************************************************
+
+.p-single 記事詳細ページ single.phpのコンテンツ部分
+
+******************************************************************/
+@use '../global/' as *;
+
+.p-single__title{
+  font-size: rem(24);
+  line-height: 1.5;
+  color: $text-color;
+  font-weight: bold;
+}
+
+.p-single__box{
+  margin-top: rem(20);
+  display: flex;
+  align-items: center;
+}
+
+.p-single__category{
+  margin-right: rem(10);
+}
+
+.p-single__time{
+  font-size: rem(14);
+  line-height: 1;
+  font-weight: normal;
+  color: $text-color;
+}
+
+.p-single__img{
+  margin-top: rem(20);
+  overflow: hidden;
+  position: relative;
+}
+
+.p-single__img::before{
+  content: '';
+  display: block;
+  padding-top: 56.25%;
+}
+
+.p-single__img img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.p-single__contents{
+  margin-top: rem(40);
+
+  @include mq('tab'){
+    margin-top: rem(50);
+  }
+}
+
+.p-single__relation{
+  margin-top: rem(30);
+
+  @include mq('tab'){
+    margin-top: rem(40);
+  }
+}
+
+/******************************************************************
+
+ブログ記事のカスタム
+
+******************************************************************/
+// pタグ
+.p-single__contents p{
+  font-size: rem(14);
+  color: $text-color;
+  margin-bottom: rem(30);
+
+  @include mq('tab'){
+    font-size: rem(16);
+    margin-bottom: rem(40);
+  }
+}
+
+// h2タグ
+.p-single__contents h2{
+  margin-bottom: rem(30);
+  padding-top: rem(10);
+  padding-bottom: rem(10);
+  padding-right: rem(20);
+  padding-left: rem(20);
+
+  font-size: rem(18);
+  font-weight: bold;
+  color: $text-color;
+  background-color: $background;
+  border-left: rem(8) solid $coral;
+
+  @include mq('tab'){
+    margin-bottom: rem(40);
+    padding-top: rem(20);
+    padding-bottom: rem(20);
+    padding-right: rem(40);
+    padding-left: rem(40);
+    font-size: rem(24);
+  }
+}
+
+// h3タグ
+.p-single__contents h3{
+  margin-bottom: rem(30);
+  padding-top: rem(2);
+  padding-bottom: rem(2);
+  padding-right: rem(10);
+  padding-left: rem(10);
+  font-size: rem(16);
+  font-weight: bold;
+  color: $text-color;
+  border-left: rem(5) solid $coral;
+
+  @include mq('tab'){
+    margin-bottom: rem(40);
+    padding-top: rem(4);
+    padding-bottom: rem(4);
+    padding-right: rem(20);
+    padding-left: rem(20);
+    font-size: rem(20);
+  }
+}
+
+// img画像
+.p-single__contents img{
+  height: auto;
+}
+
+// リンク文字
+.p-single__contents a{
+  color: $link;
+}
+
+// ulタグ
+.p-single__contents ul{
+  margin-bottom: rem(30);
+  padding-top: rem(20);
+  padding-bottom: rem(20);
+  padding-right: rem(20);
+  padding-left: rem(20);
+  font-size: rem(14);
+  font-weight: normal;
+  color: $text-color;
+  background-color: $background;
+
+  @include mq('tab'){
+    margin-bottom: rem(40);
+    font-size: rem(16);
+  }
+}
+
+// listタグ
+.p-single__contents li:not(:first-child){
+  margin-top: rem(10);
+
+  @include mq('tab'){
+    margin-top: rem(20);
+  }
+}
+
+// codeタグ
+.p-single__contents code{
+  display: block;
+  padding-top: rem(20);
+  padding-bottom: rem(20);
+  padding-right: rem(20);
+  padding-left: rem(20);
+  font-size: rem(14);
+  font-weight: normal;
+  color: $white;
+  background-color: $text-color;
+
+  @include mq('tab'){
+    font-size: rem(16);
+  }
+}
+
+.p-single__contents .marker{
+  background: linear-gradient(transparent 60%, $yellow 60%);
+}
+
+// 赤字にする
+.p-single__contents .red{
+  color: $red;
+}
+
+.p-single__contents .yellow{
+  color: $yellow;
+}

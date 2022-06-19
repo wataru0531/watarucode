@@ -1,0 +1,43 @@
+/******************************************************************
+
+.p-works
+
+******************************************************************/
+@use '../global/' as *;
+
+.p-works{
+  padding-top: rem(50);
+  padding-bottom: rem(50);
+  background-color: $white;
+  opacity: 0;
+
+  @include mq('tab'){
+    padding-top: rem(70);
+    padding-bottom: rem(70);
+  }
+}
+
+.p-works.is-inview{
+  @include animation($name: fadeIn, $duration: 1.5s);
+}
+
+.p-works__header{
+  margin-top: rem(-20);
+}
+
+.p-works__contents{
+  margin-top: rem(40);
+  @include mq('tab'){
+    margin-top: rem(50);
+  }
+}
+
+
+.p-works__btn{
+  margin-top: rem(40);
+  text-align: right;
+  
+  @include mq('tab'){
+    margin-top: rem(60);
+  }
+}

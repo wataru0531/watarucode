@@ -1,0 +1,42 @@
+/******************************************************************
+
+p-contact
+
+******************************************************************/
+@use '../global/' as *;
+
+.p-contact{
+  padding-top: rem(50);
+  padding-bottom: rem(50);
+  opacity: 0;
+
+  @include mq('tab'){
+    padding-top: rem(70);
+    padding-bottom: rem(70);
+  }
+}
+
+.p-contact.is-inview{
+  @include animation($name: fadeIn, $duration: 1.5s);
+}
+
+.p-contact__header{
+  margin-top: rem(-20);
+}
+
+.p-contact__description{
+  margin-top: rem(40);
+  font-size: rem(14);
+  
+  @include mq('tab'){
+    margin-top: rem(50);
+    font-size: rem(16);
+  }
+}
+
+.p-contact__form{
+  margin-top: rem(40);
+  @include mq('tab'){
+    margin-top: rem(50);
+  }
+}

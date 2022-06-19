@@ -1,0 +1,128 @@
+/******************************************************************
+
+.p-global-nav ヘッダーナビゲーション
+
+******************************************************************/
+@use '../global/' as *;
+
+.p-global-nav{
+  height: inherit;
+}
+
+.p-global-nav__items{
+  height: inherit;
+  display: flex;
+}
+
+.p-global-nav__item{
+  height: inherit;
+}
+
+.p-global-nav__item a{
+  padding-right: rem(15);
+  padding-left: rem(15);
+  height: inherit;
+  font-family: $font-family-sub;
+  font-weight: bold;
+  font-size: rem(18);
+  line-height: 1;
+  letter-spacing: 0.02em;
+  //mix-blend-modeを効かせるために反転したカラーを指定。
+  color: $white;
+  text-transform: uppercase;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.p-global-nav__item a > span{
+  display: inline-block;
+  overflow: hidden;
+}
+.p-global-nav__item > a:hover > span > span > span{
+  display: inline-block;
+}
+
+// 共通 keyframesをあてる
+.p-global-nav__item > a:hover > span > span > span{
+  @include animation(
+    $name: accordionText,
+    $duration: .3s,
+  )
+}
+// TOP
+@for $i from 1 through 3 {
+  .p-global-nav__item:nth-child(1) > a:hover > span > span > span:nth-child(#{$i}){
+    animation-delay: $i * 0.08s;
+  }
+}
+
+// CONCEPT文字アニメーション
+@for $i from 1 through 7 {
+  .p-global-nav__item:nth-child(2) > a:hover > span > span > span:nth-child(#{$i}){
+    animation-delay: $i * 0.08s;
+  }
+}
+
+// WORKS
+@for $i from 1 through 7 {
+  .p-global-nav__item:nth-child(3) > a:hover > span > span > span:nth-child(#{$i}){
+    animation-delay: $i * 0.08s;
+  }
+}
+
+// BLOG
+@for $i from 1 through 4 {
+  .p-global-nav__item:nth-child(4) > a:hover > span > span > span:nth-child(#{$i}){
+    animation-delay: $i * 0.08s;
+  }
+}
+
+// PRICE
+@for $i from 1 through 5 {
+  .p-global-nav__item:nth-child(5) > a:hover > span > span > span:nth-child(#{$i}){
+    animation-delay: $i * 0.08s;
+  }
+}
+
+// ABOUT
+@for $i from 1 through 5 {
+  .p-global-nav__item:nth-child(6) > a:hover > span > span > span:nth-child(#{$i}){
+    animation-delay: $i * 0.08s;
+  }
+}
+
+// CONTACT
+@for $i from 1 through 7{
+  .p-global-nav__item:nth-child(7) > a:hover > span > span > span:nth-child(#{$i}){
+    animation-delay: $i * 0.08s;
+  }
+}
+
+
+.p-global-nav__item a::after{
+  content: '';
+  display: block;
+  width: calc(100% - #{rem(30)});
+  height: rem(1);
+  background-color: $white;
+  
+  position: absolute;
+  bottom: rem(25);
+  left: rem(15);
+  transform-origin: right;
+  transform: scale(0, 1);
+  transition: transform .2s;
+}
+// aタグホバー時
+.p-global-nav__item a:hover::after{
+  transform-origin: left;
+  transform: scale(1, 1);
+}
+// カレント表示
+.p-global-nav__item.is-current a::after{
+  transform: scale(1, 1);
+}

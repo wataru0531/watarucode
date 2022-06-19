@@ -1,0 +1,18 @@
+/******************************************************************
+
+.c-btn-top
+
+******************************************************************/
+@use '../global/' as *;
+
+.c-btn-top{
+  padding: rem(10);
+  // width: rem(160);
+  display: inline-block;
+  font-size: rem(16);
+  line-height: 1;
+  color: $text-color;
+  font-weight: normal;
+  border-bottom: rem(1) solid $text-color;
+  position: relative;
+}

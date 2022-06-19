@@ -1,0 +1,42 @@
+/******************************************************************
+
+.p-works-archive  下層ページのworks アーカイブページ
+
+******************************************************************/
+@use '../global/' as *;
+
+.p-works-archive{
+  padding-top: rem(50);
+  padding-bottom: rem(50);
+  background-color: $white;
+
+  @include mq('tab'){
+    padding-top: rem(70);
+    padding-bottom: rem(70);
+  }
+}
+
+.p-works-archive.is-inview{
+  @include animation($name: fadeIn, $duration: 1.5s);
+}
+
+.p-works-archive__header{
+  margin-top: rem(-20);
+}
+
+.p-works-archive__contents{
+  margin-top: rem(40);
+  @include mq('tab'){
+    margin-top: rem(50);
+  }
+}
+
+
+.p-works-archive__btn{
+  margin-top: rem(40);
+  text-align: right;
+  
+  @include mq('tab'){
+    margin-top: rem(60);
+  }
+}

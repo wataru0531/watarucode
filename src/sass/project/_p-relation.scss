@@ -1,0 +1,45 @@
+/******************************************************************
+
+.p-relation 関連記事
+
+******************************************************************/
+@use '../global/' as *;
+
+.p-relation__header{
+  padding-top: rem(10);
+  padding-bottom: rem(10);
+  position: relative;
+}
+
+.p-relation__title{
+  font-size: rem(16);
+  font-weight: bold;
+  line-height: 1;
+  color: $text-color;
+}
+
+.p-relation__title::before{
+  content: '';
+  display: block;
+  width: 100%;
+  height: rem(1);
+  background-color: $gray;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.p-relation__title::after{
+  content: '';
+  display: block;
+  width: 40%;
+  height: rem(1);
+  background-color: $coral;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.p-relation__items{
+  margin-top: rem(20);
+}

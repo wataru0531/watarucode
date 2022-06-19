@@ -1,0 +1,29 @@
+/******************************************************************
+
+.c-menus
+
+******************************************************************/
+@use '../global/' as *;
+
+.c-menus{
+  height: 1em;
+  font-family: $font-family-sub;
+  font-weight: bold;
+  font-size: rem(14);
+  line-height: 1;
+  letter-spacing: normal;
+  color: $white;
+  text-align: center;
+  text-transform: uppercase;
+
+  overflow: hidden;
+}
+
+.c-menus span{
+  display: block;
+  transition: all .3s;
+}
+
+.c-menus.is-switch span{
+  transform: translateY(-1em);
+}

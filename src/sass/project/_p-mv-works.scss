@@ -1,0 +1,83 @@
+/******************************************************************
+
+.p-mv-works
+
+******************************************************************/
+@use '../global/' as *;
+
+.p-mv-works{
+  width: 100%;
+  height: rem(250);
+  background-color: $white;
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  
+  @include mq('tab'){
+    height: rem(350);
+  }
+}
+
+.p-mv-works__inner{
+  padding-top: rem(56);
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @include mq('tab'){
+    padding-top: rem(80);
+  }
+}
+
+.p-mv-works__subtitle{
+  font-family: $font-family-sub;
+  font-size: rem(40);
+  line-height: 1;
+  letter-spacing: 0.02em;
+  font-weight: bold;
+  text-transform: uppercase;
+
+  @include mq('tab'){
+    font-size: rem(50);
+  }
+}
+
+.p-mv-works__title{
+  padding-left: rem(27);
+  font-size: rem(16);
+  line-height: 3;
+  font-weight: normal;
+  font-weight: bold;
+  position: relative;
+
+  @include mq('tab'){
+    padding-left: rem(32);
+    font-size: rem(18);
+  }
+}
+
+.p-mv-works__line{
+  display: block;
+  width: rem(20);
+  height: rem(2);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+
+  @include mq('tab'){
+    width: rem(25);
+  }
+}
+
+.p-mv-works__title-single{
+  font-size: rem(30);
+  line-height: 1.5;
+  font-weight: bold;
+
+  @include mq('tab'){
+    font-size: rem(40);
+  }
+}

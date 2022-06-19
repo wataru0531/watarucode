@@ -1,0 +1,34 @@
+/******************************************************************
+
+p-sns-drawer  SNS群(twitter、instagram)
+
+******************************************************************/
+@use '../global/' as *;
+
+// SNS群
+.p-sns-drawer__item{
+  overflow: hidden;
+}
+
+.p-sns-drawer__item:first-child{
+  margin-right: rem(20);
+}
+
+.p-sns-drawer__item  a{
+  display: block;
+
+  // opacity: 0;
+  transform: translateY(rem(40));
+}
+
+.p-sns-drawer__item  a  img{
+  width: rem(40);
+}
+
+.p-drawer.is-slide .p-sns-drawer__item  a{
+  @include animation(
+    $name: emergeUpSns,
+    $duration: .5s,
+    $delay: .4s,
+  );
+}

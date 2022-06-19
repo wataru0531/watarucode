@@ -1,0 +1,81 @@
+/******************************************************************
+
+.p-category
+
+******************************************************************/
+@use '../global/' as *;
+
+.p-category__header{
+  padding-top: rem(10);
+  padding-bottom: rem(10);
+  position: relative;
+}
+
+.p-category__title{
+  font-size: rem(16);
+  font-weight: bold;
+  line-height: 1;
+  color: $text-color;
+}
+
+.p-category__title::before{
+  content: '';
+  display: block;
+  width: 100%;
+  height: rem(1);
+  background-color: $gray;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.p-category__title::after{
+  content: '';
+  display: block;
+  width: 40%;
+  height: rem(1);
+  background-color: $coral;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.p-category__items{
+  margin-top: rem(20);
+}
+
+.p-category__item{
+  border-bottom: rem(1) solid $gray;
+}
+
+.p-category__item a{
+  padding-top: rem(10);
+  padding-bottom: rem(10);
+  padding-right: rem(5);
+  padding-left: rem(5);
+  display: block;
+  font-size: rem(14);
+  line-height: 1;
+  color: $text-color;
+  position: relative;
+}
+
+.p-category__item a::after{
+  content: '';
+  display: block;
+  width: rem(5);
+  height: rem(5);
+  border-right: rem(2) solid $text-color;
+  border-bottom: rem(2) solid $text-color;
+  position: absolute;
+  top: 50%;
+  right: rem(15);
+  transform: rotate(-45deg) translateY(-50%);
+  transition: all .3s;
+}
+
+.p-category__item a:hover::after{
+  @include mq('tab'){
+    right: rem(10);
+  }
+}

@@ -9,17 +9,12 @@
 </div><!-- p-mv-404 -->
 
 <!-- p-breadcrumb -->
-<div class="p-breadcrumb">
-  <div class="p-breadcrumb__inner l-inner">
-    <?php
-      if(function_exists('bcn_display')){
-        bcn_display();
-      }
-    ?>
-  </div>
-</div><!-- p-breadcrumb -->
+<?php get_template_part('template-parts/content', 'breadcrumb'); ?>
+<!-- p-breadcrumb -->
 
+<!-- l-min-height -->
 <main class="l-min-height">
+
   <!-- l-404 -->
   <section class="l-404 p-404">
     <div class="p-404__inner l-inner">
@@ -29,12 +24,11 @@
         <p class="p-404__text">申し訳ありませんが、お探しのページは移動または削除された可能性があります。</p>
         <p class="p-404__text">ヘッダーよりメニューを選択されるか、トップページにお戻りください。</p>
       </div>
-      
       <div class="p-404__btn">
         <a href="<?php echo esc_url(home_url('/')); ?>" class="c-btn-top">トップページへ</a>
       </div>
     </div>
   </section><!-- l-404 -->
-</main>
+</main><!-- l-min-height -->
 
 <?php get_footer(); ?>

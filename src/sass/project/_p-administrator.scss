@@ -1,0 +1,95 @@
+/******************************************************************
+
+.p-administrator
+
+******************************************************************/
+@use '../global/' as *;
+
+.p-administrator{
+  padding-top: rem(30);
+  padding-bottom: rem(30);
+  padding-right: rem(15);
+  padding-left: rem(15);
+  border: rem(1) solid $gray;
+}
+
+.p-administrator__img{
+  margin: 0 auto;
+  width: rem(120);
+  height: rem(120);
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.p-administrator__img img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.p-administrator__name{
+  margin-top: rem(10);
+  font-size: rem(14);
+  line-height: 1;
+  color: $text-color;
+  text-align: center;
+  @include mq('tab'){
+    margin-top: rem(15);
+  }
+}
+
+.p-administrator__job{
+  margin-top: rem(10);
+  font-size: rem(14);
+  line-height: 1;
+  color: $text-color;
+  text-align: center;
+  opacity: .7;
+  @include mq('tab'){
+    margin-top: rem(15);
+  }
+} 
+
+.p-administrator__text{
+  margin-top: rem(10);
+  font-size: rem(14);
+  color: $text-color;
+  text-align: center;
+  @include mq('tab'){
+    margin-top: rem(15);
+  }
+}
+
+.p-administrator__painting{
+  margin-top: rem(30);
+  overflow: hidden;
+  position: relative;
+
+  @include mq('tab'){
+    margin-top: rem(40);
+  }
+}
+
+.p-administrator__painting::before{
+  content: '';
+  display: block;
+  padding-top: 56.25%;
+}
+
+.p-administrator__painting img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.p-administrator__btn{
+  margin-top: rem(30);
+  text-align: center;
+  @include mq('tab'){
+    margin-top: rem(40);
+  }
+}
