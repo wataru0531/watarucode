@@ -4,13 +4,13 @@
 <div class="p-mv">
   <h1 class="p-mv__title js-inview" style="color: <?php the_field('title_color', 10); ?>">wataru<br>design</h1>
 
-  <a class="p-mv__scroll" href="#concept" style="color: <?php the_field('scroll_color', 10); ?>">
+  <a class="p-mv__scroll c-scroll-down" href="#concept" style="color: <?php the_field('scroll_color', 10); ?>">
     scroll
-    <span class="c-line-down" style="background-color: <?php the_field('line_color', 10); ?>"></span>
+    <span class="c-scroll-down__circle" style="background-color: <?php the_field('line_color', 10); ?>"></span>
   </a>
   <?php $slider_images = SCF::get('slider_images', 10); ?>
   <?php if($slider_images[0]['image']): ?>
-    <div class="swiper-container swiper-mv">
+    <div class="swiper swiper-mv">
       <div class="swiper-wrapper">
         <?php foreach($slider_images as $slider_image): ?>
           <div class="swiper-slide">
@@ -24,7 +24,7 @@
   <?php else: ?>
   <!-- swiper画像が登録されていなかった場合に表示 -->
     <?php if(get_field('mv_image')): ?>
-    <!-- 画像が登録されていれば表示 -->
+    <!-- ACFに画像が登録されていれば表示 -->
       <div class="p-mv__img">
         <img src="<?php the_field('mv_image', 10); ?>" alt="">
       </div>
@@ -32,7 +32,9 @@
   <?php endif; ?>
 </div><!-- p-mv -->
 
+<!-- l-min-height -->
 <main class="l-min-height">
+
   <!-- p-concept -->
   <section class="p-concept js-inview" id="concept">
     <div class="p-concept__inner l-inner">
@@ -62,18 +64,18 @@
     </div>
   </section><!-- p-concept -->
 
-  <!-- l-works-top -->
-  <section class="l-works-top p-works-top js-inview" id="works">
-    <div class="p-works-top__inner l-inner">
-      <div class="p-works-top__background-text">
+  <!-- l-works -->
+  <section class="l-works p-works js-inview" id="works">
+    <div class="p-works__inner l-inner">
+      <div class="p-works__background-text">
         <span class="c-background-text--gray">works</span>
       </div>
-      <div class="p-works-top__header">
+      <div class="p-works__header">
         <div class="c-section-subtitle">works</div>
         <h2 class="c-section-title">制作実績</h2>
       </div>
-      <div class="p-works-top__contents">
-        <div class="swiper-container swiper-works">
+      <div class="p-works__contents">
+        <div class="swiper swiper-works">
           <div class="swiper-pagination"></div>
           <ul class="swiper-wrapper">
             <?php
@@ -87,9 +89,17 @@
             ?>
             <?php if($wp_query->have_posts()): ?>
               <?php while($wp_query->have_posts()): $wp_query->the_post(); ?>
+                
                 <li class="swiper-slide p-card-works">
                   <a class="p-card-works__img" href="<?php the_permalink(); ?>">
-                    <img src="<?php the_field('image'); ?>" alt="">
+                    <?php if(get_field('image')): ?>
+                      <img src="<?php the_field('image'); ?>" alt="<?php the_title_attribute(); ?>">
+                    <?php else: ?>
+                      <picture>
+                        <source type="image/webp" srcset="<?php echo get_template_directory_uri(); ?>/assets/images/webp/works-no-image.webp" />
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/works-no-image.jpg" alt="">
+                      </picture>
+                    <?php endif; ?>
                   </a>
                   <div class="p-card-works__body">
                     <h3 class="p-card-works__title"><?php the_title(); ?></h3>
@@ -101,25 +111,25 @@
           </ul>
         </div>
       </div>
-      <div class="p-works-top__btn">
+      <div class="p-works__btn">
         <a class="c-btn-view" href="<?php echo esc_url(home_url('works')); ?>">view&nbsp;more</a>
       </div>
     </div>
-  </section><!-- l-works-top -->
+  </section><!-- l-works -->
 
-  <!-- l-blog-top -->
-  <section class="l-blog-top p-blog-top js-inview" id="blog">
-    <div class="p-blog-top__background-text l-inner">
+  <!-- l-blog -->
+  <section class="l-blog p-blog js-inview" id="blog">
+    <div class="p-blog__background-text l-inner">
       <span class="c-background-text--gray">blog</span>
     </div>
-    <div class="p-blog-top__header l-inner">
+    <div class="p-blog__header l-inner">
       <div class="c-section-subtitle">blog</div>
       <h2 class="c-section-title">ブログ</h2>
     </div>
-    <div class="p-blog-top__over-inner">
-      <div class="p-blog-top__inner l-inner">
-        <div class="swiper-container swiper-blog p-blog-top__swiper">
-          <ul class="swiper-wrapper p-blog-top__items">
+    <div class="p-blog__over-inner">
+      <div class="p-blog__inner l-inner">
+        <div class="swiper swiper-blog p-blog__swiper">
+          <ul class="swiper-wrapper p-blog__items">
             <?php
               $args = [
                 'post_type' => 'post',
@@ -131,12 +141,21 @@
             ?>
             <?php if($wp_query->have_posts()): ?>
               <?php while($wp_query->have_posts()): $wp_query->the_post(); ?>
-                <li class="swiper-slide p-blog-top__item p-card-blog">
+                <li class="swiper-slide p-blog__item p-card-blog">
                   <a class="p-card-blog__img" href="<?php the_permalink(); ?>">
-                    <?php if(has_post_thumbnail()): ?>
-                      <?php the_post_thumbnail(); ?>
+                    <?php 
+                      $attach_id = get_post_thumbnail_id($post->ID);
+                      // var_dump($attach_id);
+                      $image = wp_get_attachment_image_src($attach_id, 'full');
+                      // var_dump($image);
+                    ?>
+                    <?php if($image): ?>
+                      <img src="<?php echo $image[0]; ?>" alt="<?php the_title_attribute(); ?>">
                     <?php else: ?>
-                      <img src="<?php echo get_template_directory_uri(); ?>/assets/img/blog-no-image.jpeg" alt="">
+                      <picture>
+                        <source type="image/webp" srcset="<?php echo get_template_directory_uri(); ?>/assets/images/webp/blog-no-image.webp" />
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/blog-no-image.jpeg" alt="">
+                      </picture>
                     <?php endif; ?>
                     <span class="p-card-blog__category" style="background-color: <?php the_field('background_color', 'category_' . get_the_category()[0]->cat_ID); ?>">
                         <?php
@@ -147,7 +166,7 @@
                     </span>
                   </a>
                   <div class="p-card-blog__body">
-                    <div class="p-blog__box">
+                    <div class="p-card-blog__box">
                       <h3 class="p-card-blog__title"><?php the_title(); ?></h3>
                       <div class="p-card-blog__content"><?php echo get_flexible_content(60); ?></div>
                     </div>
@@ -161,17 +180,17 @@
           <!-- swiperページネーション -->
           <div class="swiper-pagination"></div>
         </div>
-        <div class="p-blog-top__box">
-          <p class="p-blog-top__description">
+        <div class="p-blog__box">
+          <p class="p-blog__description">
             実装の過程や学習で学んだことについて発信します。
           </p>
-          <div class="p-blog-top__btn">
+          <div class="p-blog__btn">
             <a class="c-btn-blog" href="<?php echo esc_url(home_url('blog')); ?>">WATARU&nbsp;LOGへ</a>
           </div>
         </div>
       </div>
     </div>
-  </section><!-- l-blog-top -->
+  </section><!-- l-blog -->
 
   <!-- l-price -->
   <section class="l-price p-price js-inview" id="price">
@@ -217,6 +236,11 @@
         <figure class="p-about__img">
           <?php if(get_field('face_image', 10)): ?>
             <img src="<?php the_field('face_image', 10); ?>" alt="">
+          <?php else: ?>
+            <picture>
+              <source type="image/webp" srcset="<?php echo get_template_directory_uri(); ?>/assets/images/webp/face-no-image.webp" />
+              <img src="<?php echo get_template_directory_uri(); ?>/assets/images/face-no-image.jpg" alt="">
+            </picture>
           <?php endif; ?>
         </figure>
         <div class="p-about__profiles">
@@ -266,6 +290,7 @@
       <?php echo do_shortcode('[contact-form-7 id="9" title="お問い合わせ"]'); ?>
     </div>
   </section><!-- l-contact -->
-</main>
+
+</main><!-- l-min-height -->
 
 <?php get_footer(); ?>

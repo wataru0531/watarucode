@@ -1,0 +1,80 @@
+/******************************************************************
+
+.p-blog  ブログセクション　トップページ
+
+******************************************************************/
+@use '../global/' as *;
+
+.p-blog{
+  padding-top: rem(50);
+  opacity: 0;
+
+  @include mq('tab'){
+    padding-top: rem(70);
+  }
+}
+
+.p-blog.is-inview{
+  @include animation($name: fadeIn, $duration: 1.5s);
+}
+
+.p-blog__header{
+  margin-top: rem(-20);
+}
+
+.p-blog__over-inner{
+  margin-top: rem(90);
+  padding-bottom: rem(50);
+  background-color: $text-color;
+  
+  @include mq('tab'){
+    margin-top: rem(110);
+    padding-bottom: 0;
+  }
+}
+
+.p-blog__inner{
+  @include mq('tab'){
+    display: flex;
+    flex-direction: row-reverse;
+  }
+}
+
+.p-blog__swiper{
+  transform: translateY(rem(-50));
+
+  @include mq('tab'){
+    transform: translateY(rem(-70));
+    flex: 1;
+  }
+  
+}
+
+.p-blog__box{
+  @include mq('tab'){
+    width: 40%;
+    margin-right: rem(20);
+    padding-top: rem(70);
+  }
+  @include mq('pc'){
+    margin-right: rem(30);
+  }
+}
+
+.p-blog__description{
+  font-size: rem(14);
+  font-weight: normal;
+  color: $white;
+  @include mq('tab'){
+    font-size: rem(16);
+  }
+}
+
+.p-blog__btn{
+  margin-top: rem(40);
+  text-align: left;
+
+  @include mq('tab'){
+    margin-top: rem(90);
+  }
+}

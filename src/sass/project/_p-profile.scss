@@ -1,0 +1,41 @@
+/******************************************************************
+
+p-profile
+
+******************************************************************/
+@use '../global/' as *;
+
+.p-profile__contents{
+  margin-top: rem(10);
+}
+
+.p-profile__title{
+  font-family: $font-family-sub;
+  font-size: rem(20);
+  font-weight: bold;
+  line-height: 1;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  @include mq('tab'){
+    font-size: rem(30);
+  }
+}
+
+.p-profile__resident{
+  font-size: rem(14);
+  line-height: 1;
+
+  @include mq('tab'){
+    font-size: rem(16);
+  }
+}
+
+.p-profile__hobby{
+  margin-top: rem(10);
+  font-size: rem(14);
+  line-height: 1;
+
+  @include mq('tab'){
+    font-size: rem(16);
+  }
+}

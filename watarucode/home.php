@@ -10,24 +10,19 @@
 </div><!-- p-mv-blog -->
 
 <!-- p-breadcrumb -->
-<div class="p-breadcrumb">
-  <div class="p-breadcrumb__inner l-inner">
-    <?php
-      if(function_exists('bcn_display')){
-        bcn_display();
-      }
-    ?>
-  </div>
-</div><!-- p-breadcrumb -->
+<?php get_template_part('template-parts/content', 'breadcrumb'); ?>
+<!-- p-breadcrumb -->
 
 <!-- l-container -->
 <div class="l-container p-container l-min-height">
   <div class="p-container__inner l-inner">
+    <!-- l-main -->
     <main class="l-main">
-      <section class="l-blog p-blog">
-        <div class="p-blog__inner">
-          <ul class="p-blog__items p-cards-list-02">
 
+      <!-- p-blog-archive -->
+      <section class="p-blog-archive">
+        <div class="p-blog-archive__inner">
+          <ul class="p-blog-archive__items p-cards-list-02">
             <?php $paged = get_query_var('paged')? get_query_var('paged') : 1; ?>
             <?php
               $args = [
@@ -40,12 +35,21 @@
             ?>
             <?php if($wp_query->have_posts()): ?>
               <?php while($wp_query->have_posts()): $wp_query->the_post(); ?>
-                <li class="p-cards-list-02__card p-card-blog">
+                
+              <li class="p-cards-list-02__card p-card-blog">
                   <a class="p-card-blog__img" href="<?php the_permalink(); ?>">
-                    <?php if(has_post_thumbnail()): ?>
-                      <?php the_post_thumbnail(); ?>
+                    <?php 
+                      $attach_id = get_post_thumbnail_id($post->id);
+                      $image = wp_get_attachment_image_src($attach_id, 'full');
+                      // var_dump($image);
+                    ?>
+                    <?php if($image): ?>
+                      <img src="<?php echo $image[0]; ?>" alt="<?php the_title_attribute(); ?>">
                     <?php else: ?>
-                      <img src="<?php echo get_template_directory_uri(); ?>/assets/img/blog-no-image.jpeg" alt="">
+                      <picture>
+                        <source type="image/webp" srcset="<?php echo get_template_directory_uri(); ?>/assets/images/webp/blog-no-image.webp" />
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/blog-no-image.jpeg" alt="">
+                      </picture>
                     <?php endif; ?>
                     <span class="c-category--absolute" style="background-color: <?php the_field('background_color', 'category_' . get_the_category()[0]->cat_ID); ?>">
                         <?php
@@ -56,16 +60,17 @@
                     </span>
                   </a>
                   <div class="p-card-blog__body">
-                    <div class="p-blog__box">
+                    <div class="p-card-blog__box">
                       <h2 class="p-card-blog__title--black"><?php the_title(); ?></h2>
                       <div class="p-card-blog__content--black"><?php echo get_flexible_content(80); ?></div>
                     </div>
                     <time class="p-card-blog__time--black" datetime="<?php the_time(get_option('date_format')); ?>"><?php the_time(get_option('date_format')); ?></time>
                   </div>
                 </li>
+
               <?php endwhile; ?>
             <?php else: ?>
-              <p class="p-blog__not-write">記事はありませんでした。</p>
+              <p class="p-blog-archive__not-write">記事はありませんでした。</p>
             <?php endif; ?>
             <?php wp_reset_postdata(); ?>
           </ul>
@@ -100,10 +105,10 @@
               <?php endif; ?>
             </div>
           </div><!-- l-pagination -->
-
+          
         </div>
-      </section>
-    </main>
+      </section><!-- p-blog-archive -->
+    </main><!-- l-main -->
 
     <!-- l-sidebar -->
     <aside class="l-sidebar p-sidebar">

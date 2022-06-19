@@ -5,7 +5,7 @@
     <input class="c-search-form__input" type="text" name="s" placeholder="検索" value="<?php the_search_query(); ?>">
 
     <button type="submit" class="c-search-form__btn">
-      <img src="<?php echo get_template_directory_uri(); ?>/assets/img/search.png" alt="">
+      <img src="<?php echo get_template_directory_uri(); ?>/assets/images/search.png" alt="">
     </button>
   </form>
 </div>
@@ -52,24 +52,31 @@
     ?>
     <?php if($wp_query->have_posts()): ?>
       <?php while($wp_query->have_posts()): $wp_query->the_post(); ?>
-        <li class="p-popular__item p-card-blog">
+        
+      <li class="p-popular__item p-card-blog">
           <a class="p-card-blog__img" href="<?php the_permalink(); ?>">
-            <?php if(has_post_thumbnail()): ?>
-              <?php the_post_thumbnail(); ?>
+            <?php 
+              $attach_id = get_post_thumbnail_id($post->ID);
+              $image = wp_get_attachment_image_src($attach_id, 'full');
+            ?>
+            <?php if($image): ?>
+              <img src="<?php echo $image[0]; ?>" alt="<?php the_title_attribute(); ?>">
             <?php else: ?>
-              <img src="<?php echo get_template_directory_uri(); ?>/assets/img/blog-no-image.jpeg" alt="">
+              <picture>
+                <source type="image/webp" srcset="<?php echo get_template_directory_uri(); ?>/assets/images/webp/blog-no-image.webp" />
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/blog-no-image.jpeg" alt="">
+              </picture>
             <?php endif; ?>
             <span class="c-category--absolute" style="background-color: <?php the_field('background_color', 'category_' . get_the_category()[0]->cat_ID); ?> ">
               <?php
-              $category = get_the_category();
-              $category_name = $category[0]->cat_name;
-
-              echo $category_name;
+                $category = get_the_category();
+                $category_name = $category[0]->cat_name;
+                echo $category_name;
               ?>
             </span>
           </a>
           <div class="p-card-blog__body">
-            <div class="p-blog__box">
+            <div class="p-card-blog">
               <h3 class="p-card-blog__title--black"><?php the_title(); ?></h3>
             </div>
             <time class="p-card-blog__time--black" datetime="<?php the_time(get_option('date_format')); ?>"><?php the_time(get_option('date_format')); ?></time>

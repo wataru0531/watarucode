@@ -1,0 +1,73 @@
+/******************************************************************
+
+.p-drawer
+
+******************************************************************/
+@use '../global/' as *;
+
+
+.p-drawer{
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(3255, 79, 79, .98);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  opacity: 0;
+  visibility: hidden;
+  transition: all .3s;
+}
+
+// .is-slide付与
+.p-drawer.is-slide{
+  opacity: 1;
+  visibility: visible;
+}
+
+.p-drawer__inner{
+  padding-top: rem(20);
+  padding-bottom: rem(20);
+  overflow: scroll;
+}
+
+.p-drawer__item{
+  overflow: hidden;
+}
+.p-drawer__item:not(:first-child){
+  margin-top: rem(20);
+}
+
+.p-drawer__item a{
+  padding-left: rem(50);
+  display: block;
+  font-family: $font-family-sub;
+  font-size: rem(35);
+  font-weight: bold;
+  line-height: 1;
+  letter-spacing: 0.03em;
+  color: $white;
+  text-transform: uppercase;
+
+  // opacity: 0;
+  transform: translateY(1em);
+}
+
+// .is-slide付与
+.p-drawer.is-slide .p-drawer__item a{
+  @include animation(
+    $name: emergeUp,
+    $duration: .5s,
+    $delay: .4s,
+  )
+}
+
+// sns
+.p-drawer__sns{
+  margin-top: rem(40);
+  padding-left: rem(50);
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+

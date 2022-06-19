@@ -1,0 +1,49 @@
+/******************************************************************
+
+p-menu
+
+******************************************************************/
+@use '../global/' as *;
+
+.p-menu{
+  border-top: rem(1) solid $gray;
+}
+
+.p-menu__block{
+  padding-top: rem(15);
+  padding-bottom: rem(15);
+  padding-right: rem(10);
+  padding-left: rem(10);
+  border-bottom: rem(1) solid $gray;
+  display: flex;
+
+  @include mq('tab'){
+    padding-top: rem(20);
+    padding-bottom: rem(20);
+    padding-right: rem(30);
+    padding-left: rem(30);
+  }
+}
+
+// flex...flex-grow、flex-shrink、flex-basis。初期値...1 1 auto。
+.p-menu__title{
+  flex: 1 1 auto;
+  font-size: rem(14);
+  line-height: 1;
+  padding-right: rem(20);
+
+  @include mq('tab'){
+    font-size: rem(16);
+  }
+}
+
+.p-menu__price{
+  width: 100%;
+  max-width: rem(100);
+  font-size: rem(14);
+  line-height: 1;
+
+  @include mq('tab'){
+    font-size: rem(16);
+  }
+}

@@ -14,24 +14,17 @@
 </div><!-- p-mv-works -->
 
 <!-- p-breadcrumb -->
-<div class="p-breadcrumb">
-  <div class="p-breadcrumb__inner l-inner">
-    <?php
-      if(function_exists('bcn_display')){
-        bcn_display();
-      }
-    ?>
-  </div>
-</div><!-- p-breadcrumb -->
+<?php get_template_part('template-parts/content', 'breadcrumb'); ?>
+<!-- p-breadcrumb -->
 
 <main class="l-min-height">
 
-  <!-- p-works -->
-  <section class="p-works">
-    <div class="p-works__inner l-inner">
-      <div class="p-works__contents">
+  <!-- p-works-archive -->
+  <section class="p-works-archive">
+    <div class="p-works-archive__inner l-inner">
+      <div class="p-works-archive__contents">
 
-        <ul class="p-works__items p-cards-list-03">
+        <ul class="p-works-archive__items p-cards-list-03">
           <?php $paged = get_query_var('paged')? get_query_var('paged') : 1; ?>
           <?php
             $args = [
@@ -45,9 +38,17 @@
           ?>
           <?php if($wp_query->have_posts()): ?>
             <?php while($wp_query->have_posts()): $wp_query->the_post(); ?>
+              
               <li class="p-cards-list-03__card p-card-works">
                 <a class="p-card-works__img" href="<?php the_permalink(); ?>">
-                  <img src="<?php the_field('image'); ?>" alt="">
+                  <?php if(get_field('image')): ?>
+                    <img src="<?php the_field('image'); ?>" alt="<?php the_title_attribute(); ?>">
+                  <?php else: ?>
+                    <picture>
+                      <source type="image/webp" srcset="<?php echo get_template_directory_uri(); ?>/assets/images/webp/works-no-image.webp" />
+                      <img src="<?php echo get_template_directory_uri(); ?>/assets/images/works-no-image.jpg" alt="">
+                    </picture>
+                  <?php endif ?>
                 </a>
                 <div class="p-card-works__body">
                   <h2 class="p-card-works__title"><?php the_title(); ?></h2>
@@ -90,7 +91,7 @@
 
       </div>
     </div>
-  </section><!-- p-works -->
+  </section><!-- p-works-archive -->
 
   </main>
   

@@ -1,0 +1,47 @@
+/******************************************************************
+
+.p-mv-blog
+
+******************************************************************/
+@use '../global/' as *;
+
+.p-mv-blog{
+  width: 100%;
+  height: rem(250);
+  background-color: $white;
+  
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  
+  @include mq('tab'){
+    height: rem(350);
+  }
+}
+
+.p-mv-blog__inner{
+  padding-top: rem(56);
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+
+  @include mq('tab'){
+    padding-top: rem(80);
+    
+  }
+}
+
+.p-mv-blog__title{
+  font-family: $font-family-sub;
+  font-weight: bold;
+  font-size: rem(30);
+  line-height: 1;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.p-mv-blog__title a{
+  display: inline-block;
+}

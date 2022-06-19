@@ -10,103 +10,106 @@
 </div><!-- p-mv-works -->
 
 <!-- p-breadcrumb -->
-<div class="p-breadcrumb">
-  <div class="p-breadcrumb__inner l-inner">
-    <?php
-      if(function_exists('bcn_display')){
-        bcn_display();
-      }
-    ?>
-  </div>
-</div><!-- p-breadcrumb -->
+<?php get_template_part('template-parts/content', 'breadcrumb'); ?>
+<!-- p-breadcrumb -->
 
+<!-- l-min-height -->
 <main class="l-min-height">
-  <!-- p-introduction -->
-  <section class="p-introduction">
-    <div class="p-introduction__inner l-inner">
+
+  <!-- p-works-single -->
+  <section class="p-works-single">
+    <div class="p-works-single__inner l-inner">
       <?php if(have_posts()): ?>
         <?php while(have_posts()): the_post(); ?>
 
           <!-- 画像 -->
-          <figure class="p-introduction__img">
+          <figure class="p-works-single__img">
             <?php if(get_field('image')): ?>
-              <img src="<?php the_field('image'); ?>" alt="">
+              <picture>
+                <source media="(min-width: 768px)" srcset="<?php the_field('image_large'); ?>" />
+                <img src="<?php the_field('image'); ?>" alt="<?php the_title_attribute(); ?>">
+              </picture>
+            <?php else: ?>
+              <picture>
+                <source type="image/webp" srcset="<?php echo get_template_directory_uri(); ?>/assets/images/webp/works-no-image.webp" />
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/works-no-image.jpg" alt="">
+              </picture>
             <?php endif; ?>
           </figure>
 
-          <div class="p-introduction__line"></div>
+          <div class="p-works-single__line"></div>
 
-          <div class="p-introduction__contents">
+          <div class="p-works-single__contents">
             <!-- url -->
             <?php if(get_field('url')): ?>
-              <div class="p-introduction__url">
+              <div class="p-works-single__url">
                 <a href="<?php the_field('url'); ?>" target="_blank"><?php the_field('url'); ?></a>
               </div>
             <?php endif; ?>
             <!-- ユーザー名 -->
             <?php if(get_field('user_name')): ?>
-              <div class="p-introduction__user">
+              <div class="p-works-single__user">
                 ユーザー名：<?php the_field('user_name'); ?>
               </div>
             <?php endif; ?>
             <!-- パスワード -->
             <?php if(get_field('password')): ?>
-              <div class="p-introduction__password">
+              <div class="p-works-single__password">
                 パスワード：<?php the_field('password'); ?>
               </div>
             <?php endif; ?>
             <!-- コメント -->
             <?php if(get_field('comment')): ?>
-              <div class="p-introduction__comment">
+              <div class="p-works-single__comment">
                 <?php the_field('comment'); ?>
               </div>
             <?php endif; ?>
 
-            <dl class="p-introduction__list p-introduction-list">
+            <dl class="p-works-single__list p-list-introduction">
               <!-- 仕様 -->
               <?php if(get_field('specification')): ?>
-                <div class="p-introduction-list__block">
-                  <dt class="p-introduction-list__title">仕様</dt>
-                  <dd class="p-introduction-list__detail"><?php the_field('specification'); ?></dd>
+                <div class="p-list-introduction__block">
+                  <dt class="p-list-introduction__title">仕様</dt>
+                  <dd class="p-list-introduction__detail"><?php the_field('specification'); ?></dd>
                 </div>
               <?php endif; ?>
               <!-- ページ数 -->
               <?php if(get_field('pages')): ?>
-                <div class="p-introduction-list__block">
-                  <dt class="p-introduction-list__title">ページ数</dt>
-                  <dd class="p-introduction-list__detail"><?php the_field('pages'); ?>ページ</dd>
+                <div class="p-list-introduction__block">
+                  <dt class="p-list-introduction__title">ページ数</dt>
+                  <dd class="p-list-introduction__detail"><?php the_field('pages'); ?>ページ</dd>
                 </div>
               <?php endif; ?>
               <!-- 制作範囲 -->
               <?php if(get_field('range')): ?>
-                <div class="p-introduction-list__block">
-                  <dt class="p-introduction-list__title">制作範囲</dt>
-                  <dd class="p-introduction-list__detail"><?php the_field('range'); ?></dd>
+                <div class="p-list-introduction__block">
+                  <dt class="p-list-introduction__title">制作範囲</dt>
+                  <dd class="p-list-introduction__detail"><?php the_field('range'); ?></dd>
                 </div>
               <?php endif; ?>
               <!-- 使用言語 -->
               <?php if(get_field('use_language')): ?>
-                <div class="p-introduction-list__block">
-                  <dt class="p-introduction-list__title">使用言語</dt>
-                  <dd class="p-introduction-list__detail"><?php the_field('use_language'); ?></dd>
+                <div class="p-list-introduction__block">
+                  <dt class="p-list-introduction__title">使用言語</dt>
+                  <dd class="p-list-introduction__detail"><?php the_field('use_language'); ?></dd>
                 </div>
               <?php endif; ?>
             </dl>
           </div>
 
           <!-- ページネーション -->
-          <div class="p-introduction__pagination">
+          <div class="p-works-single__pagination">
             
-            <div class="p-introduction__previous">
+            <div class="p-works-single__previous">
               <?php if(get_next_post()): ?>
                 <!-- %link...aタグで表示させる記述 -->
                 <?php next_post_link('%link', 'PREV'); ?>
               <?php endif; ?>
             </div>
-            <div class="p-introduction__archive">
+            <div class="p-works-single__archive">
               <a href="<?php echo esc_url(home_url('works')); ?>">一覧へ</a>
             </div>
-            <div class="p-introduction__next">
+            <div class="p-works-single__next">
               <?php if(get_previous_post()): ?>
                 <?php previous_post_link('%link', 'NEXT'); ?>
               <?php endif; ?>
@@ -118,8 +121,8 @@
       <?php endif; ?>
 
     </div>
-  </section><!-- p-introduction -->
+  </section><!-- p-works-single -->
 
-  </main>
+  </main><!-- l-min-height -->
   
 <?php get_footer(); ?>

@@ -1,0 +1,66 @@
+/******************************************************************
+
+.p-blog-archive  下層ページのブログセクション
+
+******************************************************************/
+@use '../global/' as *;
+
+.p-blog-archive__header{
+  margin-bottom: rem(30);
+  padding-top: rem(10);
+  padding-bottom: rem(10);
+  padding-right: rem(10);
+  padding-left: rem(10);
+  position: relative;
+
+  @include mq('tab'){
+    margin-bottom: rem(40);
+  }
+}
+
+.p-blog-archive__header::before{
+  content: '';
+  display: block;
+  width: 100%;
+  height: rem(1);
+  background-color: #E2E2E2;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.p-blog-archive__header::after{
+  content: '';
+  display: block;
+  width: 40%;
+  height: rem(1);
+  background-color: $coral;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.p-blog-archive__category-title{
+  font-size: rem(20);
+  font-weight: bold;
+  line-height: 1;
+  color: $text-color;
+}
+
+.p-blog-archive__category-title span{
+  margin-left: rem(10);
+  font-size: rem(18);
+  font-weight: normal;
+  line-height: 1;
+  color: $grayText;
+}
+
+.p-blog-archive__not-found{
+  font-size: rem(14);
+  line-height: 1;
+  color: $text-color;
+
+  @include mq('tab'){
+    font-size: rem(16);
+  }
+}

@@ -1,0 +1,17 @@
+/******************************************************************
+
+.p-hamburger
+
+******************************************************************/
+@use '../global/' as *;
+
+.p-hamburger{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.p-hamburger__menus{
+  margin-top: rem(7);
+}

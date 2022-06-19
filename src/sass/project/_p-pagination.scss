@@ -1,0 +1,53 @@
+/******************************************************************
+
+.p-pagination
+
+******************************************************************/
+@use '../global/' as *;
+
+.p-pagination{
+  font-size: rem(14);
+  line-height: 1;
+  color: $text-color;
+  text-align: center;
+
+  @include mq('tab'){
+    font-size: rem(16);
+  }
+}
+
+.p-pagination .page-numbers{
+  padding-top: rem(10);
+  padding-bottom: rem(10);
+  padding-right: rem(10);
+  padding-left: rem(10);
+  position: relative;
+}
+
+.p-pagination .page-numbers:not(:last-child){
+  margin-right: rem(10);
+}
+
+.p-pagination .page-numbers.current{
+  color: $current;
+}
+
+.p-pagination__inner > a.page-numbers::after{
+  content: '';
+  display: block;
+  width: 100%;
+  height: rem(1);
+  background-color: $coral;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  transform-origin: right;
+  transform: scale(0, 1);
+  transition: transform .2s;
+}
+
+.p-pagination__inner > a.page-numbers:hover::after{
+  transform-origin: left;
+  transform: scale(1, 1);
+}
