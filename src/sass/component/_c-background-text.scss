@@ -8,15 +8,16 @@
 .c-background-text{
   display: block;
   font-family: $font-family-sub;
-  font-weight: bold;
-  font-size: 25vw;
+  font-weight: 900;
+  font-size: 19vw;
+  letter-spacing: 0.02em;
   line-height: 0.8;
   color: $white;
   text-transform: uppercase;
   white-space: nowrap;
 
   @include mq('tab'){
-    font-size: rem(245);
+    font-size: rem(190);
   }
 }
 

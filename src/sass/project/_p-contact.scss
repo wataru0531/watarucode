@@ -22,11 +22,18 @@ p-contact
 
 .p-contact__header{
   margin-top: rem(-20);
+
+  @include mq('tab'){
+    margin-top: rem(-35);
+  }
 }
 
 .p-contact__description{
   margin-top: rem(40);
+  font-weight: normal;
   font-size: rem(14);
+  line-height: 1.8;
+  letter-spacing: normal;
   
   @include mq('tab'){
     margin-top: rem(50);
@@ -36,6 +43,7 @@ p-contact
 
 .p-contact__form{
   margin-top: rem(40);
+  
   @include mq('tab'){
     margin-top: rem(50);
   }

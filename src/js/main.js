@@ -2,24 +2,24 @@ import Swiper from 'swiper/bundle';
 import smoothscroll from 'smoothscroll-polyfill';
 smoothscroll.polyfill();
 
+
 /***************************************************************
 
 JavaScript
 
 ***************************************************************/
-window.addEventListener('load', function(){
+window.addEventListener('load', () => {
 
-	// /***************************************************************
-	// オープニングの演出
-	// ***************************************************************/
-	const opening = document.querySelector('.js-opening');
-	const openingTitle = document.querySelector('.js-opening-title');
-	const openingLines = document.querySelectorAll('.js-opening-line');
+	/***************************************************************
+	オープニングの演出
+	***************************************************************/
+	const globalContainer = document.getElementById('js-global-container');
+	const opening = document.getElementById('js-opening');
+	const openingTitle = document.getElementById('js-opening-title');
+	const openingLine = document.getElementById('js-opening-line');
 
-	const globalContainer = document.querySelector('.l-global-container');
-
-	//タイトルをアコーディオンさせる
-	const accordion = function(){
+	// タイトルをアコーディオンさせる
+	const accordion = () => {
 		openingTitle.classList.add('is-accordion');
 	};
 
@@ -34,7 +34,7 @@ window.addEventListener('load', function(){
 	};
 
 	// オープニングの演出を初回のみに制御
-	const webStorage = function(){
+	const webStorage = () => {
 		if(sessionStorage.getItem('access')){
 			// console.log('2回目以降のアクセスです');
 
@@ -43,16 +43,14 @@ window.addEventListener('load', function(){
 
 		}else{
 			// console.log('1回目のアクセスです');
-			sessionStorage.setItem('access', 0);
+			// sessionStorage.setItem('access', 0);
 
 			globalContainer.style.opacity='1';
-
-			openingLines.forEach(openingLine => {
-				openingLine.classList.add('is-stretch');
-			});
-			setTimeout(accordion, 2200); //アコーディオン開始
-			setTimeout(upFade, 5000); //タイトルを上にフェイドアウト
-			setTimeout(fadeOut, 6500); //レイヤーをフェイドアウト
+			
+			openingLine.classList.add('is-stretch'); // 赤ライン、灰色ラインを伸ばす。時間はcssで調整
+			setTimeout(accordion, 2500); //アコーディオン開始
+			setTimeout(upFade, 6000); //タイトルを上にフェイドアウト
+			setTimeout(fadeOut, 7500); //レイヤーをフェイドアウト
 		}
 	};
 
@@ -61,10 +59,9 @@ window.addEventListener('load', function(){
 	/***************************************************************
 	intersectionObserver
 	***************************************************************/
-	const contents = document.querySelectorAll('.js-inview');
-
-	const cb = function(entries, observer){
-		entries.forEach(entry => {
+	// コールバック
+	const cb = (entries, observer) => {
+		entries.forEach((entry) => {
 			if(entry.isIntersecting){
 				entry.target.classList.add('is-inview');
 				observer.unobserve(entry.target); //監視を打ち切る。
@@ -72,76 +69,111 @@ window.addEventListener('load', function(){
 				entry.target.classList.remove('is-inview');
 			}
 		});
-	}
+	};
 
+	// オプション
 	const options = {
 		root: null,
 		rootMargin: '-10% 0px',  //0にもpxなど単位をつける。
 		threshold: 0,
-	}
+	};
+
+	const contents = document.querySelectorAll('.js-inview');
 
 	const io = new IntersectionObserver(cb, options);
-	contents.forEach(content => {
+
+	contents.forEach((content) => {
 		io.observe(content);
 	});
-	
 });
 
-document.addEventListener('DOMContentLoaded', function(){
+
+document.addEventListener('DOMContentLoaded', () => {
+	/***************************************************************
+	カーソル
+	***************************************************************/
+	const cursor = document.getElementById('js-cursor');
+
+	if(window.navigator.userAgent.match(/(iPhone|iPad|iPod|Android)/i)){
+		// スマホ、タブレット(iOS、Android)の場合の処理
+
+		// PC以外は新しく作った擬似カーソルを消す。
+		cursor.style.display = 'none';
+
+	}else{
+		// PCの場合の処理
+
+		// デフォルトのカーソルを消すして擬似カーソルを適用。
+		document.body.style.cursor = 'none';
+
+		let mouseX = 0;
+		let mouseY = 0;
+
+		// カーソルが画面に入ってきた時
+		document.addEventListener('mousemove', (event) => {
+			// console.log(event);
+			mouseX = event.pageX; // 左からの位置
+			mouseY = event.pageY; // 上からの位置
+
+			cursor.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
+			cursor.style.opacity = '1';
+			cursor.style.visibility = 'visible';
+		});
+
+		// カーソルが画面から出た時
+		document.addEventListener('mouseout', () => {
+			cursor.style.opacity = '0';
+			cursor.style.visibility = 'hidden';
+		});
+	}
+
+
 	/***************************************************************
 	ハンバーガーメニュー・ドロワーメニュー開閉
 	***************************************************************/
-	const hamburger = document.querySelector('.js-hamburger');
-	const hamburgerBtn = document.querySelector('.js-hamburger-btn');
-	const hamburgerMenus = document.querySelector('.js-hamburger-menus');
+	const hamburger = document.getElementById('js-hamburger');
+
+	const hamburgerBtn = document.getElementById('js-hamburger-btn');
+	const hamburgerMenus = document.getElementById('js-hamburger-menus');
 	const drawerLinks = document.querySelectorAll('.js-link');
 
-	
-	const header = document.querySelector('.js-header');
-	const drawer = document.querySelector('.js-drawer');
+	const header = document.getElementById('js-header');
+	const drawer = document.getElementById('js-drawer');
 
-	hamburger.addEventListener('click', function(){
+	hamburger.addEventListener('click', () => {
 		hamburgerBtn.classList.toggle('is-open');
 		hamburgerMenus.classList.toggle('is-switch')
 		header.classList.toggle('is-blend');
 		drawer.classList.toggle('is-slide');
 	});
 
-	// ドロワーメニュークリック時にハンバーガーメニューも開閉させる
-	for(let i = 0; i < drawerLinks.length; i++){
-		drawerLinks[i].addEventListener('click', function(){
-
-			header.classList.toggle('is-blend');
+	drawerLinks.forEach((drawerLink) => {
+		drawerLink.addEventListener('click', () => {
 			hamburgerBtn.classList.toggle('is-open');
+			hamburgerMenus.classList.toggle('is-switch');
+			header.classList.toggle('is-blend');
 			drawer.classList.toggle('is-slide');
 		});
-	}
+	});
 
 	/***************************************************************
 	スムーススクロール
 	***************************************************************/
-	const smoothScrollTrigger = document.querySelectorAll('a[href^="#"]');
 
-	for(let i = 0; i < smoothScrollTrigger.length; i++){
-		smoothScrollTrigger[i].addEventListener('click', function(e){
-			// デフォルトの動作をキャンセル
-			e.preventDefault();
-			
-			// console.log(e.target); //イベントが発生した要素
-			// console.log(e.type); //イベントの名前：
-			// console.log(e.timeStamp); //イベントの発生時間
-			// console.log(e.pageX); //クリックされたX座標
+	const smoothScrollTriggers = document.querySelectorAll('a[href^="#"]');
 
-			//hrefの属性を取得する。
-			const href = smoothScrollTrigger[i].getAttribute('href');
-			// console.log(href);  例：#concept
+	smoothScrollTriggers.forEach((smoothScrollTrigger) => {
+		smoothScrollTrigger.addEventListener('click', (event) => {
+			event.preventDefault();
 
+			// urlを取得
+			const href = smoothScrollTrigger.getAttribute('href');
 			// #を省く
 			const targetElement = document.getElementById(href.replace('#', ''));
-			// console.log(targetElement);
-
-			const rect = targetElement.getBoundingClientRect().top; //ブラウザからの位置を取得
-			const offset = window.pageYOffset; //現在のスクロール量を取得
+			// ブラウザのトップからの位置を取得
+			const rect = targetElement.getBoundingClientRect().top;
+			// スクロール量を取得
+			const offset = window.pageYOffset;
 
 			const target = rect + offset;
 
@@ -150,7 +182,7 @@ document.addEventListener('DOMContentLoaded', function(){
 				behavior: 'smooth',
 			});
 		});
-	}
+	});
 
 	/***************************************************************
 	swiper トップページ メインビジュアル
@@ -177,7 +209,7 @@ document.addEventListener('DOMContentLoaded', function(){
 	swiper トップページ WORKSセクション
 	***************************************************************/
 	const worksOptions = {
-		grabCursor: true,
+		// grabCursor: true,
 		direction: 'horizontal',
 		spaceBetween: 20,
 		slidesPerView: 1.3,
@@ -206,7 +238,7 @@ document.addEventListener('DOMContentLoaded', function(){
 	swiper トップページ BLOGセクション
 	***************************************************************/
 	const blogOptions = {
-		grabCursor: true,
+		// grabCursor: true,
 		direction: 'horizontal',
 		spaceBetween: 20,
 		slidesPerView: 1.3,
@@ -233,9 +265,9 @@ document.addEventListener('DOMContentLoaded', function(){
 	/***************************************************************
 	トップに戻るボタン
 	***************************************************************/
-	const pageTopBtn = document.querySelector('.js-page-top');
+	const pageTopBtn = document.getElementById('js-page-top');
 
-	window.addEventListener('scroll', function(){
+	window.addEventListener('scroll', () => {
 		const currentY = window.pageYOffset;
 
 		if(currentY > 100){
@@ -245,11 +277,72 @@ document.addEventListener('DOMContentLoaded', function(){
 		}
 	});
 
-	pageTopBtn.addEventListener('click', function(){
+	pageTopBtn.addEventListener('click', () => {
 		window.scrollTo({
 				top: 0,
 				behavior: "smooth"
 		});
 	});
 
+	/***************************************************************
+	works シングルページ PREVボタン 
+	***************************************************************/
+	// aタグ
+	const prevBtn = document.querySelector('a[rel^="next"]');
+	if(prevBtn){
+		// console.log(prevBtn);
+		prevBtn.className = 'c-btn-prev';
+
+
+		// 矢印本体
+		const prevBtnAllow = document.createElement('span');
+		prevBtnAllow.className = 'c-btn-prev__allow';
+		prevBtn.append(prevBtnAllow);
+
+		// 矢印の先
+		const prevBtnAllowTip = document.createElement('span');
+		prevBtnAllowTip.className = 'c-btn-prev__allow-tip';
+		prevBtnAllow.append(prevBtnAllowTip);
+		
+		// ライン
+		const prevBtnAllowLine = document.createElement('span');
+		prevBtnAllowLine.className = 'c-btn-prev__allow-line';
+		prevBtnAllow.append(prevBtnAllowLine);
+		
+		// テキスト
+		const prevBtnText = document.createElement('div');
+		prevBtnText.className = 'c-btn-prev__text';
+		prevBtnText.textContent = 'prev';
+		prevBtn.append(prevBtnText);
+	}
+	
+
+	/***************************************************************
+	works シングルページ NEXTボタン
+	***************************************************************/
+	// aタグ
+	const nextBtn = document.querySelector('a[rel^="prev"]');
+	if(nextBtn){
+		nextBtn.className = 'c-btn-next';
+
+		// テキスト
+		const nextBtnText = document.createElement('div');
+		nextBtnText.className = 'c-btn-next__text';
+		nextBtnText.textContent = 'next';
+		nextBtn.append(nextBtnText);
+
+		// 矢印本体
+		const nextBtnAllow = document.createElement('span');
+		nextBtnAllow.className = 'c-btn-next__allow';
+		nextBtn.append(nextBtnAllow);
+		// ライン
+		const nextBtnAllowLine = document.createElement('span');
+		nextBtnAllowLine.className = 'c-btn-next__allow-line';
+		nextBtnAllow.append(nextBtnAllowLine);
+		// 矢印の先
+		const nextBtnAllowTip = document.createElement('span');
+		nextBtnAllowTip.className = 'c-btn-next__allow-tip';
+		nextBtnAllow.append(nextBtnAllowTip);
+	}
+	
 });

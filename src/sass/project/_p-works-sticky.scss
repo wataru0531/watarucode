@@ -1,19 +1,24 @@
 /******************************************************************
 
-.l-sns
+.p-works-sticky
 
 ******************************************************************/
 @use '../global/' as *;
 
-.l-sns{
-  position: fixed;
-  top: rem(140);
-  transform: translateY(-50%);
-  right: rem(22);
-  z-index: 300;
+
+.p-works-sticky__item{
 
   @include mq('tab'){
-    top: rem(160);
-    right: rem(30);
+    position: sticky;
+    top: rem(100);
   }
 }
+
+.p-works-sticky__btn{
+  text-align: center;
+
+  @include mq('tab'){
+    text-align-last: left;
+  }
+}
+

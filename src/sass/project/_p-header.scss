@@ -10,10 +10,6 @@
   height: rem(80);
   background-color: transparent;
   mix-blend-mode: difference;
-
-  @include mq('tab'){
-    height: rem(80);
-  }
 }
 
 // is-blend付与後mix-blend-modeを解く。

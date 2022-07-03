@@ -1,0 +1,127 @@
+/***************************************************************
+
+.c-btn-allow-right 共通のviewボタン
+
+***************************************************************/
+@use '../global/' as *;
+
+
+// aタグ本体
+.c-btn-allow-right{
+  display: inline-flex;
+  align-items: center;
+}
+
+/***************************************************************
+テキスト部分
+***************************************************************/
+
+.c-btn-allow-right__text{
+  margin-right: rem(20);
+  font-family: $font-family-sub;
+  font-weight: 900;
+  font-size: rem(16);
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: uppercase;
+}
+
+// 日本語に。colorを白に、大きさをnormalに
+.c-btn-allow-right__text--japanese{
+  @extend .c-btn-allow-right__text;
+
+  font-family: $font-family-base;
+  font-weight: normal;
+  color: $white;
+  text-transform: none;
+}
+
+// テキストを小さく 
+.c-btn-allow-right__text--small{
+  @extend .c-btn-allow-right__text;
+
+  font-weight: normal;
+  text-transform: none;
+}
+
+/***************************************************************
+円部分
+***************************************************************/
+.c-btn-allow-right__circle{
+  width: rem(80);
+  height: rem(80);
+  background-color: transparent;
+  border: rem(1) solid $coral;
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include animation(
+    $name: circleToSmall,
+    $duration: .6s,
+    $timing-function: cubic-bezier(0.85, 0, 0.15, 1),
+  )
+}
+.c-btn-allow-right:hover .c-btn-allow-right__circle{
+  @include mq('tab'){
+    @include animation(
+      $name: circleToLarge,
+      $duration: .6s,
+      $timing-function: cubic-bezier(0.85, 0, 0.15, 1),
+    )
+  }
+}
+
+/***************************************************************
+矢印
+***************************************************************/
+.c-btn-allow-right__allow{
+  display: inline-flex;
+  align-items: center;
+}
+
+// 矢印のライン -
+.c-btn-allow-right__allow-line{
+  display: block;
+  width: rem(15);
+  height: rem(2);
+  background-color: $text-color;
+  transform: translateX(rem(3));
+}
+// background-colorを白に
+.c-btn-allow-right__allow-line--white{
+  @extend .c-btn-allow-right__allow-line;
+
+  background-color: $white;
+}
+
+// 矢印の先 >
+.c-btn-allow-right__allow-tip{
+  display: block;
+  width: rem(7);
+  height: rem(7);
+  border-right: rem(2) solid $text-color;
+  border-bottom: rem(2) solid $text-color;
+  transform: translateX(rem(-3)) rotate(-45deg);
+}
+// border色を白に
+.c-btn-allow-right__allow-tip--white{
+  @extend .c-btn-allow-right__allow-tip;
+
+  border-right: rem(2) solid $white;
+  border-bottom: rem(2) solid $white;
+}
+
+
+// ホバー時の挙動
+.c-btn-allow-right:hover .c-btn-allow-right__allow{
+  @include mq('tab'){
+    @include animation(
+      $name: allowFadeRight,
+      $duration: .6s,
+      $timing-function: cubic-bezier(0.85, 0, 0.15, 1),
+    )
+  }
+}

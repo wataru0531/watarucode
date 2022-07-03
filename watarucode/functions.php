@@ -16,7 +16,8 @@ function my_script_init() {
 	// wp_deregister_script('jquery');
 
 	// Google Fonts
-	wp_enqueue_style('Oswald', '//fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet');
+	wp_enqueue_style('Lato', '//fonts.googleapis.com/css2?family=Lato:wght@400;900&display=swap');
+	
 	// swiper
 	wp_enqueue_style('swiper_css', get_template_directory_uri() . '/assets/css/vendors/swiper-bundle.min.css');
 	// CSS

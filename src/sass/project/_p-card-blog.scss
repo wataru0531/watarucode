@@ -8,6 +8,9 @@
 .p-card-blog{
   display: flex;
   flex-direction: column;
+  overflow: hidden;
+  border-radius: rem(5);
+  background-color: $white;
 }
 
 .p-card-blog__img{
@@ -32,25 +35,13 @@
   transition: all .3s;
 }
 
-.p-card-blog__img:hover img{
+.p-card-blog:hover .p-card-blog__img img{
   @include mq('tab'){
     transform: translateY(-50%) scale(1.1);
   }
 }
 
-.p-card-blog__category{
-  padding-top: rem(5);
-  padding-bottom: rem(5);
-  padding-right: rem(15);
-  padding-left: rem(15);
-  display: inline-block;
-  font-size: rem(14);
-  color: $white;
-  line-height: 1;
-  position: absolute;
-  top: 0;
-  right: 0;
-}
+
 
 .p-card-blog__body{
   flex: 1;
@@ -58,49 +49,61 @@
   padding-bottom: rem(10);
   padding-right: rem(10);
   padding-left: rem(10);
-  background-color: $white;
+  // background-color: $white;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-.p-card-blog__box{
-  
-}
-
 .p-card-blog__title{
+  font-weight: bold;
   font-size: rem(16);
   color: $text-color;
   line-height: 1.5;
-  font-weight: bold;
+  letter-spacing: normal;
 }
-.p-card-blog__title--black{
-  @extend .p-card-blog__title;
-  color: $text-color;
-}
+
 
 .p-card-blog__content{
   margin-top: rem(15);
+  font-weight: normal;
   font-size: rem(14);
   font-weight: normal;
   line-height: 1.5;
-  color: $text-color;
-}
-.p-card-blog__content--black{
-  @extend .p-card-blog__content;
+  letter-spacing: normal;
   color: $text-color;
 }
 
+.p-card-blog__meta{
+  margin-top: rem(20);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+// .p-card-blog__category{
+//   display: inline-block;
+//   padding-top: rem(5);
+//   padding-bottom: rem(5);
+//   padding-right: rem(15);
+//   padding-left: rem(15);
+//   font-weight: normal;
+//   font-size: rem(14);
+//   color: $white;
+//   line-height: 1;
+//   letter-spacing: normal;
+//   border-radius: rem(9999);
+// }
+
 .p-card-blog__time{
-  margin-top: rem(15);
   display: block;
-  font-size: rem(14);
   font-weight: normal;
+  font-weight: bold;
+  font-size: rem(14);
   line-height: 1;
-  color: $text-color;
+  letter-spacing: normal;
+  // color: $text-color;
+  color: $grayTime;
   text-align: right;
 }
-.p-card-blog__time--black{
-  @extend .p-card-blog__time;
-  color: $text-color;
-}
+

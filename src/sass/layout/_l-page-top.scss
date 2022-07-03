@@ -7,12 +7,16 @@
 
 .l-page-top{
   position: fixed;
-  bottom: rem(20);
-  right: rem(20);
+  bottom: rem(15);
+  right: rem(15);
   z-index: 300;
 
-  @include mq('tab'){
-    bottom: rem(30);
-    right: rem(30);
-  }
+  opacity: 0;
+  visibility: hidden;
+  transition: all .3s;
+}
+
+.l-page-top.is-top{
+  opacity: 1;
+  visibility: visible;
 }

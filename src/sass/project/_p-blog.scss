@@ -7,6 +7,7 @@
 
 .p-blog{
   padding-top: rem(50);
+  background-color: $white;
   opacity: 0;
 
   @include mq('tab'){
@@ -20,6 +21,10 @@
 
 .p-blog__header{
   margin-top: rem(-20);
+
+  @include mq('tab'){
+    margin-top: rem(-35);
+  }
 }
 
 .p-blog__over-inner{
@@ -62,16 +67,19 @@
 }
 
 .p-blog__description{
-  font-size: rem(14);
   font-weight: normal;
+  font-size: rem(14);
+  line-height: 1.8;
+  letter-spacing: normal;
   color: $white;
+
   @include mq('tab'){
     font-size: rem(16);
   }
 }
 
 .p-blog__btn{
-  margin-top: rem(40);
+  margin-top: rem(60);
   text-align: left;
 
   @include mq('tab'){

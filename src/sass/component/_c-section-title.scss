@@ -6,32 +6,29 @@
 @use '../global/' as *;
 
 .c-section-title{
-  padding-left: rem(27);
+  padding-left: rem(22);
+  font-weight: bold;
   font-size: rem(16);
   line-height: 3;
   color: $text-color;
-  font-weight: normal;
-  font-weight: bold;
   position: relative;
 
   @include mq('tab'){
-    padding-left: rem(32);
+    padding-left: rem(25);
     font-size: rem(18);
   }
 }
 
+// 球
 .c-section-title::before{
   content: '';
   display: block;
-  width: rem(20);
-  height: rem(2);
+  width: rem(12);
+  height: rem(12);
   background-color: $coral;
+  border-radius: 50%;
   position: absolute;
   top: 50%;
   left: 0;
   transform: translateY(-50%);
-
-  @include mq('tab'){
-    width: rem(25);
-  }
 }

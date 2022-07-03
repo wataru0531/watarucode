@@ -41,9 +41,10 @@
 }
 
 .p-blog-archive__category-title{
-  font-size: rem(20);
   font-weight: bold;
+  font-size: rem(20);
   line-height: 1;
+  letter-spacing: normal;
   color: $text-color;
 }
 
@@ -52,12 +53,15 @@
   font-size: rem(18);
   font-weight: normal;
   line-height: 1;
+  letter-spacing: normal;
   color: $grayText;
 }
 
 .p-blog-archive__not-found{
+  font-weight: normal;
   font-size: rem(14);
   line-height: 1;
+  letter-spacing: normal;
   color: $text-color;
 
   @include mq('tab'){

@@ -10,19 +10,22 @@
   display: flex;
 }
 
-.c-search-form__input{
+input[type="text"].c-search-form__input{
   padding-top: rem(5);
   padding-bottom: rem(5);
   padding-right: rem(10);
   padding-left: rem(10);
   width: 100%;
   height: inherit;
+  font-weight: normal;
   font-size: rem(14);
   line-height: 2;
+  letter-spacing: normal;
   background-color: $white;
   border-top: rem(1) solid $gray;
   border-left: rem(1) solid $gray;
   border-bottom: rem(1) solid $gray;
+  border-radius: rem(5) 0 0 rem(5);
 }
 
 .c-search-form__btn{
@@ -30,6 +33,7 @@
   width: rem(40);
   height: inherit;
   background-color: $coral;
+  border-radius: 0 rem(5) rem(5) 0;
   display: flex;
   justify-content: center;
   align-items: center;

@@ -10,12 +10,14 @@ $coral: #ff4f4f;
 $gray: #E2E2E2; //works詳細のライン、トップ料金ライン、サイドバーの枠、h2タグの下線
 $border: #7F7F7F; //ブログのul
 $grayText: #B4B4B4; //h2タグの下線
-
-$current: #eedcdc; //ページネーションのcurrent表示部分のカラー
+$grayTime: #757575;
 
 // 背景色
 $bgWhite: #F8F8F8; //トップセクション背景、セクション背景文字、パンくず
 $bgGray: #f9f9f9; //お問い合わせ各項目の背景色
+// $bgKhaki: #F7F6F1; // 背景色
+// $bgKhaki: #F8F6F3; // 背景色
+$bgKhaki: #f7f6f2; // 背景色
 
 // ブログ記事内で仕様
 $background: #f7f7f7;
@@ -26,16 +28,13 @@ $yellow: #ff0;
 // マウスホバー
 $opacity: 0.7; // 透過度
 
-
 // フォント
 // ・游ゴシック体、YuGothic...mac。macにはMedium(500)とBold(700)しかないので大丈夫。
 // ・游ゴシック、Yu Gothic...windows。Light、Regular（標準）、Medium、Boldの４つがあるが、
 // font-weightを400で指定すると、regularが適用されてクロームではかすれてしまうのでMediumを直接指定しておく。
 
 $font-family-base: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
-// $font-family-base: 'Noto Sans JP', sans-serif; // ベースフォント。全体へ適用するフォント。
-
-$font-family-sub: 'Oswald', sans-serif; // 英語など適用したい部分に上書きしたいフォント。
+$font-family-sub: 'Lato', sans-serif; // 英語など適用したい部分に上書きしたいフォント。
 $font-size-base: 16px; // ベースフォントサイズ
 $font-weight-base: 400; // ベースフォントウェイト
 $lh: 1.6; // ベース行間

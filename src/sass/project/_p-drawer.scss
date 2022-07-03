@@ -39,26 +39,47 @@
 }
 
 .p-drawer__item a{
-  padding-left: rem(50);
   display: block;
+  padding-left: rem(50);
+}
+
+.p-drawer__item a span{
+  display: inline-block;
   font-family: $font-family-sub;
+  font-weight: 900;
   font-size: rem(35);
-  font-weight: bold;
   line-height: 1;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.02em;
   color: $white;
   text-transform: uppercase;
 
-  // opacity: 0;
   transform: translateY(1em);
 }
 
+// ライン
+.p-drawer__item a span::after{
+  content: '';
+  display: block;
+  margin-top: rem(-17);
+  width: 100%;
+  height: rem(2);
+  background-color: $white;
+  transform: scale(0, 1);
+  transition: transform .3s ;
+}
+
+// カレント表示
+.p-drawer__item.is-current a span::after{
+  transform: scale(1, 1);
+}
+
+
 // .is-slide付与
-.p-drawer.is-slide .p-drawer__item a{
+.p-drawer.is-slide .p-drawer__item a span{
   @include animation(
     $name: emergeUp,
     $duration: .5s,
-    $delay: .4s,
+    $delay: .3s,
   )
 }
 

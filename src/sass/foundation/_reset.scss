@@ -32,6 +32,7 @@ body {
 	font-size: $font-size-base;
 	font-weight: $font-weight-base;
 	color: $text-color;
+  background-color: $white;
 	line-height: $lh;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -44,6 +45,7 @@ body {
   -webkit-tap-highlight-color: transparent; //スマホでaタグやbuttonタグのクリック時に背景色が変わらないように指定。
 }
 
+// このポートフォリオのみ記載。
 main{
   background-color: $white;
 }
@@ -57,6 +59,9 @@ a[href^="tel:"] {
 
 /* ホバー */
 a {
+  // PC時、擬似ポインターを作ったためaタグのカーソルを消去
+  cursor: none;
+
   text-decoration: none;
   color: inherit;
   // transition: all 0.3s;
