@@ -1263,10 +1263,12 @@ l-contact
 ******************************************************************/
 .l-container {
   background-color: #fff;
+  padding-bottom: 3.125rem;
   padding-top: 3.125rem;
 }
 @media screen and (min-width: 768px) {
   .l-container {
+    padding-bottom: 4.375rem;
     padding-top: 4.375rem;
   }
 }
