@@ -11,6 +11,7 @@
   padding-bottom: rem(50);
   background-color: $white;
 
+  
   @include mq('tab'){
     padding-top: rem(70);
     padding-bottom: rem(70);
