@@ -9,7 +9,6 @@
   width: 100%;
   height: rem(250);
   background-color: $white;
-
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -25,6 +24,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  position: relative;
 
   @include mq('tab'){
     padding-top: rem(80);
@@ -33,10 +33,10 @@
 
 .p-mv-works__subtitle{
   font-family: $font-family-sub;
+  font-weight: 900;
   font-size: rem(40);
   line-height: 1;
   letter-spacing: 0.02em;
-  font-weight: bold;
   text-transform: uppercase;
 
   @include mq('tab'){
@@ -45,37 +45,39 @@
 }
 
 .p-mv-works__title{
-  padding-left: rem(27);
+  padding-left: rem(22);
+  font-weight: normal;
   font-size: rem(16);
   line-height: 3;
-  font-weight: normal;
+  letter-spacing: normal;
   font-weight: bold;
   position: relative;
 
   @include mq('tab'){
-    padding-left: rem(32);
+    padding-left: rem(25);
     font-size: rem(18);
   }
 }
 
-.p-mv-works__line{
+// 球
+.p-mv-works__circle{
   display: block;
-  width: rem(20);
-  height: rem(2);
+  width: rem(12);
+  height: rem(12);
+  background-color: $coral;
+  border-radius: 50%;
   position: absolute;
   top: 50%;
   left: 0;
   transform: translateY(-50%);
-
-  @include mq('tab'){
-    width: rem(25);
-  }
 }
 
 .p-mv-works__title-single{
+  font-weight: bold;
   font-size: rem(30);
   line-height: 1.5;
-  font-weight: bold;
+  letter-spacing: normal;
+  
 
   @include mq('tab'){
     font-size: rem(40);

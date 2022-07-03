@@ -14,7 +14,8 @@
 
 // スマホ時のmargin-top
 .p-cards-list-02__card:not(:first-child){
-  margin-top: rem(30);
+  margin-top: rem(50);
+
   @include mq('tab'){
     margin-top: 0;
   }
@@ -23,7 +24,7 @@
 //タブレット時の3番目以降のmargin-top
 .p-cards-list-02__card:nth-child(n+3){
   @include mq('tab'){
-    margin-top: rem(30);
+    margin-top: rem(40);
   }
 }
 

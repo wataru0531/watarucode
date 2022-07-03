@@ -23,14 +23,14 @@
 
 // スマホ時のmargin-top
 .p-cards-list-03__card:not(:first-child){
-  margin-top: rem(30);
+  margin-top: rem(50);
 
   @include mq('tab'){
     margin-top: 0;
   }
 }
 
-// タブレット時の左列のmargin-right
+// タブレット時の左列(奇数)のmargin-right
 .p-cards-list-03__card:nth-child(odd){
 
   @include mq('tab'){

@@ -23,7 +23,8 @@
   padding-left: rem(15);
   height: inherit;
   font-family: $font-family-sub;
-  font-weight: bold;
+  // font-weight: bold;
+  font-weight: 900;
   font-size: rem(18);
   line-height: 1;
   letter-spacing: 0.02em;
@@ -38,12 +39,14 @@
   position: relative;
 }
 
-.p-global-nav__item a > span{
+// inline-block化しないとtransformが効かない。
+.p-global-nav__item a  span{
   display: inline-block;
-  overflow: hidden;
 }
-.p-global-nav__item > a:hover > span > span > span{
-  display: inline-block;
+
+// aタグ直下のspanのみoverflowをかける
+.p-global-nav__item a > span{
+  overflow: hidden;
 }
 
 // 共通 keyframesをあてる
@@ -103,16 +106,16 @@
 }
 
 
+
+
+// ホバー時ライン
 .p-global-nav__item a::after{
   content: '';
+  margin-top: rem(-9);
   display: block;
-  width: calc(100% - #{rem(30)});
-  height: rem(1);
   background-color: $white;
-  
-  position: absolute;
-  bottom: rem(25);
-  left: rem(15);
+  width: 100%;
+  height: rem(2);
   transform-origin: right;
   transform: scale(0, 1);
   transition: transform .2s;
@@ -120,6 +123,8 @@
 // aタグホバー時
 .p-global-nav__item a:hover::after{
   transform-origin: left;
+  transform: scale(1, 1);
+
   transform: scale(1, 1);
 }
 // カレント表示

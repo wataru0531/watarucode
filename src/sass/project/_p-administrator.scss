@@ -11,6 +11,7 @@
   padding-right: rem(15);
   padding-left: rem(15);
   border: rem(1) solid $gray;
+  border-radius: rem(5);
 }
 
 .p-administrator__img{
@@ -29,10 +30,13 @@
 
 .p-administrator__name{
   margin-top: rem(10);
+  font-weight: normal;
   font-size: rem(14);
   line-height: 1;
+  letter-spacing: normal;
   color: $text-color;
   text-align: center;
+
   @include mq('tab'){
     margin-top: rem(15);
   }
@@ -40,11 +44,14 @@
 
 .p-administrator__job{
   margin-top: rem(10);
+  font-weight: normal;
   font-size: rem(14);
   line-height: 1;
+  letter-spacing: normal;
   color: $text-color;
   text-align: center;
   opacity: .7;
+
   @include mq('tab'){
     margin-top: rem(15);
   }
@@ -52,9 +59,13 @@
 
 .p-administrator__text{
   margin-top: rem(10);
+  font-weight: normal;
   font-size: rem(14);
+  line-height: 1.8;
+  letter-spacing: normal;
   color: $text-color;
   text-align: center;
+
   @include mq('tab'){
     margin-top: rem(15);
   }
@@ -62,6 +73,7 @@
 
 .p-administrator__painting{
   margin-top: rem(30);
+  // border-radius: rem(20);
   overflow: hidden;
   position: relative;
 
@@ -89,6 +101,7 @@
 .p-administrator__btn{
   margin-top: rem(30);
   text-align: center;
+  
   @include mq('tab'){
     margin-top: rem(40);
   }

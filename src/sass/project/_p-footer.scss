@@ -8,10 +8,14 @@
 .p-footer{
   padding-top: rem(30);
   padding-bottom: rem(30);
+  background-color: $text-color;
 }
 .p-footer__copyright{
+  font-weight: normal;
   font-size: rem(16);
   line-height: 1;
+  letter-spacing: normal;
+  color: $white;
   text-align: center;
 }
 

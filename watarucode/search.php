@@ -2,16 +2,16 @@
 
 <!-- p-mv-blog -->
 <div class="p-mv-blog" style="background-color: <?php the_field('background_color', 12); ?>; background-image: url(<?php the_field('background_image', 12); ?>)">
-  <div class="p-mv-blog__inner">
+  <div class="p-mv-blog__inner l-inner">
     <h1 class="p-mv-blog__title" style="color: <?php the_field('title_color', 12); ?>">
-      <a href="<?php echo esc_url(home_url('blog')); ?>">wataru&nbsp;log</a>
+      <a href="<?php echo esc_url(home_url('blog')); ?>">わたるブログ</a>
     </h1>
+    <!-- l-breadcrumb -->
+    <?php get_template_part('template-parts/content', 'breadcrumb'); ?>
+    <!-- l-breadcrumb -->
   </div>
 </div><!-- p-mv-blog -->
 
-<!-- p-breadcrumb -->
-<?php get_template_part('template-parts/content', 'breadcrumb'); ?>
-<!-- p-breadcrumb -->
 
 
 <!-- l-container -->
@@ -37,11 +37,11 @@
           
           <!-- get_search_query()...検索された文字列を取得する。 -->
           <?php if(have_posts() && get_search_query()): ?>
-            <ul class="p-search__items p-cards-list-02">
+            <div class="p-search__items p-cards-list-02">
               <?php while(have_posts()): the_post(); ?>
                 
-                <li class="p-cards-list-02__card p-card-blog">
-                  <a class="p-card-blog__img" href="<?php the_permalink(); ?>">
+                <a class="p-cards-list-02__card p-card-blog" href="<?php the_permalink(); ?>">
+                  <figure class="p-card-blog__img">
                     <?php 
                       $attach_id = get_post_thumbnail_id($post->ID);
                       $image = wp_get_attachment_image_src($attach_id, 'full');
@@ -54,55 +54,30 @@
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/blog-no-image.jpeg" alt="">
                       </picture>
                     <?php endif; ?>
-                    <span class="c-category--absolute" style="background-color: <?php the_field('background_color', 'category_' . get_the_category()[0]->cat_ID); ?>">
-                        <?php
-                          $category = get_the_category();
-                          $category_name = $category[0]->cat_name;
-                          echo $category_name;
-                        ?>
-                    </span>
-                  </a>
+                  </figure>
                   <div class="p-card-blog__body">
                     <div class="p-card-blog__box">
-                      <h2 class="p-card-blog__title--black"><?php the_title(); ?></h2>
-                      <div class="p-card-blog__content--black"><?php echo get_flexible_content(80); ?></div>
+                      <h2 class="p-card-blog__title"><?php the_title(); ?></h2>
+                      <div class="p-card-blog__content"><?php echo get_flexible_content(80); ?></div>
                     </div>
-                    <time class="p-card-blog__time--black" datetime="<?php the_time(get_option('date_format')); ?>"><?php the_time(get_option('date_format')); ?></time>
+                    <div class="p-card-blog__meta">
+                      <span class="c-category-blog" style="background-color: <?php the_field('background_color', 'category_' . get_the_category()[0]->cat_ID); ?>">
+                          <?php
+                            $category = get_the_category();
+                            $category_name = $category[0]->cat_name;
+                            echo $category_name;
+                          ?>
+                      </span>
+                      <time class="p-card-blog__time" datetime="<?php the_time(get_option('date_format')); ?>"><?php the_time(get_option('date_format')); ?></time>
+                    </div>
                   </div>
-                </li>
+                </a>
               <?php endwhile; ?>
-            </ul>
+            </div>
 
             <!-- l-pagination -->
-            <div class="l-pagination p-pagination">
-              <div class="p-pagination__inner">
-
-                <!-- str_replace(検索文字列, 置換文字列(この文字に置き換える), 対象文字列) -->
-                <!-- get_pagenum_link()...引数で与えられた数字を元にページ番号のリンクを返す。 -->
-                <!-- 例：http://hogehoge.com/?paged=9999999999/ -->
-
-                  <!-- ２ページ以上ある場合ページャーを出力 -->
-                  <?php if($wp_query->max_num_pages > 1): ?>
-                    <?php
-                      $big = 999999999;
-                      $page = get_pagenum_link($big);
-
-                      echo paginate_links([
-                        'base'         => str_replace($big, '%#%', esc_url(get_pagenum_link($big))),
-                        'format'       => '',
-                        'current'      => max(1, get_query_var('paged')), //現在のページを取得
-                        'total'        => $wp_query->max_num_pages,
-                        'prev_next'    => true,
-                        'prev_text'    => 'PREV',
-                        'next_text'    => 'NEXT',
-                        'type'         => 'plain',
-                        'end_size'     => 1, //端の数字
-                        'mid_size'     => 1  //currentの左右
-                      ]);
-                    ?>
-                  <?php endif; ?>
-                </div>
-              </div><!-- l-pagination -->
+            <?php get_template_part('template-parts/content', 'pagination'); ?>
+            <!-- l-pagination -->
             
           <?php elseif(! get_search_query()): ?>
             <p class="p-search__not-keyword">検索キーワードが入力されていません。</p>

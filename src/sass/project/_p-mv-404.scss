@@ -21,6 +21,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
 
   @include mq('tab'){
     padding-top: rem(80);
@@ -29,7 +30,7 @@
 
 .p-mv-404__title{
   font-family: $font-family-sub;
-  font-weight: bold;
+  font-weight: 900;
   font-size: rem(30);
   line-height: 1;
   letter-spacing: 0.02em;

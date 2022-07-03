@@ -1,25 +1,21 @@
 /******************************************************************
 
-.c-category カテゴリー
+.c-category-blog カテゴリー
 
 ******************************************************************/
 @use '../global/' as *;
 
-.c-category{
+.c-category-blog{
+  display: inline-block;
   padding-top: rem(5);
   padding-bottom: rem(5);
   padding-right: rem(15);
   padding-left: rem(15);
-  display: inline-block;
+  font-weight: normal;
   font-size: rem(14);
-  color: $white;
   line-height: 1;
+  letter-spacing: normal;
+  border-radius: rem(9999);
+  color: $white;
 }
 
-.c-category--absolute{
-  @extend .c-category;
-  
-  position: absolute;
-  top: 0;
-  right: 0;
-}

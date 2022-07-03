@@ -2,7 +2,7 @@
 
 <!-- p-mv -->
 <div class="p-mv">
-  <h1 class="p-mv__title js-inview" style="color: <?php the_field('title_color', 10); ?>">wataru<br>design</h1>
+  <h1 class="p-mv__title js-inview" style="color: <?php the_field('title_color', 10); ?>">wataru&nbsp;design</h1>
 
   <a class="p-mv__scroll c-scroll-down" href="#concept" style="color: <?php the_field('scroll_color', 10); ?>">
     scroll
@@ -77,7 +77,7 @@
       <div class="p-works__contents">
         <div class="swiper swiper-works">
           <div class="swiper-pagination"></div>
-          <ul class="swiper-wrapper">
+          <div class="swiper-wrapper">
             <?php
               $args = [
                 'post_type' => 'works',
@@ -90,8 +90,8 @@
             <?php if($wp_query->have_posts()): ?>
               <?php while($wp_query->have_posts()): $wp_query->the_post(); ?>
                 
-                <li class="swiper-slide p-card-works">
-                  <a class="p-card-works__img" href="<?php the_permalink(); ?>">
+                <a class="swiper-slide p-card-works" href="<?php the_permalink(); ?>">
+                  <figure class="p-card-works__img">
                     <?php if(get_field('image')): ?>
                       <img src="<?php the_field('image'); ?>" alt="<?php the_title_attribute(); ?>">
                     <?php else: ?>
@@ -100,19 +100,27 @@
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/works-no-image.jpg" alt="">
                       </picture>
                     <?php endif; ?>
-                  </a>
+                  </figure>
                   <div class="p-card-works__body">
                     <h3 class="p-card-works__title"><?php the_title(); ?></h3>
                   </div>
-                </li>
+                </a>
               <?php endwhile; ?>
               <?php wp_reset_postdata(); ?>
             <?php endif; ?>
-          </ul>
+          </div>
         </div>
       </div>
       <div class="p-works__btn">
-        <a class="c-btn-view" href="<?php echo esc_url(home_url('works')); ?>">view&nbsp;more</a>
+        <a class="c-btn-allow-right" href="<?php echo esc_url(home_url('works')); ?>">
+          <div class="c-btn-allow-right__text">view&nbsp;more</div>
+          <div class="c-btn-allow-right__circle">
+            <span class="c-btn-allow-right__allow">
+              <span class="c-btn-allow-right__allow-line"></span>
+              <span class="c-btn-allow-right__allow-tip"></span>
+            </span>
+          </div>
+        </a>
       </div>
     </div>
   </section><!-- l-works -->
@@ -129,7 +137,7 @@
     <div class="p-blog__over-inner">
       <div class="p-blog__inner l-inner">
         <div class="swiper swiper-blog p-blog__swiper">
-          <ul class="swiper-wrapper p-blog__items">
+          <div class="swiper-wrapper p-blog__items">
             <?php
               $args = [
                 'post_type' => 'post',
@@ -141,8 +149,8 @@
             ?>
             <?php if($wp_query->have_posts()): ?>
               <?php while($wp_query->have_posts()): $wp_query->the_post(); ?>
-                <li class="swiper-slide p-blog__item p-card-blog">
-                  <a class="p-card-blog__img" href="<?php the_permalink(); ?>">
+                <a class="swiper-slide p-blog__item p-card-blog" href="<?php the_permalink(); ?>">
+                  <figure class="p-card-blog__img">
                     <?php 
                       $attach_id = get_post_thumbnail_id($post->ID);
                       // var_dump($attach_id);
@@ -157,26 +165,29 @@
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/blog-no-image.jpeg" alt="">
                       </picture>
                     <?php endif; ?>
-                    <span class="p-card-blog__category" style="background-color: <?php the_field('background_color', 'category_' . get_the_category()[0]->cat_ID); ?>">
-                        <?php
-                          $category = get_the_category();
-                          $category_name = $category[0]->cat_name;
-                          echo $category_name;
-                        ?>
-                    </span>
-                  </a>
+                    
+                  </figure>
                   <div class="p-card-blog__body">
                     <div class="p-card-blog__box">
                       <h3 class="p-card-blog__title"><?php the_title(); ?></h3>
                       <div class="p-card-blog__content"><?php echo get_flexible_content(60); ?></div>
                     </div>
-                    <time class="p-card-blog__time" datetime="<?php the_time(get_option('date_format')); ?>"><?php the_time(get_option('date_format')); ?></time>
+                    <div class="p-card-blog__meta">
+                      <span class="c-category-blog" style="background-color: <?php the_field('background_color', 'category_' . get_the_category()[0]->cat_ID); ?>">
+                          <?php
+                            $category = get_the_category();
+                            $category_name = $category[0]->cat_name;
+                            echo $category_name;
+                          ?>
+                      </span>
+                      <time class="p-card-blog__time" datetime="<?php the_time(get_option('date_format')); ?>"><?php the_time(get_option('date_format')); ?></time>
+                    </div>
                   </div>
-                </li>
+                </a>
               <?php endwhile; ?>
               <?php wp_reset_postdata(); ?>
             <?php endif; ?>
-          </ul>
+          </div>
           <!-- swiperページネーション -->
           <div class="swiper-pagination"></div>
         </div>
@@ -185,7 +196,15 @@
             実装の過程や学習で学んだことについて発信します。
           </p>
           <div class="p-blog__btn">
-            <a class="c-btn-blog" href="<?php echo esc_url(home_url('blog')); ?>">WATARU&nbsp;LOGへ</a>
+            <a class="c-btn-allow-right" href="<?php echo esc_url(home_url('blog')); ?>">
+              <div class="c-btn-allow-right__text--japanese">わたるブログへ</div>
+              <div class="c-btn-allow-right__circle">
+                <span class="c-btn-allow-right__allow">
+                  <span class="c-btn-allow-right__allow-line--white"></span>
+                  <span class="c-btn-allow-right__allow-tip--white"></span>
+                </span>
+              </div>
+            </a>
           </div>
         </div>
       </div>

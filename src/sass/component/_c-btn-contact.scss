@@ -17,9 +17,14 @@
   color: $text-color;
   border: rem(1) solid $text-color;
   background-color: $white;
-  border-radius: rem(28);
+  border-radius: rem(9999);
   text-transform: uppercase;
   transition: all .3s;
+}
+
+// マウスポインター無効化
+input[type=submit].c-btn-contact{
+  cursor: none;
 }
 
 .c-btn-contact:hover{

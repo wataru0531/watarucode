@@ -7,81 +7,140 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
   <!-- favicon -->
-  <link rel="icon" href="<?php echo get_template_directory_uri();?>/assets/images/favicon/favicon.ico">
-  <link rel="apple-touch-icon" href="<?php echo get_template_directory_uri();?>/assets/images/favicon/apple-touch-icon.png">
+  <link rel="shortcut icon" href="<?php echo get_template_directory_uri();?>/assets/images/favicon/favicon.ico">
+  <!-- アップルタッチアイコン -->
+  <link rel="apple-touch-icon" sizes="180x180" href="<?php echo get_template_directory_uri();?>/assets/images/favicon/apple-touch-icon.png">
+  <!-- Androidアイコン -->
+  <link rel="icon" type="image/png" sizes="192x192" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicon/android-touch-icon.png">
 
   <?php wp_head(); ?>
 </head>
 <body>
-  <!-- ソースコードをご覧いただきありがとうございます。(人-) -->
-  <!-- 何かお気づきのことやご質問ありましたらTwitterの方でDMをいただけたら幸いです。 -->
-  <!-- 今後とも宜しくお願いいたします。 -->
-  <!--  -->
+  <!-- カーソル -->
+  <div class="c-cursor" id="js-cursor"></div>
+  <!-- カーソル -->
+
 
 <!-- l-global-container -->
-<div class="l-global-container js-global-container">
-
+<div class="l-global-container" id="js-global-container">
+  
   <!-- l-opening -->
-  <div class="l-opening p-opening js-opening">
-      <div class="p-opening__box">
-        <div class="p-opening__title js-opening-title">
+  <div class="l-opening p-opening" id="js-opening">
+      <div class="p-opening__block">
+        <div class="p-opening__title" id="js-opening-title">
           <span>w</span><span>a</span><span>t</span><span>a</span><span>r</span><span>u</span><span>&nbsp;</span><span>d</span><span>e</span><span>s</span><span>i</span><span>g</span><span>n</span>
         </div>
-        <div class="p-opening__lines">
-          <span class="p-opening__line-gray js-opening-line"></span>
-          <span class="p-opening__line-coral js-opening-line"></span>
+        <div class="p-opening__line p-opening-line">
+          <span class="p-opening-line__coral" id="js-opening-line"></span>
         </div>
       </div>
   </div>
   <!-- l-opening -->
 
+  <!-- l-page-top -->
+  <div class="l-page-top c-btn-page-top" id="js-page-top">
+    <button class="c-btn-page-top__allow">
+      <span class="c-btn-page-top__allow-tip"></span>
+      <span class="c-btn-page-top__allow-line"></span>
+    </button>
+  </div>
+  <!-- l-page-top -->
+
+  <!-- l-sns -->
+  <div class="l-sns p-sns">
+    <ul class="p-sns__items">
+      <li class="p-sns__item">
+        <a href="https://twitter.com/watarudesign/" target="_blank">
+          <picture>
+            <source type="image/webp" srcset="<?php echo get_template_directory_uri(); ?>/assets/images/webp/twitter-blue.webp" />
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/twitter-blue.png" alt="twitterのアイコン">
+          </picture>
+        </a>
+      </li>
+      <li class="p-sns__item">
+        <a href="https://www.instagram.com/watarudesign/" target="_blank">
+          <picture>
+            <source type="image/webp" srcset="<?php echo get_template_directory_uri(); ?>/assets/images/webp/instagram-multi.webp" />
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/instagram-multi.png" alt="instagramのアイコン">
+          </picture>
+        </a>
+      </li>
+    </ul>
+  </div><!-- l-sns -->
+  
   <!-- l-drawer -->
-  <div class="l-drawer p-drawer js-drawer">
+  <div class="l-drawer p-drawer" id="js-drawer">
     <div class="p-drawer__inner">
       <ul class="p-drawer__items">
-        <li class="p-drawer__item">
-          <a href="<?php echo esc_url(home_url('/')); ?>">top</a>
+        <li class="p-drawer__item <?php if(is_front_page()){ echo 'is-current'; } ?>">
+            <a href="<?php echo esc_url(home_url('/')); ?>">
+              <span>top</span>
+            </a>
         </li>
         <li class="p-drawer__item">
           <?php if(is_front_page()): ?>
-            <a class="js-link" href="#concept">concept</a>
+            <a class="js-link" href="#concept">
+              <span>concept</span>
+            </a>
           <?php else: ?>
-            <a href="<?php echo esc_url(home_url('/')); ?>#concept">concept</a>
+            <a href="<?php echo esc_url(home_url('/')); ?>#concept">
+              <span>concept</span>
+            </a>
+          <?php endif; ?>
+        </li>
+        <li class="p-drawer__item <?php if(is_post_type_archive('works') || is_singular('works')){ echo 'is-current'; } ?>">
+          <?php if(is_front_page()): ?>
+            <a class="js-link" href="#works">
+              <span>works</span>
+            </a>
+          <?php else: ?>
+            <a href="<?php echo esc_url(home_url('/')); ?>#works">
+              <span>works</span>
+            </a>
+          <?php endif; ?>
+        </li>
+        <li class="p-drawer__item <?php if(is_home() || is_category() || is_search() || is_singular('post')){ echo 'is-current'; } ?>">
+          <?php if(is_front_page()): ?>
+            <a class="js-link" href="#blog">
+              <span>blog</span>
+            </a>
+          <?php else: ?>
+            <a href="<?php echo esc_url(home_url('/')); ?>#blog">
+              <span>blog</span>
+            </a>
           <?php endif; ?>
         </li>
         <li class="p-drawer__item">
           <?php if(is_front_page()): ?>
-            <a class="js-link" href="#works">works</a>
+            <a class="js-link" href="#price">
+              <span>price</span>
+            </a>
           <?php else: ?>
-            <a href="<?php echo esc_url(home_url('/')); ?>#works">works</a>
+            <a href="<?php echo esc_url(home_url('/')); ?>#price">
+              <span>price</span>
+            </a>
           <?php endif; ?>
         </li>
         <li class="p-drawer__item">
           <?php if(is_front_page()): ?>
-            <a class="js-link" href="#blog">blog</a>
+            <a class="js-link" href="#about">
+              <span>about</span>
+            </a>
           <?php else: ?>
-            <a href="<?php echo esc_url(home_url('/')); ?>#blog">blog</a>
+            <a href="<?php echo esc_url(home_url('/')); ?>#about">
+              <span>about</span>
+            </a>
           <?php endif; ?>
         </li>
         <li class="p-drawer__item">
           <?php if(is_front_page()): ?>
-            <a class="js-link" href="#price">price</a>
+            <a class="js-link" href="#contact">
+              <span>contact</span>
+            </a>
           <?php else: ?>
-            <a href="<?php echo esc_url(home_url('/')); ?>#price">price</a>
-          <?php endif; ?>
-        </li>
-        <li class="p-drawer__item">
-          <?php if(is_front_page()): ?>
-            <a class="js-link" href="#about">about</a>
-          <?php else: ?>
-            <a href="<?php echo esc_url(home_url('/')); ?>#about">about</a>
-          <?php endif; ?>
-        </li>
-        <li class="p-drawer__item">
-          <?php if(is_front_page()): ?>
-            <a class="js-link" href="#contact">contact</a>
-          <?php else: ?>
-            <a href="<?php echo esc_url(home_url('/')); ?>#contact">contact</a>
+            <a href="<?php echo esc_url(home_url('/')); ?>#contact">
+              <span>contact</span>
+            </a>
           <?php endif; ?>
         </li>
       </ul>
@@ -106,36 +165,8 @@
     </div>
   </div><!-- l-drawer -->
 
-  <!-- l-sns -->
-  <div class="l-sns p-sns">
-    <ul class="p-sns__items">
-      <li class="p-sns__item">
-        <a href="https://twitter.com/watarudesign/" target="_blank">
-          <picture>
-            <source type="image/webp" srcset="<?php echo get_template_directory_uri(); ?>/assets/images/webp/twitter-blue.webp" />
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/twitter-blue.png" alt="twitterのアイコン">
-          </picture>
-        </a>
-      </li>
-      <li class="p-sns__item">
-        <a href="https://www.instagram.com/watarudesign/" target="_blank">
-          <picture>
-            <source type="image/webp" srcset="<?php echo get_template_directory_uri(); ?>/assets/images/webp/instagram-multi.webp" />
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/instagram-multi.png" alt="instagramのアイコン">
-          </picture>
-        </a>
-      </li>
-    </ul>
-  </div><!-- l-sns -->
-
-  <!-- l-page-top -->
-  <div class="l-page-top p-page-top js-page-top">
-    <button class="c-arrow"></button>
-  </div>
-  <!-- l-page-top -->
-
   <!-- l-header -->
-  <header class="l-header p-header js-header">
+  <header class="l-header p-header" id="js-header">
     <div class="p-header__inner">
 
       <!-- p-global-nav -->
@@ -268,17 +299,19 @@
         </ul>
       </nav><!-- p-global-nav -->
 
-      <!-- c-hamburger-btn -->
-      <div class="p-header__hamburger p-hamburger js-hamburger">
-        <button class="p-hamburger__btn c-btn-hamburger js-hamburger-btn">
+      
+      <div class="p-header__hamburger p-hamburger" id="js-hamburger">
+        <!-- c-hamburger-btn -->
+        <button class="p-hamburger__btn c-btn-hamburger" id="js-hamburger-btn">
           <span></span>
           <span></span>
-        </button>
-        <div class="p-hamburger__menus c-menus js-hamburger-menus">
+        </button><!-- c-hamburger-btn -->
+        <!-- c-menus -->
+        <div class="p-hamburger__menus c-menus" id="js-hamburger-menus">
           <span class="c-menus__menu">menu</span>
           <span class="c-menus__close">close</span>
-        </div>
-      </div><!-- c-hamburger-btn -->
+        </div><!-- c-menus -->
+      </div>
 
     </div>
   </header><!-- l-header -->

@@ -21,33 +21,45 @@
   padding-bottom: rem(10);
   padding-right: rem(10);
   padding-left: rem(10);
-  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .p-pagination .page-numbers:not(:last-child){
   margin-right: rem(10);
 }
 
-.p-pagination .page-numbers.current{
-  color: $current;
+// カレント表示
+.p-pagination .page-numbers.current::after{
+  content: '';
+  display: block;
+  margin-top: rem(10);
+  width: rem(12);
+  height: rem(12);
+  background-color: $coral;
+  border-radius: 50%;
 }
 
+// ホバー時
 .p-pagination__inner > a.page-numbers::after{
   content: '';
   display: block;
-  width: 100%;
-  height: rem(1);
+  margin-top: rem(10);
+  width: rem(12);
+  height: rem(12);
   background-color: $coral;
-  position: absolute;
-  bottom: 0;
-  left: 0;
+  border-radius: 50%;
+  // position: absolute;
+  // bottom: 0;
+  // left: 0;
 
-  transform-origin: right;
-  transform: scale(0, 1);
-  transition: transform .2s;
+  // transform-origin: right;
+  transform: scale(0);
+  transition: transform .3s;
 }
 
 .p-pagination__inner > a.page-numbers:hover::after{
-  transform-origin: left;
-  transform: scale(1, 1);
+  transform: scale(1);
 }

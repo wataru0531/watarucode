@@ -2,15 +2,16 @@
 
 <!-- p-mv-404 -->
 <div class="p-mv-404">
-  <div class="p-mv-404__inner">
-    <div class="p-mv-404__title">wataru&nbsp;design</div>
+  <div class="p-mv-404__inner l-inner">
+    <div class="p-mv-404__title">
+      <a href="<?php echo esc_url(home_url('/')); ?>">wataru&nbsp;design</a>
+    </div>
+    <!-- l-breadcrumb -->
+    <?php get_template_part('template-parts/content', 'breadcrumb'); ?>
+    <!-- l-breadcrumb -->
   </div>
-    
 </div><!-- p-mv-404 -->
 
-<!-- p-breadcrumb -->
-<?php get_template_part('template-parts/content', 'breadcrumb'); ?>
-<!-- p-breadcrumb -->
 
 <!-- l-min-height -->
 <main class="l-min-height">
@@ -25,7 +26,15 @@
         <p class="p-404__text">ヘッダーよりメニューを選択されるか、トップページにお戻りください。</p>
       </div>
       <div class="p-404__btn">
-        <a href="<?php echo esc_url(home_url('/')); ?>" class="c-btn-top">トップページへ</a>
+        <a class="c-btn-allow-left" href="<?php echo esc_url(home_url('/')); ?>">
+          <div class="c-btn-allow-left__circle">
+            <span class="c-btn-allow-left__allow">
+              <span class="c-btn-allow-left__allow-tip"></span>
+              <span class="c-btn-allow-left__allow-line"></span>
+            </span>
+          </div>
+          <div class="c-btn-allow-left__text">to&nbsp;top</div>
+        </a>
       </div>
     </div>
   </section><!-- l-404 -->

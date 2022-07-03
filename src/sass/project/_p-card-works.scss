@@ -8,6 +8,9 @@
 .p-card-works{
   display: flex;
   flex-direction: column;
+  overflow: hidden;
+  border-radius: rem(5);
+  background-color: $white;
 }
 
 .p-card-works__img{
@@ -32,7 +35,7 @@
   transition: all .3s;
 }
 
-.p-card-works__img:hover img{
+.p-card-works:hover .p-card-works__img img{
   @include mq('tab'){
     transform: translateY(-50%) scale(1.1);
   }
@@ -48,9 +51,10 @@
 }
 
 .p-card-works__title{
+  font-weight: normal;
   font-size: rem(16);
   line-height: 1.5;
-  font-weight: normal
+  letter-spacing: normal;
 }
 
 .p-card-works__title--weight{
@@ -60,14 +64,18 @@
 
 .p-card-works__pages{
   margin-top: rem(15);
+  font-weight: normal;
   font-size: rem(16);
   line-height: 1;
+  letter-spacing: normal;
 }
 
 .p-card-works__specification{
   margin-top: rem(15);
+  font-weight: normal;
   font-size: rem(16);
   line-height: 1;
+  letter-spacing: normal;
 }
 
 .p-card-works__category{
@@ -77,15 +85,19 @@
   padding-right: rem(15);
   padding-left: rem(15);
   display: inline-block;
+  font-weight: normal;
   font-size: rem(14);
   color: $white;
   line-height: 1;
+  letter-spacing: normal;
 }
 
 .p-card-works__time{
   margin-top: rem(15);
   display: block;
+  font-weight: normal;
   font-size: rem(14);
   line-height: 1;
+  letter-spacing: normal;
   text-align: right;
 }

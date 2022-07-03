@@ -41,24 +41,27 @@
 }
 
 .p-search__title{
-  font-size: rem(20);
   font-weight: bold;
+  font-size: rem(20);
   line-height: 1;
+  letter-spacing: normal;
   color: $text-color;
 }
 
 .p-search__posts{
   margin-left: rem(10);
-  font-size: rem(18);
   font-weight: normal;
+  font-size: rem(18);
   line-height: 1;
+  letter-spacing: normal;
   color: $grayText;
 }
 
 .p-search__not-keyword{
-  font-size: rem(14);
   font-weight: normal;
+  font-size: rem(14);
   line-height: 1;
+  letter-spacing: normal;
   color: $text-color;
 
   @include mq('tab'){
@@ -67,9 +70,10 @@
 }
 
 .p-search__not-found{
-  font-size: rem(14);
   font-weight: normal;
+  font-size: rem(14);
   line-height: 1;
+  letter-spacing: normal;
   color: $text-color;
 
   @include mq('tab'){
