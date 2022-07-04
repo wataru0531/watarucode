@@ -58,7 +58,7 @@
   line-height: 1;
   letter-spacing: normal;
   color: $white;
-  background-color: $coral;
+  background-color: $accentColor;
   border-radius: rem(5);
 
   @include mq('tab'){

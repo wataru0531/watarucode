@@ -18,7 +18,7 @@
 // 各項目でのエラーメッセージ
 .wpcf7-not-valid-tip{
   font-size: rem(14);
-  color: $coral;
+  color: $accentColor;
 
   @include mq('tab'){
     font-size: rem(16);
@@ -29,7 +29,7 @@
 .wpcf7 form.invalid .wpcf7-response-output, .wpcf7 form.unaccepted .wpcf7-response-output, .wpcf7 form.payment-required .wpcf7-response-output{
   font-size: rem(14);
   color: $text-color;
-  border-color: $coral;
+  border-color: $accentColor;
 
   @include mq('tab'){
     font-size: rem(16);
@@ -40,7 +40,7 @@
 .wpcf7 form.sent .wpcf7-response-output{
   font-size: rem(14);
   color: $text-color;
-  border-color: $coral;
+  border-color: $accentColor;
 
   @include mq('tab'){
     font-size: rem(16);

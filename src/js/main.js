@@ -16,7 +16,6 @@ window.addEventListener('load', () => {
 	const globalContainer = document.getElementById('js-global-container');
 	const opening = document.getElementById('js-opening');
 	const openingTitle = document.getElementById('js-opening-title');
-	const openingLine = document.getElementById('js-opening-line');
 
 	// タイトルをアコーディオンさせる
 	const accordion = () => {
@@ -47,10 +46,9 @@ window.addEventListener('load', () => {
 
 			globalContainer.style.opacity='1';
 			
-			openingLine.classList.add('is-stretch'); // 赤ライン、灰色ラインを伸ばす。時間はcssで調整
-			setTimeout(accordion, 2500); //アコーディオン開始
-			setTimeout(upFade, 6000); //タイトルを上にフェイドアウト
-			setTimeout(fadeOut, 7500); //レイヤーをフェイドアウト
+			setTimeout(accordion, 500); //アコーディオン開始
+			setTimeout(upFade, 3000); //タイトルを上にフェイドアウト
+			setTimeout(fadeOut, 4500); //レイヤーをフェイドアウト
 		}
 	};
 

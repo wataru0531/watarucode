@@ -102,7 +102,7 @@
   letter-spacing: normal;
   color: $text-color;
   background-color: $background;
-  border-left: rem(8) solid $coral;
+  border-left: rem(8) solid $accentColor;
 
   @include mq('tab'){
     margin-bottom: rem(40);
@@ -127,7 +127,7 @@
   line-height: 1.3;
   letter-spacing: normal;
   color: $text-color;
-  border-left: rem(5) solid $coral;
+  border-left: rem(5) solid $accentColor;
 
   @include mq('tab'){
     margin-bottom: rem(40);

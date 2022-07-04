@@ -33,7 +33,7 @@
               <span class="c-btn-allow-left__allow-line"></span>
             </span>
           </div>
-          <div class="c-btn-allow-left__text">to&nbsp;top</div>
+          <div class="c-btn-allow-left__text">back&nbsp;to&nbsp;top</div>
         </a>
       </div>
     </div>
