@@ -42,7 +42,7 @@ window.addEventListener('load', () => {
 
 		}else{
 			// console.log('1回目のアクセスです');
-			// sessionStorage.setItem('access', 0);
+			sessionStorage.setItem('access', 0);
 
 			globalContainer.style.opacity='1';
 			
