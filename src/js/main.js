@@ -42,13 +42,13 @@ window.addEventListener('load', () => {
 
 		}else{
 			// console.log('1回目のアクセスです');
-			sessionStorage.setItem('access', 0);
+			// sessionStorage.setItem('access', 0);
 
 			globalContainer.style.opacity='1';
 			
-			setTimeout(accordion, 500); //アコーディオン開始
-			setTimeout(upFade, 3000); //タイトルを上にフェイドアウト
-			setTimeout(fadeOut, 4500); //レイヤーをフェイドアウト
+			setTimeout(accordion, 1000); //アコーディオン開始
+			setTimeout(upFade, 3500); //タイトルを上にフェイドアウト
+			setTimeout(fadeOut, 5000); //レイヤーをフェイドアウト
 		}
 	};
 
