@@ -30,9 +30,6 @@
         <div class="p-opening__title" id="js-opening-title">
           <span>w</span><span>a</span><span>t</span><span>a</span><span>r</span><span>u</span><span>&nbsp;</span><span>d</span><span>e</span><span>s</span><span>i</span><span>g</span><span>n</span>
         </div>
-        <div class="p-opening__line p-opening-line">
-          <span class="p-opening-line__coral" id="js-opening-line"></span>
-        </div>
       </div>
   </div>
   <!-- l-opening -->

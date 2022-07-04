@@ -15,8 +15,8 @@
   font-weight: bold;
   line-height: 1;
   color: $white;
-  background-color: $coral;
-  border: rem(1) solid $coral;
+  background-color: $accentColor;
+  border: rem(1) solid $accentColor;
   border-radius: rem(27);
 
   @include mq('tab'){

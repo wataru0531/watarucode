@@ -35,7 +35,7 @@
 }
 
 .p-breadcrumb span[property="itemListElement"] span.current-item{
-  color: $coral;
+  color: $accentColor;
 }
 
 // search.phpの時
@@ -44,7 +44,7 @@
   font-size: rem(14);
   line-height: 1.3;
   letter-spacing: normal;
-  color: $coral;
+  color: $accentColor;
 
   @include mq('tab'){
     font-size: rem(16);
