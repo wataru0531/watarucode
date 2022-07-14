@@ -291,30 +291,28 @@ document.addEventListener('DOMContentLoaded', () => {
 		// console.log(prevBtn);
 		prevBtn.className = 'c-btn-prev';
 
-
 		// 矢印本体
 		const prevBtnAllow = document.createElement('span');
 		prevBtnAllow.className = 'c-btn-prev__allow';
-		prevBtn.append(prevBtnAllow);
+		prevBtn.appendChild(prevBtnAllow);
 
 		// 矢印の先
 		const prevBtnAllowTip = document.createElement('span');
 		prevBtnAllowTip.className = 'c-btn-prev__allow-tip';
-		prevBtnAllow.append(prevBtnAllowTip);
+		prevBtnAllow.appendChild(prevBtnAllowTip);
 		
 		// ライン
 		const prevBtnAllowLine = document.createElement('span');
 		prevBtnAllowLine.className = 'c-btn-prev__allow-line';
-		prevBtnAllow.append(prevBtnAllowLine);
+		prevBtnAllow.appendChild(prevBtnAllowLine);
 		
 		// テキスト
 		const prevBtnText = document.createElement('div');
 		prevBtnText.className = 'c-btn-prev__text';
 		prevBtnText.textContent = 'prev';
-		prevBtn.append(prevBtnText);
+		prevBtn.appendChild(prevBtnText);
 	}
 	
-
 	/***************************************************************
 	works シングルページ NEXTボタン
 	***************************************************************/
@@ -327,20 +325,20 @@ document.addEventListener('DOMContentLoaded', () => {
 		const nextBtnText = document.createElement('div');
 		nextBtnText.className = 'c-btn-next__text';
 		nextBtnText.textContent = 'next';
-		nextBtn.append(nextBtnText);
+		nextBtn.appendChild(nextBtnText);
 
 		// 矢印本体
 		const nextBtnAllow = document.createElement('span');
 		nextBtnAllow.className = 'c-btn-next__allow';
-		nextBtn.append(nextBtnAllow);
+		nextBtn.appendChild(nextBtnAllow);
 		// ライン
 		const nextBtnAllowLine = document.createElement('span');
 		nextBtnAllowLine.className = 'c-btn-next__allow-line';
-		nextBtnAllow.append(nextBtnAllowLine);
+		nextBtnAllow.appendChild(nextBtnAllowLine);
 		// 矢印の先
 		const nextBtnAllowTip = document.createElement('span');
 		nextBtnAllowTip.className = 'c-btn-next__allow-tip';
-		nextBtnAllow.append(nextBtnAllowTip);
+		nextBtnAllow.appendChild(nextBtnAllowTip);
 	}
 	
 });
